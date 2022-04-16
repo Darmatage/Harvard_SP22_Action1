@@ -7,52 +7,11 @@ using UnityEngine.Audio;
 
 public class GameHandler : MonoBehaviour {
 	public static bool GameisPaused = false;
-        public GameObject pauseMenuUI;
-        public AudioMixer mixer;
-        public static float volumeLevel = 1.0f;
-        private Slider sliderVolumeCtrl;
+      public GameObject pauseMenuUI;
+      public AudioMixer mixer;
+      public static float volumeLevel = 1.0f;
+      private Slider sliderVolumeCtrl;
 
-        void Awake (){
-                SetLevel (volumeLevel);
-                GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
-                if (sliderTemp != null){
-                        sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
-                        sliderVolumeCtrl.value = volumeLevel;
-                }
-        }
-
-        void Start (){
-                pauseMenuUI.SetActive(false);
-                GameisPaused = false;
-        }
-
-        void Update (){
-                if (Input.GetKeyDown(KeyCode.Escape)){
-                        if (GameisPaused){
-                                Resume();
-                        }
-                        else{
-                                Pause();
-                        }
-                }
-        }
-
-        void Pause(){
-                pauseMenuUI.SetActive(true);
-                Time.timeScale = 0f;
-                GameisPaused = true;
-        }
-
-        public void Resume(){
-                pauseMenuUI.SetActive(false);
-                Time.timeScale = 1f;
-                GameisPaused = false;
-        }
-
-        public void SetLevel (float sliderValue){
-                mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
-                volumeLevel = sliderValue;
-        }
       private GameObject player;
       public static int playerHealth = 100;
       public int StartPlayerHealth = 100;
@@ -62,6 +21,49 @@ public class GameHandler : MonoBehaviour {
       public GameObject tokensText;
 
       public bool isDefending = false;
+
+      void Awake () {
+            SetLevel (volumeLevel);
+            GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
+
+            if (sliderTemp != null) {
+                  sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
+                  sliderVolumeCtrl.value = volumeLevel;
+            }
+      }
+
+      void Start (){
+            pauseMenuUI.SetActive(false);
+            GameisPaused = false;
+      }
+
+      void Update (){
+            if (Input.GetKeyDown(KeyCode.Escape)){
+                  if (GameisPaused){
+                        Resume();
+                  }
+                  else {
+                        Pause();
+                  }
+            }
+      }
+
+      void Pause(){
+            pauseMenuUI.SetActive(true);
+            Time.timeScale = 0f;
+            GameisPaused = true;
+      }
+
+      public void Resume(){
+            pauseMenuUI.SetActive(false);
+            Time.timeScale = 1f;
+            GameisPaused = false;
+      }
+
+      public void SetLevel (float sliderValue){
+            mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
+            volumeLevel = sliderValue;
+      }
 
       public static bool stairCaseUnlocked = false;
       //this is a flag check. Add to other scripts: GameHandler.stairCaseUnlocked = true;
@@ -126,17 +128,17 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void RestartGame() {
-		  Time.timeScale = 1f;
+		Time.timeScale = 1f;
             SceneManager.LoadScene("MainMenu");
             playerHealth = StartPlayerHealth;
       }
 
       public void QuitGame() {
-                #if UNITY_EDITOR
-                UnityEditor.EditorApplication.isPlaying = false;
-                #else
-                Application.Quit();
-                #endif
+            #if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+            #else
+            Application.Quit();
+            #endif
       }
 
       public void Credits() {
