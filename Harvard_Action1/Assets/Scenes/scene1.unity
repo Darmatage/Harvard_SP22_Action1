@@ -5216,10 +5216,6 @@ PrefabInstance:
       propertyPath: yellowJelly.uiBar
       value: 
       objectReference: {fileID: 16714370}
-    - target: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
-      propertyPath: yellowJelly.startValue
-      value: 20
-      objectReference: {fileID: 0}
     - target: {fileID: 6419823561646818545, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
       propertyPath: m_Name
       value: Player

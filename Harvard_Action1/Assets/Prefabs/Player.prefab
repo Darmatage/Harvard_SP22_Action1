@@ -162,8 +162,11 @@ MonoBehaviour:
     decayRate: 1
     maxValue: 100
     regenRate: 0
-    startValue: 0
+    startValue: 20
     uiBar: {fileID: 0}
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &6419823562536136108
 GameObject:
   m_ObjectHideFlags: 0
