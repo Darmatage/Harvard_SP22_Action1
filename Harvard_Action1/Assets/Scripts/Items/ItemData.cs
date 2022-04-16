@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum ConsumableType {
+  YellowJelly
+}
+
 public enum ItemType {
   Consumable,
   // Resource
@@ -15,4 +19,13 @@ public class ItemData : ScriptableObject {
   public Sprite icon;
   public GameObject prefab;
   public ItemType type;
+
+  [Header("Consumable")]
+  public ItemDataConsumable[] consumables;
+}
+
+[System.Serializable]
+public class ItemDataConsumable {
+  public ConsumableType type;
+  public float value;
 }
