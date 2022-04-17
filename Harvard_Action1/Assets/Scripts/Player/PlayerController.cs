@@ -53,11 +53,22 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, groundCheck.surfacePosition.y + floorHeight, transform.position.z);
         }*/
 
-        if (isGrounded && Input.GetButtonDown("Jump")) {
+        if (Input.GetButtonDown("Jump")) {
+            if (!isGrounded) {
+                // Only allow extra jumps if player has yellow jelly available
+                if (bars.yellowJelly.curValue > 0) {
+                    bars.Burn(bars.yellowJelly, 5f);
+                }
+                else {
+                    return;
+                }
+            }
+
             isGrounded = false;
             jumping = true;
             jumpTime = 0;
             velocity = jumpForce;
+
             // animator.SetTrigger("Jump");
             // JumpSFX.Play();
         }

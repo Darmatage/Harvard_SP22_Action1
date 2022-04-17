@@ -17,7 +17,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
 
     void Update() {
         // Decay values over time
-        yellowJelly.Subtract(yellowJelly.decayRate * Time.deltaTime);
+        // yellowJelly.Subtract(yellowJelly.decayRate * Time.deltaTime);
 
         // Regen values over time
         health.Add(health.regenRate * Time.deltaTime);
@@ -32,8 +32,8 @@ public class PlayerBars : MonoBehaviour, IDamageable
         }
     }
 
-    public void Burn(float value) {
-        yellowJelly.Subtract(value);
+    public void Burn(Bar bar, float value) {
+        bar.Subtract(value);
     }
 
     public void Consume(float value) {
