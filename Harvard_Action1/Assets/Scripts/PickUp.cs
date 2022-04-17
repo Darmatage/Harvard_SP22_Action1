@@ -8,6 +8,7 @@ public class PickUp : MonoBehaviour{
       //public playerVFX playerPowerupVFX;
       public bool isHealthPickUp = true;
       public bool isSpeedBoostPickUp = false;
+public Animator playerAnimator;
 
       public int healthBoost = 50;
       public float speedBoost = 2f;
@@ -19,13 +20,15 @@ public class PickUp : MonoBehaviour{
       }
 
       public void OnTriggerEnter2D (Collider2D other){
+                playerAnimator=GameObject.Find("PlayerArt").GetComponent<Animator>();
             if (other.gameObject.tag == "Player"){
                   GetComponent<Collider2D>().enabled = false;
                   GetComponent<AudioSource>().Play();
                   StartCoroutine(DestroyThis());
 
                   if (isHealthPickUp == true) {
-                       // gameHandler.playerGetHit(healthBoost * -1);
+                       playerAnimator.SetInteger("PlayerColor",1);
+			// gameHandler.playerGetHit(healthBoost * -1);
                         //playerPowerupVFX.powerup();
                   }
 
