@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 8809949573466474361}
   - component: {fileID: 178395436847464248}
   - component: {fileID: 2309537925956633862}
-  - component: {fileID: 2791825486336648558}
-  - component: {fileID: 1724678715273291897}
+  - component: {fileID: 4566554729063134722}
   - component: {fileID: 5225560397350133281}
   - component: {fileID: 1749147776738300367}
   m_Layer: 0
@@ -102,7 +101,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &2791825486336648558
+--- !u!114 &4566554729063134722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -111,34 +110,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 6419823561646818545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 644a34ab22fcf4d98879d9f255f9f5f3, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d8b9ee06e6a84332b73cb5e64b02612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb2D: {fileID: 0}
-  startSpeed: 10
-  isAlive: 1
---- !u!114 &1724678715273291897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6419823561646818545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fb0eae9e81570d46995fe3f59113aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 0}
-  jumpForce: 7
+  buttonTime: 0.3
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 128
   feet: {fileID: 6419823562536136109}
   groundLayer:
     serializedVersion: 2
     m_Bits: 2147483647
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 128
   isAlive: 1
+  jumpForce: 7
+  rig: {fileID: 0}
+  startSpeed: 10
 --- !u!114 &5225560397350133281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,7 +181,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6419823562536136109}
   - component: {fileID: 6419823562536136097}
-  - component: {fileID: 6419823562536136098}
   m_Layer: 0
   m_Name: PlayerArt
   m_TagString: Player
@@ -269,21 +254,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6419823562536136098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6419823562536136108}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 644a34ab22fcf4d98879d9f255f9f5f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb2D: {fileID: 0}
-  startSpeed: 10
-  isAlive: 1
 --- !u!1 &7625822004230709796
 GameObject:
   m_ObjectHideFlags: 0

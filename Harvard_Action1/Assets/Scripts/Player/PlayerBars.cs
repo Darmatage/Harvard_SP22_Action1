@@ -32,6 +32,10 @@ public class PlayerBars : MonoBehaviour, IDamageable
         }
     }
 
+    public void Burn(float value) {
+        yellowJelly.Subtract(value);
+    }
+
     public void Consume(float value) {
         Debug.LogFormat("Consumed: {0}", value);
         yellowJelly.Add(value);
