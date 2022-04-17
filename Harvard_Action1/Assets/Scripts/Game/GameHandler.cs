@@ -6,7 +6,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
 public class GameHandler : MonoBehaviour {
+      public Level currentLevel;
 	public static bool GameisPaused = false;
+      Level[] levels = new Level[2]; // When adding more levels, increase size
       public GameObject pauseMenuUI;
       public AudioMixer mixer;
       public static float volumeLevel = 1.0f;
@@ -23,7 +25,7 @@ public class GameHandler : MonoBehaviour {
       public bool isDefending = false;
 
       void Awake () {
-            SetLevel (volumeLevel);
+            SetAudioLevel (volumeLevel);
             GameObject sliderTemp = GameObject.FindWithTag("PauseMenuSlider");
 
             if (sliderTemp != null) {
@@ -32,12 +34,19 @@ public class GameHandler : MonoBehaviour {
             }
       }
 
-      void Start (){
+      void Start () {
             pauseMenuUI.SetActive(false);
             GameisPaused = false;
+            player = GameObject.FindWithTag("Player");
+
+            DefineGameLevels();
+            SetGameLevel(1); // Start the game at level 1
+            SetPlayerPosition(currentLevel.spawnPoint); // Define player starting point in level
       }
 
-      void Update (){
+      void Update () {
+            FallCheck();
+
             if (Input.GetKeyDown(KeyCode.Escape)){
                   if (GameisPaused){
                         Resume();
@@ -45,6 +54,22 @@ public class GameHandler : MonoBehaviour {
                   else {
                         Pause();
                   }
+            }
+      }
+
+      void DefineGameLevels() {
+            levels[0] = new Level(0, new Vector3(0,0,0)); // Not a real level, allows us to look up levels numbers by the index
+            levels[1] = new Level(1, new Vector3(0,0,0));
+      }
+
+      // Has player fallen off map?
+      void FallCheck() {
+            Transform transform = player.GetComponent<Transform>();
+
+            if (transform.position.y <= -10) {
+                  Debug.Log("Fell Off");
+
+                  SetPlayerPosition(currentLevel.spawnPoint);
             }
       }
 
@@ -60,9 +85,19 @@ public class GameHandler : MonoBehaviour {
             GameisPaused = false;
       }
 
-      public void SetLevel (float sliderValue){
+      public void SetAudioLevel (float sliderValue){
             mixer.SetFloat("MusicVolume", Mathf.Log10 (sliderValue) * 20);
             volumeLevel = sliderValue;
+      }
+
+      public void SetGameLevel(int number) {
+            currentLevel = levels[number];
+      }
+
+      public void SetPlayerPosition(Vector3 position) {
+            Transform transform = player.GetComponent<Transform>();
+
+            transform.position = position;
       }
 
       public static bool stairCaseUnlocked = false;
@@ -143,5 +178,15 @@ public class GameHandler : MonoBehaviour {
 
       public void Credits() {
             SceneManager.LoadScene("Credits");
+      }
+}
+
+public class Level {
+      public int number;
+      public Vector3 spawnPoint;
+
+      public Level(int number, Vector3 spawnPoint) {
+            this.number = number;
+            this.spawnPoint = spawnPoint;
       }
 }

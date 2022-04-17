@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
         }        
     }
 
+    
+
     public void Jump() {
         velocity += gravity * gravityScale * Time.deltaTime;
 
