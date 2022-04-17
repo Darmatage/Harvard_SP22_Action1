@@ -90,7 +90,7 @@ public class GameHandler : MonoBehaviour {
                   if (playerHealth >=0){
                         updateStatsDisplay();
                   }
-                 // player.GetComponent<PlayerHurt>().playerHit();
+                  player.GetComponent<PlayerHurt>().playerHit();
             }
 
            if (playerHealth >= StartPlayerHealth){
