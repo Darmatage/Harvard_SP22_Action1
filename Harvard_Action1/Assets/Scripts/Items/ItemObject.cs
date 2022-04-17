@@ -31,7 +31,7 @@ public class ItemObject : MonoBehaviour, IInteractable {
   }
 
   public void OnTriggerEnter2D (Collider2D other) {
-
+    //Debug.LogFormat("Item Type {0}", item.type);
     if (other.gameObject.tag == "Player") {
       // Player has hit consumable item
       if (item.type == ItemType.Consumable) {
@@ -40,8 +40,16 @@ public class ItemObject : MonoBehaviour, IInteractable {
 
         // Apply all stat updates from consumeable
         for (int i = 0; i < item.consumables.Length; i++) {
+          //Debug.LogFormat("Consumable Type {0}", item.consumables[i].type);
           switch (item.consumables[i].type) {
-            case ConsumableType.YellowJelly: bars.Consume(item.consumables[i].value); break;
+            case ConsumableType.RedHeart:
+              //Debug.Log("Consuming Heart");
+              bars.Heal(item.consumables[i].value);
+              break;
+            case ConsumableType.YellowJelly:
+              //Debug.Log("Consuming YellowJelly");
+              bars.Consume(item.consumables[i].value);
+              break;
           }
         }
 

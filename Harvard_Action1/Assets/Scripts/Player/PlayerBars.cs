@@ -33,6 +33,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     }
 
     public void Consume(float value) {
+        Debug.LogFormat("Consumed: {0}", value);
         yellowJelly.Add(value);
     }
 
@@ -42,6 +43,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     }
 
     public void Heal(float value) {
+        Debug.LogFormat("Headled: {0}", value);
         health.Add(value);
     }
 

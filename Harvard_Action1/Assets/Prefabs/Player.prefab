@@ -156,11 +156,11 @@ MonoBehaviour:
     decayRate: 0
     maxValue: 100
     regenRate: 0
-    startValue: 100
+    startValue: 50
     uiBar: {fileID: 0}
   yellowJelly:
     curValue: 0
-    decayRate: 1
+    decayRate: 0.1
     maxValue: 100
     regenRate: 0
     startValue: 20
@@ -180,6 +180,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7afdc74515ad4934904ec440ecd591c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  promptText: {fileID: 0}
+  raycastRate: 0.05
 --- !u!1 &6419823562536136108
 GameObject:
   m_ObjectHideFlags: 0
