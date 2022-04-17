@@ -9,15 +9,17 @@ public class PlayerController : MonoBehaviour
     public float buttonTime = 0.3f;
     public LayerMask enemyLayer;
     private bool FaceRight = true; // Which way is the player facing?
-    public Transform feet;
+    public float gravity = -9.81f;
+    public float gravityScale = 5;
     public LayerMask groundLayer;
     public bool isAlive = true; // Will come from bars when needed
-    private bool isGrounded = false;
+    private bool isGrounded = true;
     public float jumpForce = 20f;
     private bool jumping = false;
     private float jumpTime = 0;
     public Rigidbody2D rig;
     public static float runSpeed = 10f;
+    private float velocity;
     
     public float startSpeed = 10f;
     // TODO: public AudioSource WalkSFX;
@@ -38,52 +40,53 @@ public class PlayerController : MonoBehaviour
     void Update() {
         if (isAlive) {
             Move();
-
-            if ((hMove.x < 0 && !FaceRight) || (hMove.x > 0 && FaceRight)) {
-                PlayerTurn();
-            }
-
-            if (Input.GetButtonDown("Jump") && IsGrounded()) {
-                Jump();
-                // animator.SetTrigger("Jump");
-                // JumpSFX.Play();
-            }
-
-            if (jumping) {
-                // rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                rig.velocity = new Vector2(rig.velocity.x, jumpForce);
-            }
-
-            if (Input.GetKeyUp(KeyCode.Space) | jumpTime > buttonTime) {
-                jumping = false;
-            }
+            Jump();
         }        
     }
 
-    public bool IsGrounded() {
-        Collider2D enemyCheck = Physics2D.OverlapCircle(feet.position, 2f, enemyLayer);
-        Collider2D groundCheck = Physics2D.OverlapCircle(feet.position, 2f, groundLayer);
+    public void Jump() {
+        velocity += gravity * gravityScale * Time.deltaTime;
 
-        if (groundCheck != null || enemyCheck != null) {
-            return true;
+        /*if (groundCheck.isGrounded && velocity < 0) {
+            float floorHeight = 0.7f;
+            velocity = 0;
+            transform.position = new Vector3(transform.position.x, groundCheck.surfacePosition.y + floorHeight, transform.position.z);
+        }*/
+
+        if (isGrounded && Input.GetButtonDown("Jump")) {
+            isGrounded = false;
+            jumping = true;
+            jumpTime = 0;
+            velocity = jumpForce;
+            // animator.SetTrigger("Jump");
+            // JumpSFX.Play();
         }
 
-        return false;
-    }
+        if (jumping) {
+            // rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            rig.velocity = new Vector2(rig.velocity.x, jumpForce);
+            // rig.velocity = velocity;
+            jumpTime += Time.deltaTime;
+        }
 
-    public void Jump() {
-        jumping = true;
-        jumpTime = 0;
-
-        // rig.velocity = Vector2.up * jumpForce;
-        
-        //Vector2 movement = new Vector2(rb.velocity.x, jumpForce);
-        //rb.velocity = movement;
+        if (Input.GetKeyUp(KeyCode.Space) | jumpTime > buttonTime) {
+            jumping = false;
+        }
     }
 
     public void Move() {
         hMove = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
         transform.position = transform.position + hMove * runSpeed * Time.deltaTime;
+
+        if ((hMove.x < 0 && !FaceRight) || (hMove.x > 0 && FaceRight)) {
+            PlayerTurn();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision) {
+        if (collision.gameObject.CompareTag("Ground")) {
+            isGrounded = true;
+        }
     }
 
     private void PlayerTurn() {
