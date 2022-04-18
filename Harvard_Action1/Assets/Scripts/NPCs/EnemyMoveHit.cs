@@ -53,6 +53,7 @@ public class EnemyMoveHit : MonoBehaviour {
                      isAttacking = true;
                      //anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
+					 
               }
        }
 

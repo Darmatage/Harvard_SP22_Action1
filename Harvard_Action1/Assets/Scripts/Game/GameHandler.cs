@@ -122,10 +122,11 @@ public class GameHandler : MonoBehaviour {
       public void playerGetHit(int damage){
            if (isDefending == false){
                   playerHealth -= damage;
+				  Debug.Log(playerHealth);
                   if (playerHealth >=0){
                         updateStatsDisplay();
                   }
-                 // player.GetComponent<PlayerHurt>().playerHit();
+                  player.GetComponent<PlayerHurt>().playerHit();
             }
 
            if (playerHealth >= StartPlayerHealth){
@@ -134,7 +135,8 @@ public class GameHandler : MonoBehaviour {
 
           if (playerHealth <= 0){
                   playerHealth = 0;
-                  //playerDies();
+                  //Debug.Log("health is zero");
+				  playerDies();
             }
       }
 
@@ -146,17 +148,17 @@ public class GameHandler : MonoBehaviour {
             tokensTextTemp.text = "GOLD: " + gotTokens;
       }
 
-     /* public void playerDies(){
+     public void playerDies(){
             player.GetComponent<PlayerHurt>().playerDead();
             StartCoroutine(DeathPause());
-      }*/
+      }
 
-     /* IEnumerator DeathPause(){
-            player.GetComponent<PlayerMove>().isAlive = false;
-            player.GetComponent<PlayerJump>().isAlive = false;
+      IEnumerator DeathPause(){
+           // player.GetComponent<PlayerMove>().isAlive = false;
+            //player.GetComponent<PlayerJump>().isAlive = false;
             yield return new WaitForSeconds(1.0f);
             SceneManager.LoadScene("EndLose");
-      }*/
+      }
 
       public void StartGame() {
             SceneManager.LoadScene("Level1");
