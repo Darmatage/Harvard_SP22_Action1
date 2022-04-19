@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     // TODO: public Animator animator;
     private PlayerBars bars;
     public float buttonTime = 0.3f;
+    private CircleCollider2D circleCollider;
     public LayerMask enemyLayer;
     private bool FaceRight = true; // Which way is the player facing?
     public float fallMultiplier = 2.5f;
@@ -16,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     private Vector3 hMove;
     public bool isAlive = true; // Will come from bars when needed
-    private bool isGrounded = true;
+    // private bool isGrounded = true;
     private bool isJumping = false;
     public float jumpForce = 20f;
     private float jumpTime = 0;
@@ -29,6 +30,7 @@ public class PlayerController : MonoBehaviour
 
     void Start() {
         bars = GameObject.FindWithTag("Player").GetComponent<PlayerBars>();
+        circleCollider = GetComponent<CircleCollider2D>();
         rig = transform.GetComponent<Rigidbody2D>();
     }
 
@@ -46,6 +48,10 @@ public class PlayerController : MonoBehaviour
         }        
     }
 
+    public bool isGrounded() {
+        return circleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+    }
+
     public void Jump() {
         // Future idea for "snapping" to ground/platform.
         /*if (groundCheck.isGrounded && velocity < 0) {
@@ -55,7 +61,7 @@ public class PlayerController : MonoBehaviour
         }*/
 
         if (Input.GetButtonDown("Jump")) {
-            if (!isGrounded) {
+            if (!isGrounded()) {
                 // Only allow extra jumps if player has yellow jelly available
                 if (bars.yellowJelly.curValue > 0) {
                     bars.Burn(bars.yellowJelly, 5f);
@@ -65,7 +71,6 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            isGrounded = false;
             isJumping = true;
             jumpTime = 0;
 
@@ -97,7 +102,7 @@ public class PlayerController : MonoBehaviour
             // rig.gravityScale = gravityScaleFalling;
         }
 
-        else if (rig.velocity.y >= 0 && !isGrounded) {
+        else if (rig.velocity.y >= 0 && !isGrounded()) {
             rig.velocity += Vector2.up * gravity * (lowJumpModifier - 1) * Time.deltaTime;
             // rig.gravityScale = gravityScale;
         }
@@ -114,7 +119,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Ground")) {
-            isGrounded = true;
+            isJumping = false;
         }
     }
 
