@@ -11,27 +11,32 @@ public class EnemyMoveHit : MonoBehaviour {
 
        public int EnemyLives = 3;
        private GameHandler gameHandler;
-
+		
        public float attackRange = 2;
        public bool isAttacking = false;
        private float scaleX;
+	   public int enemycolor;
+	   public int playercolor;
 
        void Start () {
               anim = GetComponentInChildren<Animator> ();
               scaleX = gameObject.transform.localScale.x;
-
+				//GameObject player=GameObject.Find("Player");
+					//PlayerBars playerbars = player.GetComponent<PlayerBars>();
+				
               if (GameObject.FindGameObjectWithTag ("Player") != null) {
                      target = GameObject.FindGameObjectWithTag ("Player").GetComponent<Transform> ();
               }
 
               if (GameObject.FindWithTag ("GameHandler") != null) {
                   gameHandler = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
+				  	playercolor=gameHandler.playercolor;
               }
        }
 
        void Update () {
               float DistToPlayer = Vector3.Distance(transform.position, target.position);
-
+			if(enemycolor!=playercolor){
               if ((target != null) && (DistToPlayer <= attackRange)){
                      transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
                      if (isAttacking == false) {
@@ -46,14 +51,16 @@ public class EnemyMoveHit : MonoBehaviour {
                      //else  { anim.SetBool("Walk", false);}
               }
                //else { anim.SetBool("Walk", false);}
+			}
        }
 
          public void OnCollisionEnter2D(Collision2D collision){
               if (collision.gameObject.tag == "Player") {
+				  if(enemycolor!=playercolor){
                      isAttacking = true;
                      //anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
-					 Debug.Log(playerHealth);
+				  }
               }
        }
 

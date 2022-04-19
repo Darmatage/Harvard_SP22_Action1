@@ -9,12 +9,12 @@ public class PlayerBars : MonoBehaviour, IDamageable
     public Bar health;
     public Bar yellowJelly;
     public UnityEvent onTakeDamage;
-	
+	public int playercolor;
 	
     void Start() {
         health.curValue = health.startValue;
         yellowJelly.curValue = yellowJelly.startValue;
-		
+		playercolor=0;
     }
 
     void Update() {

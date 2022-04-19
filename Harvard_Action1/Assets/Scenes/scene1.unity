@@ -316,6 +316,8 @@ MonoBehaviour:
   EnemyLives: 3
   attackRange: 5
   isAttacking: 0
+  enemycolor: 1
+  playercolor: 0
 --- !u!1 &970804975
 GameObject:
   m_ObjectHideFlags: 0
@@ -9192,11 +9194,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8948379085193303082, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.51
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 8948379085193303082, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 16.67
+      value: -0.28
       objectReference: {fileID: 0}
     - target: {fileID: 8948379085193303082, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
       propertyPath: m_LocalPosition.z

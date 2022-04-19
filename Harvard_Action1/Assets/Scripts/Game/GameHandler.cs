@@ -23,6 +23,8 @@ public class GameHandler : MonoBehaviour {
       public GameObject tokensText;
 
       public bool isDefending = false;
+	  public int playercolor;
+	 
 
       void Awake () {
             SetAudioLevel (volumeLevel);
@@ -38,6 +40,7 @@ public class GameHandler : MonoBehaviour {
             pauseMenuUI.SetActive(false);
             GameisPaused = false;
             player = GameObject.FindWithTag("Player");
+			playercolor=0;
 
             DefineGameLevels();
             SetGameLevel(1); // Start the game at level 1
@@ -161,7 +164,7 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void StartGame() {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("scene1");
       }
 
       public void RestartGame() {

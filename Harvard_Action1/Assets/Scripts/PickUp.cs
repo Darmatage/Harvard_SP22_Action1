@@ -3,13 +3,13 @@ using System.Collections;
 using UnityEngine;
 
 public class PickUp : MonoBehaviour{
-
+	
       public GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
       public bool isHealthPickUp = true;
       public bool isSpeedBoostPickUp = false;
-public Animator playerAnimator;
-
+	public Animator playerAnimator;
+		
       public int healthBoost = 50;
       public float speedBoost = 2f;
       public float speedTime = 2f;
@@ -25,9 +25,12 @@ public Animator playerAnimator;
                   GetComponent<Collider2D>().enabled = false;
                   GetComponent<AudioSource>().Play();
                   StartCoroutine(DestroyThis());
-
+					
+					
                   if (isHealthPickUp == true) {
                        playerAnimator.SetInteger("PlayerColor",1);
+					   gameHandler.playercolor=1;
+					   
 			// gameHandler.playerGetHit(healthBoost * -1);
                         //playerPowerupVFX.powerup();
                   }
