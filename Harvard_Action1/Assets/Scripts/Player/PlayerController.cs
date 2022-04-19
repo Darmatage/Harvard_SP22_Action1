@@ -110,11 +110,12 @@ public class PlayerController : MonoBehaviour
 
     public void Move() {
         float x = Input.GetAxisRaw("Horizontal");
-        rig.velocity = new Vector2(x * runSpeed, rig.velocity.y);
 
         if (isJumping) {
-            // x = x / 2;
+            x = x / 2;
         }
+ 
+        rig.velocity = new Vector2(x * runSpeed, rig.velocity.y);
 
         if ((x < 0 && !FaceRight) || (x > 0 && FaceRight)) {
             PlayerTurn();
