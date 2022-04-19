@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private bool FaceRight = true; // Which way is the player facing?
     public float fallMultiplier = 2.5f;
     public float gravity = -9.81f;
-    public float gravityScale = 5;
+    public float gravityScale = 1;
     public float gravityScaleFalling = 10;
     public LayerMask groundLayer;
     private Vector3 hMove;
@@ -99,18 +99,22 @@ public class PlayerController : MonoBehaviour
         */
         if (rig.velocity.y < 0) {
             rig.velocity += Vector2.up * gravity * (fallMultiplier - 1) * Time.deltaTime;
-            // rig.gravityScale = gravityScaleFalling;
+            rig.gravityScale = 10;
         }
 
         else if (rig.velocity.y >= 0 && !isGrounded()) {
             rig.velocity += Vector2.up * gravity * (lowJumpModifier - 1) * Time.deltaTime;
-            // rig.gravityScale = gravityScale;
+            rig.gravityScale = 1;
         }
     }
 
     public void Move() {
         float x = Input.GetAxisRaw("Horizontal");
         rig.velocity = new Vector2(x * runSpeed, rig.velocity.y);
+
+        if (isJumping) {
+            // x = x / 2;
+        }
 
         if ((x < 0 && !FaceRight) || (x > 0 && FaceRight)) {
             PlayerTurn();
