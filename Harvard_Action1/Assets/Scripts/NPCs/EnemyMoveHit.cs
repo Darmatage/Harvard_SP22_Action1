@@ -59,7 +59,7 @@ public class EnemyMoveHit : MonoBehaviour {
               if (collision.gameObject.tag == "Player") {
 				  if(enemycolor!=playercolor){
                      isAttacking = true;
-                     //anim.SetBool("Attack", true);
+                    // anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
 				  }
               }

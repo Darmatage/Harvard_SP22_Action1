@@ -30,12 +30,13 @@ public class EnemyMoveHit : MonoBehaviour {
 
               if (GameObject.FindWithTag ("GameHandler") != null) {
                   gameHandler = GameObject.FindWithTag ("GameHandler").GetComponent<GameHandler> ();
-				  	playercolor=gameHandler.playercolor;
+				  	
               }
        }
 
        void Update () {
               float DistToPlayer = Vector3.Distance(transform.position, target.position);
+			  playercolor=gameHandler.playercolor;
 			if(enemycolor!=playercolor){
               if ((target != null) && (DistToPlayer <= attackRange)){
                      transform.position = Vector2.MoveTowards (transform.position, target.position, speed * Time.deltaTime);
@@ -58,7 +59,7 @@ public class EnemyMoveHit : MonoBehaviour {
               if (collision.gameObject.tag == "Player") {
 				  if(enemycolor!=playercolor){
                      isAttacking = true;
-                     //anim.SetBool("Attack", true);
+                     anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
 				  }
               }
@@ -67,7 +68,7 @@ public class EnemyMoveHit : MonoBehaviour {
        public void OnCollisionExit2D(Collision2D collision){
               if (collision.gameObject.tag == "Player") {
                      isAttacking = false;
-                     //anim.SetBool("Attack", false);
+                     anim.SetBool("Attack", false);
               }
        }
 

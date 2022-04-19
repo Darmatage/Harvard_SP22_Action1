@@ -10,7 +10,7 @@ public class GameHandler : MonoBehaviour {
 	public static bool GameisPaused = false;
       Level[] levels = new Level[2]; // When adding more levels, increase size
       public GameObject pauseMenuUI;
-      public AudioMixer mixer;
+     // public AudioMixer mixer;
       public static float volumeLevel = 1.0f;
       private Slider sliderVolumeCtrl;
 
@@ -23,6 +23,8 @@ public class GameHandler : MonoBehaviour {
       public GameObject tokensText;
 
       public bool isDefending = false;
+	  public int playercolor;
+	 
 
       void Awake () {
             SetAudioLevel (volumeLevel);
@@ -38,6 +40,7 @@ public class GameHandler : MonoBehaviour {
             pauseMenuUI.SetActive(false);
             GameisPaused = false;
             player = GameObject.FindWithTag("Player");
+			playercolor=0;
 
             DefineGameLevels();
             SetGameLevel(1); // Start the game at level 1
