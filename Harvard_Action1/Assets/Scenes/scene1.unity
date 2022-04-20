@@ -144,7 +144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 156445998}
   - component: {fileID: 156445999}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: enemyRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -229,7 +229,8 @@ GameObject:
   - component: {fileID: 430204460}
   - component: {fileID: 430204463}
   - component: {fileID: 430204461}
-  m_Layer: 0
+  - component: {fileID: 430204464}
+  m_Layer: 7
   m_Name: Enemy_MoveHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,12 +313,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   speed: 2
-  damage: 50
-  EnemyLives: 3
+  damage: 10
+  EnemyLives: 1
   attackRange: 5
   isAttacking: 0
   enemycolor: 1
   playercolor: 0
+--- !u!114 &430204464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 430204459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bda5a156e7428624cb5f8d7e207be618, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+  healthLoot: {fileID: 8948379085193303086, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
+  maxHealth: 10
+  currentHealth: 0
 --- !u!1 &867039694
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,7 +359,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867039694}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.62, y: -0.23, z: 0}
+  m_LocalPosition: {x: -1.23, y: -0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6419823563617319354}
@@ -9388,15 +9405,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6419823563617319353}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 28ed604afcbf6c2429d0d8be4a2a9be8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   attackPt: {fileID: 867039695}
-  attackRange: 2
+  attackRange: 6
   attackRate: 2
-  attackDamage: 50
+  attackDamage: 10
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128

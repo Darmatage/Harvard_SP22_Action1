@@ -61,6 +61,14 @@ public class EnemyMoveHit : MonoBehaviour {
                      isAttacking = true;
                     // anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
+					 //float pushBack = 0f;
+					 //if (other.gameObject.transform.position.x > gameObject.transform.position.x){
+                        //    pushBack = 3f;
+                    // }
+					// else {
+                      //      pushBack = -3f;
+                     //}
+					// other.gameObject.transform.position = new Vector3(transform.position.x + pushBack, transform.position.y + 1, -1);
 				  }
               }
        }
