@@ -6,25 +6,27 @@ using UnityEngine.UI;
 
 public class PlayerBars : MonoBehaviour, IDamageable
 {
+    public Bar brownSticky;
     public Bar health;
     public Bar yellowJelly;
     public UnityEvent onTakeDamage;
-	
-	
+
     void Start() {
+        brownSticky.curValue = health.startValue;
         health.curValue = health.startValue;
         yellowJelly.curValue = yellowJelly.startValue;
-		
     }
 
     void Update() {
         // Decay values over time
+        brownSticky.Subtract(brownSticky.decayRate * Time.deltaTime);
         // yellowJelly.Subtract(yellowJelly.decayRate * Time.deltaTime);
 
         // Regen values over time
         health.Add(health.regenRate * Time.deltaTime);
 
         // Update Bars
+        brownSticky.uiBar.fillAmount = brownSticky.GetPercentage();
         health.uiBar.fillAmount = health.GetPercentage();
         yellowJelly.uiBar.fillAmount = yellowJelly.GetPercentage();
 
@@ -51,6 +53,11 @@ public class PlayerBars : MonoBehaviour, IDamageable
     public void Heal(float value) {
         Debug.LogFormat("Headled: {0}", value);
         health.Add(value);
+    }
+
+    public void Sticky(float value) {
+        Debug.LogFormat("Sticky: {0}", value);
+        brownSticky.Add(value);
     }
 
     public void TakeDamage(int value) {

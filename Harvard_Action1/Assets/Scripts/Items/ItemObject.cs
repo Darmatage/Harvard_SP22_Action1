@@ -42,6 +42,10 @@ public class ItemObject : MonoBehaviour, IInteractable {
         for (int i = 0; i < item.consumables.Length; i++) {
           //Debug.LogFormat("Consumable Type {0}", item.consumables[i].type);
           switch (item.consumables[i].type) {
+            case ConsumableType.BrownSticky:
+              //Debug.Log("Consuming Heart");
+              bars.Sticky(item.consumables[i].value);
+              break;
             case ConsumableType.RedHeart:
               //Debug.Log("Consuming Heart");
               bars.Heal(item.consumables[i].value);

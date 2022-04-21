@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     // TODO: public Animator animator;
     private PlayerBars bars;
     public float buttonTime = 0.3f;
+    private CapsuleCollider2D capsuleCollider;
     private CircleCollider2D circleCollider;
     public LayerMask enemyLayer;
     private bool FaceRight = true; // Which way is the player facing?
@@ -22,6 +23,9 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 20f;
     private float jumpTime = 0;
     public float lowJumpModifier = 2f;
+    private PhysicsMaterial2D currentMaterial;
+    public PhysicsMaterial2D materialNoSticky;
+    public PhysicsMaterial2D materialSticky;
     public Rigidbody2D rig;
     public static float runSpeed = 10f;
     
@@ -30,14 +34,25 @@ public class PlayerController : MonoBehaviour
 
     void Start() {
         bars = GameObject.FindWithTag("Player").GetComponent<PlayerBars>();
+        capsuleCollider = GetComponent<CapsuleCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         rig = transform.GetComponent<Rigidbody2D>();
+
+        // SetMaterial(materialSticky);
+        currentMaterial = materialNoSticky;
     }
 
     void FixedUpdate() {
         // Changes velocity on hills and slides
         if (hMove.x == 0) {
             rig.velocity = new Vector2(rig.velocity.x / 1.1f, rig.velocity.y);
+        }
+
+        if (bars.brownSticky.curValue > 0 && currentMaterial == materialNoSticky) {
+            SetMaterial(materialSticky);
+        }
+        else if (bars.brownSticky.curValue <= 0 && currentMaterial == materialSticky) {
+            SetMaterial(materialNoSticky);
         }
     }
 
@@ -134,5 +149,9 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    public void SetMaterial(PhysicsMaterial2D m) {
+        capsuleCollider.sharedMaterial = m;
     }
 }

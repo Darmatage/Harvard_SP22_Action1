@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum ConsumableType {
+  BrownSticky,
   RedHeart,
   YellowJelly
 }
