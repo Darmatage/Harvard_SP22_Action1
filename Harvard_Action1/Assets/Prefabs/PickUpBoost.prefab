@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8948379085193303083}
   - component: {fileID: 8948379085193303084}
   - component: {fileID: 8948379085193303085}
+  - component: {fileID: 1633575560285642566}
   m_Layer: 0
   m_Name: PickUpBoost
   m_TagString: Untagged
@@ -171,9 +172,24 @@ MonoBehaviour:
   gameHandler: {fileID: 0}
   isHealthPickUp: 1
   isSpeedBoostPickUp: 0
+  playerAnimator: {fileID: 0}
   healthBoost: 50
   speedBoost: 2
   speedTime: 2
+--- !u!114 &1633575560285642566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8948379085193303086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec409f6b46d034060a5264d46925cc16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameHandler: {fileID: 0}
+  item: {fileID: 11400000, guid: 1abcd7cedb0964f3bb83f5bf301df4d2, type: 2}
 --- !u!1 &8948379085812215838
 GameObject:
   m_ObjectHideFlags: 0
