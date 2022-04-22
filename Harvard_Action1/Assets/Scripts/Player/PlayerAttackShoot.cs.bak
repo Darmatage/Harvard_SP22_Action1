@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttackShoot : MonoBehaviour{
 
       //public Animator animator;
-      public Transform firePoint;
+      public Transform FirePoint;
       public GameObject projectilePrefab;
       public float projectileSpeed = 10f;
       public float attackRate = 2f;
