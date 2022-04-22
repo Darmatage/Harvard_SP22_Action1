@@ -15,6 +15,18 @@ public class PlayerBars : MonoBehaviour, IDamageable
         brownSticky.curValue = health.startValue;
         health.curValue = health.startValue;
         yellowJelly.curValue = yellowJelly.startValue;
+
+        if (!brownSticky.uiBar) {
+            brownSticky.uiBar = GameObject.FindWithTag("BarBrown").GetComponent<Image>();
+        }
+
+        if (!health.uiBar) {
+            health.uiBar = GameObject.FindWithTag("BarRed").GetComponent<Image>();
+        }
+
+        if (!yellowJelly.uiBar) {
+            yellowJelly.uiBar = GameObject.FindWithTag("BarYellow").GetComponent<Image>();
+        }
     }
 
     void Update() {

@@ -87,8 +87,8 @@ GameObject:
   - component: {fileID: 419309192}
   - component: {fileID: 419309191}
   m_Layer: 0
-  m_Name: Bar
-  m_TagString: Untagged
+  m_Name: BarRed
+  m_TagString: BarRed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -554,8 +554,8 @@ GameObject:
   - component: {fileID: 1318059858}
   - component: {fileID: 1318059857}
   m_Layer: 0
-  m_Name: Bar
-  m_TagString: Untagged
+  m_Name: BarBrown
+  m_TagString: BarBrown
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1234,8 +1234,8 @@ GameObject:
   - component: {fileID: 5634994708186746145}
   - component: {fileID: 8421428569711146484}
   m_Layer: 0
-  m_Name: Bar
-  m_TagString: Untagged
+  m_Name: BarYellow
+  m_TagString: BarYellow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

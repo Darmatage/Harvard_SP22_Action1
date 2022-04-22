@@ -8,6 +8,12 @@ TagManager:
   - PauseMenuSlider
   - PlayerBars
   - Ground
+  - BarRed
+  - BarYellow
+  - BarBrown
+  - BarGroupRed
+  - BarGroupYellow
+  - BarGroupBrown
   layers:
   - Default
   - TransparentFX
