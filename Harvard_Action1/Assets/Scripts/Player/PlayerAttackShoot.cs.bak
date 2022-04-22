@@ -28,6 +28,6 @@ public class PlayerAttackShoot : MonoBehaviour{
       void playerFire(){
             //animator.SetTrigger ("Fire");
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-            projectile.AddForce(fwd * projectileSpeed, ForceMode.Impulse);
+           // projectile.AddForce(fwd * projectileSpeed, ForceMode.Impulse);
       }
 }
