@@ -8,9 +8,11 @@ public class PlayerProjectile : MonoBehaviour{
       public GameObject hitEffectAnim;
       public float SelfDestructTime = 2.0f;
 	  private GameHandler gameHandler;
+	 
 
       void Start(){
            StartCoroutine(selfDestruct());
+		   
       }
 
       //if the bullet hits a collider, play the explosion animation, then destroy the effect and the bullet
@@ -20,7 +22,7 @@ public class PlayerProjectile : MonoBehaviour{
             }
            if (other.gameObject.tag != "Player") {
                   GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
-                  Destroy (animEffect, 0.5f);
+                  Destroy (animEffect, 0.1f);
                   Destroy (gameObject);
             }
       }
