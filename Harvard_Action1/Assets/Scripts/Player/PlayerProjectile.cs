@@ -8,6 +8,7 @@ public class PlayerProjectile : MonoBehaviour{
       public GameObject hitEffectAnim;
       public float SelfDestructTime = 0.5f;
 	  private GameHandler gameHandler;
+	  public bool FaceRight;
 	 
 
       void Start(){
@@ -21,6 +22,7 @@ public class PlayerProjectile : MonoBehaviour{
                   gameHandler.playerGetHit(damage);
             }
            if (other.gameObject.tag != "Player") {
+			   Debug.Log("facing right" +FaceRight );
                   GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
                   Destroy (animEffect, 0.5f);
                   Destroy (gameObject);

@@ -94,7 +94,7 @@ SpriteRenderer:
   m_SortingOrder: 105
   m_Sprite: {fileID: 4003128988353845627, guid: b6185cd677d7dfd49b95f526ff081d2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 4.375, y: 2.1875}
@@ -234,3 +234,4 @@ MonoBehaviour:
   damage: 1
   hitEffectAnim: {fileID: 472266881183797830}
   SelfDestructTime: 0.5
+  FaceRight: 0

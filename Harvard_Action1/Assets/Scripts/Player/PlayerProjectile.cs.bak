@@ -6,7 +6,7 @@ public class PlayerProjectile : MonoBehaviour{
 
       public int damage = 1;
       public GameObject hitEffectAnim;
-      public float SelfDestructTime = 2.0f;
+      public float SelfDestructTime = 0.5f;
 	  private GameHandler gameHandler;
 	 
 
@@ -21,8 +21,9 @@ public class PlayerProjectile : MonoBehaviour{
                   gameHandler.playerGetHit(damage);
             }
            if (other.gameObject.tag != "Player") {
-                  GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
-                  Destroy (animEffect, 0.1f);
+			   
+                  GameObject animEffect = Instantiate (hitEffectAnim, transform.position.-1, Quaternion.identity);
+                  Destroy (animEffect, 0.5f);
                   Destroy (gameObject);
             }
       }

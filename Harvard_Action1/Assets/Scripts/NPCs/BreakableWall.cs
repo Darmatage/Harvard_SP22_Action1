@@ -35,22 +35,23 @@ public class BreakableWall : MonoBehaviour {
             }
       }
 
-      public void wallDamage(){
+      public void wallDamage()
+	  {
             // this is the function that the player attack script would access
-            if (hitNum > 0)
+            if (hitNum > 0) {
 			          
 				  // if (!breakSFX.isPlaying){ breakSFX.Play(); }
-                  if (hitNum == 2)
-				  { 
-			  anim.SetTrigger ("cutFull"); 
-			  }
-                  else if (hitNum == 1)
-				  { 
-			  anim.SetTrigger ("cutHalf"); 
-			  }              
-                  StartCoroutine(wallHitReturn());
+				if (hitNum == 2)
+				 { 
+						anim.SetTrigger ("cutFull"); 
+			     }
+                else if (hitNum == 1)
+				 { 
+						anim.SetTrigger ("cutHalf"); 
+			     }              
+            StartCoroutine(wallHitReturn());
             }
-      
+      }
 
       IEnumerator wallHitReturn(){
             myRend.material.color = new Color(1.0f, 1.0f, 2.5f);

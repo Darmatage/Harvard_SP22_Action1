@@ -10,8 +10,12 @@ public class PlayerAttackShoot : MonoBehaviour{
       public float projectileSpeed = 10f;
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
+	  public bool FaceRight;
 
       void Start(){
+		  GameObject player = GameObject.Find("Player");
+		  PlayerController controller = player.GetComponent<PlayerController>();
+		  FaceRight=controller.FaceRight;
            //animator = gameObject.GetComponentInChildren<Animator>();
       }
 
@@ -27,6 +31,7 @@ public class PlayerAttackShoot : MonoBehaviour{
 
       void playerFire(){
             //animator.SetTrigger ("Fire");
+			Debug.Log("facing right" +FaceRight);
             GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, Quaternion.identity);
            // projectile.AddForce(fwd * projectileSpeed, ForceMode.Impulse);
       }
