@@ -7,10 +7,11 @@ public class BreakableWall : MonoBehaviour {
       public Animator anim;
       //public GameObject ParticleVFX;
       //public AudioSource breakSFX;
-      public int hitNum = 1; // how many times the object can be hit before it disappears.
+      public int hitNum = 2; // how many times the object can be hit before it disappears.
       public GameObject boxColliderObj; // a child collider that can be turned off
       private Renderer myRend;
       private Color defaultColor;
+	  public int halfwall=0;
 
       void Start(){
             anim = gameObject.GetComponentInChildren<Animator>();
@@ -35,11 +36,15 @@ public class BreakableWall : MonoBehaviour {
             //}
 			if(hitNum==2)
 			{
-				anim.SetBool("halfwall" , false);
+				halfwall=1;
+				//anim.SetBool("halfwall" , false);
 			}
 			else if(hitNum==1)
 			{
-				anim.SetBool("halfwall",true);
+				halfwall=0;
+				boxColliderObj.SetActive (false);
+			 Destroy (gameObject);
+				//anim.SetBool("halfwall",true);
 			}
 			
       }
@@ -47,9 +52,11 @@ public class BreakableWall : MonoBehaviour {
       public void wallDamage()
 	  {
             // this is the function that the player attack script would access
-           // if (hitNum > 0) {
+            if (hitNum > 0) 
+			{
 			         
-				  // if (!breakSFX.isPlaying){ breakSFX.Play(); }
+				  //if (!breakSFX.isPlaying){ breakSFX.Play(); 
+			}
 			//	if (hitNum == 2)
 				// { 
 					//	anim.SetTrigger ("cutFull"); 
@@ -64,21 +71,25 @@ public class BreakableWall : MonoBehaviour {
 			 {
 				 Debug.Log("hitNum= "+hitNum);
 			 //anim.setBool("halfwall", true);
-			 StartCoroutine(wallHitReturn());
+			 //StartCoroutine(wallHitReturn());
 			 
 			 //boxColliderObj.SetActive (false);
 			 //Destroy (gameObject);
+			 halfwall=1;
 			 }
-			 if(hitNum==1)
-			 {
-				boxColliderObj.SetActive (false);
-			 Destroy (gameObject); 
-			 }
+			 //if(hitNum==1)
+			 //{
+			//	boxColliderObj.SetActive (false);
+			 //Destroy (gameObject); 
+			 //}
+			 StartCoroutine(wallHitReturn());
 	  }
+	  
 
       IEnumerator wallHitReturn(){
             myRend.material.color = new Color(1.0f, 1.0f, 2.5f);
             yield return new WaitForSeconds(0.5f);
+			Debug.Log("hitnum is -1"+hitNum);
             hitNum -= 1;
             myRend.material.color = defaultColor;
            // breakSFX.Stop();
