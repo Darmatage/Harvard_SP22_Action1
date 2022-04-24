@@ -36,15 +36,21 @@ public class BreakableWall : MonoBehaviour {
             //}
 			if(hitNum==2)
 			{
-				halfwall=1;
+				//halfwall=1;
+				Debug.Log("halfwall= "+halfwall);
 				//anim.SetBool("halfwall" , false);
 			}
 			else if(hitNum==1)
 			{
+				
 				halfwall=0;
-				boxColliderObj.SetActive (false);
-			 Destroy (gameObject);
+				
 				//anim.SetBool("halfwall",true);
+			}
+			else if(hitNum==0)
+			{
+				//halfwall=0;
+				
 			}
 			
       }
@@ -52,7 +58,9 @@ public class BreakableWall : MonoBehaviour {
       public void wallDamage()
 	  {
             // this is the function that the player attack script would access
-            if (hitNum > 0) 
+            boxColliderObj.SetActive (false);
+			 Destroy (gameObject);
+			if (hitNum > 0) 
 			{
 			         
 				  //if (!breakSFX.isPlaying){ breakSFX.Play(); 
@@ -70,12 +78,13 @@ public class BreakableWall : MonoBehaviour {
 			 if (hitNum==2)
 			 {
 				 Debug.Log("hitNum= "+hitNum);
+				 //halfwall=1;
 			 //anim.setBool("halfwall", true);
 			 //StartCoroutine(wallHitReturn());
 			 
 			 //boxColliderObj.SetActive (false);
 			 //Destroy (gameObject);
-			 halfwall=1;
+			 //halfwall=1;
 			 }
 			 //if(hitNum==1)
 			 //{
@@ -89,8 +98,8 @@ public class BreakableWall : MonoBehaviour {
       IEnumerator wallHitReturn(){
             myRend.material.color = new Color(1.0f, 1.0f, 2.5f);
             yield return new WaitForSeconds(0.5f);
-			Debug.Log("hitnum is -1"+hitNum);
-            hitNum -= 1;
+			//Debug.Log("hitnum is -1"+hitNum);
+            hitNum --;
             myRend.material.color = defaultColor;
            // breakSFX.Stop();
       }
