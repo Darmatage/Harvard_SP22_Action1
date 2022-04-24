@@ -8,6 +8,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
        public GameObject healthLoot;
        public int maxHealth = 10;
        public int currentHealth;
+	   public CameraShake cameraShake;
 
        void Start(){
               rend = GetComponentInChildren<Renderer> ();
@@ -21,6 +22,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
               //StartCoroutine(ResetColor());
               //anim.SetTrigger ("Hurt");
               if (currentHealth <= 0){
+				 // cameraShake.ShakeCamera(0.15f,0.3f);
                      Die();
               }
        }
@@ -35,6 +37,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
        IEnumerator Death(){
               yield return new WaitForSeconds(0.5f);
               Debug.Log("You Killed a baddie. You deserve loot!");
+			  
               Destroy(gameObject);
        }
 

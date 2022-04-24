@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour{
 	
-      public GameHandler gameHandler;
+	public CameraShake cameraShake;
+	      public GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
       public bool isHealthPickUp = true;
       public bool isSpeedBoostPickUp = false;
@@ -21,6 +22,7 @@ public class PickUp : MonoBehaviour{
 
       public void OnTriggerEnter2D (Collider2D other){
                 playerAnimator=GameObject.Find("PlayerArt").GetComponent<Animator>();
+				cameraShake.ShakeCamera(0.15f,0.3f);
             if (other.gameObject.tag == "Player"){
                   GetComponent<Collider2D>().enabled = false;
                   GetComponent<AudioSource>().Play();
@@ -29,7 +31,8 @@ public class PickUp : MonoBehaviour{
 					
                   if (isHealthPickUp == true) {
                        playerAnimator.SetInteger("PlayerColor",1);
-					   gamehandler.playercolor=1;
+					   gameHandler.playercolor=1;
+					   
 					   
 			// gameHandler.playerGetHit(healthBoost * -1);
                         //playerPowerupVFX.powerup();
