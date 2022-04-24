@@ -11,6 +11,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       private float nextAttackTime = 0f;
       public int attackDamage = 40;
       public LayerMask enemyLayers;
+	  public LayerMask wallLayer;
 
       void Start(){
            //animator = gameObject.GetComponentInChildren<Animator>();
@@ -34,6 +35,12 @@ public class PlayerAttackMelee : MonoBehaviour{
                   Debug.Log("We hit " + enemy.name);
                   enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
             }
+			Collider2D[] hitWalls = Physics2D.OverlapCircleAll(attackPt.position, attackRange, wallLayer);
+           
+          foreach(Collider2D wall in hitWalls){
+                  Debug.Log("We hit " + wall.name);
+                  wall.GetComponent<BreakableWall>().wallDamage();
+          }
       }
 
       //NOTE: to help see the attack sphere in editor:
