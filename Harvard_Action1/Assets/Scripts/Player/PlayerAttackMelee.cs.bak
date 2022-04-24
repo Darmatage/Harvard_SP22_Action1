@@ -6,6 +6,7 @@ public class PlayerAttackMelee : MonoBehaviour{
 
       //public Animator animator;
       public Transform attackPt;
+	  public Transform attackPtRight;
       public float attackRange = 0.5f;
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
@@ -38,8 +39,9 @@ public class PlayerAttackMelee : MonoBehaviour{
 			Collider2D[] hitWalls = Physics2D.OverlapCircleAll(attackPt.position, attackRange, wallLayer);
            
           foreach(Collider2D wall in hitWalls){
-                  Debug.Log("We hit " + wall.name);
+                  
                   wall.GetComponent<BreakableWall>().wallDamage();
+				  Debug.Log("We hit " + wall.name);
           }
       }
 

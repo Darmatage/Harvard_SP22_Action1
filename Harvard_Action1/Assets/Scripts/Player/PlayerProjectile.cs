@@ -25,7 +25,7 @@ public class PlayerProjectile : MonoBehaviour{
               //    gameHandler.playerGetHit(damage);
             //}
            if (other.gameObject.tag != "Player") {
-			   Debug.Log("facing right" +FaceRight );
+			  // Debug.Log("facing left" +FaceRight );
                   GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
                   Destroy (animEffect, 0.5f);
                   Destroy (gameObject);

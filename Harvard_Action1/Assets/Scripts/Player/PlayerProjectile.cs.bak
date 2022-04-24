@@ -24,8 +24,8 @@ public class PlayerProjectile : MonoBehaviour{
 			//if (other.gameObject.layer == LayerMask.NameToLayer("BreakableWall")) {
               //    gameHandler.playerGetHit(damage);
             //}
-           if (other.gameObject.tag = !"Player") {
-			   Debug.Log("facing right" +FaceRight );
+           if (other.gameObject.tag != "Player") {
+			   Debug.Log("facing left" +FaceRight );
                   GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
                   Destroy (animEffect, 0.5f);
                   Destroy (gameObject);

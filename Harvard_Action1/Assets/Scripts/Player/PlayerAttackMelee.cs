@@ -6,6 +6,7 @@ public class PlayerAttackMelee : MonoBehaviour{
 
       //public Animator animator;
       public Transform attackPt;
+	 // public Transform attackPtRight;
       public float attackRange = 0.5f;
       public float attackRate = 2f;
       private float nextAttackTime = 0f;

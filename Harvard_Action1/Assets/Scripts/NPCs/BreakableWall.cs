@@ -37,7 +37,7 @@ public class BreakableWall : MonoBehaviour {
 			if(hitNum==2)
 			{
 				//halfwall=1;
-				Debug.Log("halfwall= "+halfwall);
+				//Debug.Log("halfwall= "+halfwall);
 				//anim.SetBool("halfwall" , false);
 			}
 			else if(hitNum==1)
@@ -77,7 +77,7 @@ public class BreakableWall : MonoBehaviour {
             //}
 			 if (hitNum==2)
 			 {
-				 Debug.Log("hitNum= "+hitNum);
+				 //Debug.Log("hitNum= "+hitNum);
 				 //halfwall=1;
 			 //anim.setBool("halfwall", true);
 			 //StartCoroutine(wallHitReturn());

@@ -34,12 +34,8 @@ public class PlayerAttackShoot : MonoBehaviour{
       void playerFire(){
             //animator.SetTrigger ("Fire");
 			
-			GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, Quaternion.identity);
-		
-
-
-			
-			Debug.Log("facing right" +FaceRight);
+			GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, Quaternion.identity);			
+			Debug.Log("IS facing right" +FaceRight);
             //GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, Quaternion.identity);
            // projectile.AddForce(fwd * projectileSpeed, ForceMode.Impulse);
       }

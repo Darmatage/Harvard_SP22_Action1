@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private CapsuleCollider2D capsuleCollider;
     private CircleCollider2D circleCollider;
     public LayerMask enemyLayer;
+	public LayerMask breakableWall;
     public bool FaceRight = true; // Which way is the player facing?
     public float fallMultiplier = 2.5f;
     public float gravity = -9.81f;
@@ -149,7 +150,7 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-		Debug.Log("player is facing right" +FaceRight);
+		//Debug.Log("player is facing left" +FaceRight);
     }
 
     public void SetMaterial(PhysicsMaterial2D m) {
