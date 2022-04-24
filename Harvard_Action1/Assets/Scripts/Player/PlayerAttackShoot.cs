@@ -11,6 +11,8 @@ public class PlayerAttackShoot : MonoBehaviour{
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
 	  public bool FaceRight;
+	  // public Rigidbody2D rig2;
+	   //public static float runSpeed = 10f;
 
       void Start(){
 		  GameObject player = GameObject.Find("Player");
@@ -31,8 +33,14 @@ public class PlayerAttackShoot : MonoBehaviour{
 
       void playerFire(){
             //animator.SetTrigger ("Fire");
+			
+			GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, Quaternion.identity);
+		
+
+
+			
 			Debug.Log("facing right" +FaceRight);
-            GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, Quaternion.identity);
+            //GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, Quaternion.identity);
            // projectile.AddForce(fwd * projectileSpeed, ForceMode.Impulse);
       }
 }

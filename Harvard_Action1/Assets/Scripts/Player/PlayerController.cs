@@ -149,6 +149,7 @@ public class PlayerController : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+		Debug.Log("player is facing right" +FaceRight);
     }
 
     public void SetMaterial(PhysicsMaterial2D m) {
