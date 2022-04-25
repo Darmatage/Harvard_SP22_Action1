@@ -147,13 +147,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3329621}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1945166310}
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Children: []
+  m_Father: {fileID: 1945166310}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3329623
 MonoBehaviour:
@@ -167,8 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ff730d98f1c9a4448da75a90956fbae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  durationTime: 0.15
-  magnitude: 0.3
+  durationTime: 1
+  magnitude: 0.5
 --- !u!1 &113002002 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8948379085193303086, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
@@ -1106,6 +1105,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 867039695, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141868006, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2141868007, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 39561182511272075, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
@@ -21108,6 +21115,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2242028334283644977, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 3329623}
     - target: {fileID: 2242028334283644989, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -21156,6 +21167,10 @@ PrefabInstance:
       propertyPath: attackRange
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2242028334283644990, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 3329623}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
 --- !u!4 &1932121257 stripped
@@ -21243,9 +21258,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3329622}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 3329622}
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1945166311
 MonoBehaviour:
@@ -21537,6 +21553,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2242028334283644977, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 3329623}
     - target: {fileID: 2242028334283644989, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -21585,6 +21605,10 @@ PrefabInstance:
       propertyPath: attackRange
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2242028334283644990, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 3329623}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
 --- !u!1001 &7259577981131595011

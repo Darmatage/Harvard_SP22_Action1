@@ -11,7 +11,7 @@ public class CameraShake : MonoBehaviour{
        void Update(){
              // if (Input.GetKeyDown(KeyCode.P)){
                    //  StartCoroutine(ShakeMe(durationTime,magnitude));
-             }
+            // }
        }
 
        //use this to call from another script, like when the player gets hit
