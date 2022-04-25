@@ -21600,7 +21600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50489cd67b652a94f80b210987fd6557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: scene2
+  NextLevel: EndWin
 --- !u!50 &1770286404
 Rigidbody2D:
   serializedVersion: 4

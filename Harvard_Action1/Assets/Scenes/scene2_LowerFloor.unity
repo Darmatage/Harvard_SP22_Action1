@@ -314,6 +314,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   speed: 2
   damage: 10
+  cameraShake: {fileID: 0}
   EnemyLives: 1
   attackRange: 5
   isAttacking: 0
@@ -335,6 +336,7 @@ MonoBehaviour:
   healthLoot: {fileID: 8948379085193303086, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
   maxHealth: 10
   currentHealth: 0
+  cameraShake: {fileID: 0}
 --- !u!1 &484121052
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,6 +452,7 @@ MonoBehaviour:
   anim: {fileID: 0}
   hitNum: 2
   boxColliderObj: {fileID: 1085774884}
+  halfwall: 0
 --- !u!4 &601852598
 Transform:
   m_ObjectHideFlags: 0
@@ -7006,7 +7009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50489cd67b652a94f80b210987fd6557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NextLevel: scene2
+  NextLevel: scene3_UpperFloor
 --- !u!50 &1534666974
 Rigidbody2D:
   serializedVersion: 4
