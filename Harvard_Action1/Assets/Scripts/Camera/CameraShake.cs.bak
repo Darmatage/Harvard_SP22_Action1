@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour{
 
        public float durationTime = 0.15f;
-       public float magnitude = 0.3f;
+       public float magnitude = 0.5f;
 
        //The Update Function is just for testing (hit [p]), and can be commented out:
        void Update(){

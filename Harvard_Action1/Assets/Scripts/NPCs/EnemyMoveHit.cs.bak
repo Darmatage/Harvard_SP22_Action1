@@ -8,7 +8,7 @@ public class EnemyMoveHit : MonoBehaviour {
        public float speed = 4f;
        private Transform target;
        public int damage = 10;
-
+		public CameraShake cameraShake;
        public int EnemyLives = 3;
        private GameHandler gameHandler;
 		
@@ -61,6 +61,7 @@ public class EnemyMoveHit : MonoBehaviour {
                      isAttacking = true;
                     // anim.SetBool("Attack", true);
                      gameHandler.playerGetHit(damage);
+					 cameraShake.ShakeCamera(0.15f,0.3f);
 					 //float pushBack = 0f;
 					 //if (other.gameObject.transform.position.x > gameObject.transform.position.x){
                         //    pushBack = 3f;

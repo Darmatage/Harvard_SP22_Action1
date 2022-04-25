@@ -17,6 +17,7 @@ public class EnemyMoveHit : MonoBehaviour {
        private float scaleX;
 	   public int enemycolor;
 	   public int playercolor;
+	   
 
        void Start () {
               anim = GetComponentInChildren<Animator> ();

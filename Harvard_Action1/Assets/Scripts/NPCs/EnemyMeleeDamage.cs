@@ -9,6 +9,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
        public int maxHealth = 10;
        public int currentHealth;
 	   public CameraShake cameraShake;
+	   //public AudioSource enemyDieSFX;
 
        void Start(){
               rend = GetComponentInChildren<Renderer> ();
@@ -23,6 +24,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
               //anim.SetTrigger ("Hurt");
               if (currentHealth <= 0){
 				    Die();
+					 GetComponent<AudioSource>().Play();//enemyDieSFX.Play();
 					cameraShake.ShakeCamera(0.15f,0.3f);
 					Debug.Log("camera shake");
               }
