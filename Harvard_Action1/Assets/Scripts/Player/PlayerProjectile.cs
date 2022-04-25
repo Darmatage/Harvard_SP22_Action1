@@ -9,6 +9,7 @@ public class PlayerProjectile : MonoBehaviour{
       public float SelfDestructTime = 0.5f;
 	  private GameHandler gameHandler;
 	  public bool FaceRight;
+	  // public AudioSource playerShootSFX;
 	 
 
       void Start(){
@@ -27,6 +28,7 @@ public class PlayerProjectile : MonoBehaviour{
            if (other.gameObject.tag != "Player") {
 			  // Debug.Log("facing left" +FaceRight );
                   GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
+				// GetComponent<AudioSource>().Play();
                   Destroy (animEffect, 0.5f);
                   Destroy (gameObject);
             }
@@ -34,6 +36,7 @@ public class PlayerProjectile : MonoBehaviour{
 
       IEnumerator selfDestruct(){
             yield return new WaitForSeconds(SelfDestructTime);
+			 //playerShootSFX.Play();
             Destroy (gameObject);
       }
 }
