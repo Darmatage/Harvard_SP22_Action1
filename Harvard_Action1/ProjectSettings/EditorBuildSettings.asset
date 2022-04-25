@@ -6,30 +6,30 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/OldScenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/SceneWin.unity
+    path: Assets/Scenes/EndWin.unity
     guid: dd30895398050ca4296a77907151c275
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/PauseMenu.unity
     guid: 2e25956b71a548f45910bd7e753c1ed5
   - enabled: 1
-    path: Assets/Scenes/scene2.unity
+    path: Assets/Scenes/scene2_LowerFloor.unity
     guid: 5877f024ad48f4c4ca4c00ee96cb261c
   - enabled: 1
-    path: Assets/Scenes/Tutorial_TileMaps.unity
+    path: Assets/Scenes/OldScenes/Tutorial_TileMaps.unity
     guid: b3ea58927a92e4951be362c4d7c84794
   - enabled: 1
-    path: Assets/Scenes/Test_Tilemaps.unity
+    path: Assets/Scenes/OldScenes/Test_Tilemaps.unity
     guid: 6b25346e5626174409d12e6304126237
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/OldScenes/MainScene.unity
     guid: 32f077c9648ca455aaea329c877a5f25
   - enabled: 1
     path: Assets/Scenes/EndLose.unity
     guid: 472a2aeebb587ad4e8ab3a3d6ada5683
   - enabled: 1
-    path: Assets/Scenes/scene1.unity
+    path: Assets/Scenes/scene1_OutsideTower.unity
     guid: b54f63974833edd458b5eaf5ff2a0d6b
   m_configObjects: {}
