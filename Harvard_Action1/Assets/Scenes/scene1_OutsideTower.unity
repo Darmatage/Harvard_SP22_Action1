@@ -527,6 +527,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 6487d04a72f05154d8a60275a1565c95, type: 3}
     - target: {fileID: 8948379085193303085, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 3329623}
+    - target: {fileID: 8948379085193303085, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
       propertyPath: gameHandler
       value: 
       objectReference: {fileID: 608366652}
@@ -1936,6 +1940,10 @@ PrefabInstance:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 6487d04a72f05154d8a60275a1565c95, type: 3}
+    - target: {fileID: 8948379085193303085, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 3329623}
     - target: {fileID: 8948379085193303085, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
       propertyPath: gameHandler
       value: 
