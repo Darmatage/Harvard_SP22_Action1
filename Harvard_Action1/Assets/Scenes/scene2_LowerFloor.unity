@@ -453,6 +453,7 @@ MonoBehaviour:
   hitNum: 2
   boxColliderObj: {fileID: 1085774884}
   halfwall: 0
+  cameraShake: {fileID: 0}
 --- !u!4 &601852598
 Transform:
   m_ObjectHideFlags: 0

@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttackShoot : MonoBehaviour{
 
       //public Animator animator;
+      AudioManager audioManager;
       PlayerController controller;
       public Transform FirePoint;
       public GameObject projectilePrefab;
@@ -19,6 +20,7 @@ public class PlayerAttackShoot : MonoBehaviour{
       void Start(){
 		GameObject player = GameObject.Find("Player");
 		controller = player.GetComponent<PlayerController>();
+            audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
             //animator = gameObject.GetComponentInChildren<Animator>();
       }
 
