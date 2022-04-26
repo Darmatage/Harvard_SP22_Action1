@@ -9,9 +9,11 @@ public class SignDisplay : MonoBehaviour {
        public Text dialogueText;
        public string dialogue;
        public bool playerInRange = false;
+	   AudioManager audioManager;
 
        void Start () {
               imageSign.SetActive(false);
+			  	audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
        }
 
        void Update () {
@@ -21,6 +23,7 @@ public class SignDisplay : MonoBehaviour {
                    } else {
                         imageSign.SetActive(true);
 						dialogueText.text = dialogue;
+						audioManager.PlaySound("openbook");
                         
                    }
             }
@@ -36,7 +39,7 @@ public class SignDisplay : MonoBehaviour {
        private void OnTriggerExit2D(Collider2D other){
              if (other.CompareTag("Player")) {
                    playerInRange = false;
-                  // imageSign.SetActive(false);
+                   imageSign.SetActive(false);
                    Debug.Log("Player left range");
                   }
              }

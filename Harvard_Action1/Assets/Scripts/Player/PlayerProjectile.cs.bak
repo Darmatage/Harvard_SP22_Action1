@@ -28,7 +28,7 @@ public class PlayerProjectile : MonoBehaviour{
            if (other.gameObject.tag != "Player") {
 			  // Debug.Log("facing left" +FaceRight );
                   GameObject animEffect = Instantiate (hitEffectAnim, transform.position, Quaternion.identity);
-				 GetComponent<AudioSource>().Play();
+				// GetComponent<AudioSource>().Play();
                   Destroy (animEffect, 0.5f);
                   Destroy (gameObject);
             }

@@ -12,11 +12,14 @@ public class BreakableWall : MonoBehaviour {
       private Renderer myRend;
       private Color defaultColor;
 	  public int halfwall=0;
+	  public CameraShake cameraShake;
+	  AudioManager audioManager;
 
       void Start(){
             anim = gameObject.GetComponentInChildren<Animator>();
             boxColliderObj.SetActive(true);
             myRend = gameObject.GetComponentInChildren<Renderer>();
+				audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
             //defaultColor = myRend.material.color;
       }
 
@@ -59,7 +62,10 @@ public class BreakableWall : MonoBehaviour {
 	  {
             // this is the function that the player attack script would access
             boxColliderObj.SetActive (false);
-			 Destroy (gameObject);
+						 Destroy (gameObject);
+						 audioManager.PlaySound("wallbreak");
+			cameraShake.ShakeCamera(0.15f,0.3f);
+
 			if (hitNum > 0) 
 			{
 			         

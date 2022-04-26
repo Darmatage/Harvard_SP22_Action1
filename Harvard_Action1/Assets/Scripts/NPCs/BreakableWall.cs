@@ -13,11 +13,13 @@ public class BreakableWall : MonoBehaviour {
       private Color defaultColor;
 	  public int halfwall=0;
 	  public CameraShake cameraShake;
+	  AudioManager audioManager;
 
       void Start(){
             anim = gameObject.GetComponentInChildren<Animator>();
             boxColliderObj.SetActive(true);
             myRend = gameObject.GetComponentInChildren<Renderer>();
+				audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
             //defaultColor = myRend.material.color;
       }
 
@@ -35,7 +37,7 @@ public class BreakableWall : MonoBehaviour {
                   anim.SetBool ("wallGone", true);*/
                   boxColliderObj.SetActive (true);
             //}
-			if(hitNum==2)
+			/*if(hitNum==2)
 			{
 				//halfwall=1;
 				//Debug.Log("halfwall= "+halfwall);
@@ -52,7 +54,7 @@ public class BreakableWall : MonoBehaviour {
 			{
 				//halfwall=0;
 				
-			}
+			}*/
 			
       }
 
@@ -60,9 +62,11 @@ public class BreakableWall : MonoBehaviour {
 	  {
             // this is the function that the player attack script would access
             boxColliderObj.SetActive (false);
+						 Destroy (gameObject);
+						 audioManager.PlaySound("wallbreak");
 			cameraShake.ShakeCamera(0.15f,0.3f);
-			 Destroy (gameObject);
-			if (hitNum > 0) 
+
+			/*if (hitNum > 0) 
 			{
 			         
 				  //if (!breakSFX.isPlaying){ breakSFX.Play(); 
@@ -93,7 +97,7 @@ public class BreakableWall : MonoBehaviour {
 			//	boxColliderObj.SetActive (false);
 			 //Destroy (gameObject); 
 			 //}
-			 StartCoroutine(wallHitReturn());
+			 StartCoroutine(wallHitReturn());*/
 	  }
 	  
 

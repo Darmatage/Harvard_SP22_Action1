@@ -34,13 +34,12 @@ public class PlayerAttackMelee : MonoBehaviour{
            
             foreach(Collider2D enemy in hitEnemies){
                   Debug.Log("We hit " + enemy.name);
-				  GetComponent<AudioSource>().Play();
+				  //GetComponent<AudioSource>().Play();
                   enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
             }
 			Collider2D[] hitWalls = Physics2D.OverlapCircleAll(attackPt.position, attackRange, wallLayer);
            
           foreach(Collider2D wall in hitWalls){
-                  
                   wall.GetComponent<BreakableWall>().wallDamage();
 				  Debug.Log("We hit " + wall.name);
           }

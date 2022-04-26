@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     public PhysicsMaterial2D materialSticky;
     public Rigidbody2D rig;
     public static float runSpeed = 10f;
-    
+    AudioManager audioManager;
     public float startSpeed = 10f;
     // TODO: public AudioSource WalkSFX;
 
@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         rig = transform.GetComponent<Rigidbody2D>();
+		audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
 
         // SetMaterial(materialSticky);
         currentMaterial = materialNoSticky;
@@ -91,7 +92,7 @@ public class PlayerController : MonoBehaviour
             jumpTime = 0;
 
             // animator.SetTrigger("Jump");
-            // JumpSFX.Play();
+             audioManager.PlaySound("jump");//JumpSFX.Play();
         }
 
         if (isJumping) {

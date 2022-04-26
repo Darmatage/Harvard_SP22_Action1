@@ -2,11 +2,9 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+AudioManager audioManager;
 
 public class DoorExit_1 : MonoBehaviour{
-
-AudioManager audioManager;
 
 public void Start(){
 		audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();

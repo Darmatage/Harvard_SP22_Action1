@@ -9,7 +9,7 @@ public class PlayerProjectile : MonoBehaviour{
       public float SelfDestructTime = 0.5f;
 	  private GameHandler gameHandler;
 	  public bool FaceRight;
-	  // public AudioSource playerShootSFX;
+	  //public AudioSource playerShootSFX;
 	 
 
       void Start(){
