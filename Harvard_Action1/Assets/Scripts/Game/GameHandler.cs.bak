@@ -10,7 +10,7 @@ public class GameHandler : MonoBehaviour {
 	public static bool GameisPaused = false;
       Level[] levels = new Level[2]; // When adding more levels, increase size
       public GameObject pauseMenuUI;
-     // public AudioMixer mixer;
+      public AudioMixer mixer;
       public static float volumeLevel = 1.0f;
       private Slider sliderVolumeCtrl;
 
@@ -24,6 +24,11 @@ public class GameHandler : MonoBehaviour {
 
       public bool isDefending = false;
 	  public int playercolor;
+	  public GameObject NextButton;
+	  public GameObject StoryButton;
+	  public GameObject StartButton;
+	  public int pageNumber=0;
+	  public GameObject QuitButton;
 	 
 
       void Awake () {
@@ -41,12 +46,68 @@ public class GameHandler : MonoBehaviour {
             GameisPaused = false;
             player = GameObject.FindWithTag("Player");
 			playercolor=0;
-
+		pageNumber=0;
             DefineGameLevels();
             SetGameLevel(1); // Start the game at level 1
             SetPlayerPosition(currentLevel.spawnPoint); // Define player starting point in level
+			if (pageNumber==0)
+				NextButton.SetActive(false);
+				
+			else 
+				NextButton.SetActive(true);
+				StoryButton.SetActive(true);
+			QuitButton.SetActive(true);
+			StartButton.SetActive(true);
+			
       }
-
+public void turnPage()
+    {
+		if (pageNumber==0)
+		{
+			SceneManager.LoadScene("bookPage1");
+			pageNumber++;
+		}
+        if (pageNumber==1)
+		{
+			SceneManager.LoadScene("bookPage2");
+			pageNumber++;
+		}
+		if (pageNumber==2)
+		{
+			SceneManager.LoadScene("bookPage3");
+			pageNumber++;
+		}
+		if (pageNumber==3)
+		{
+			SceneManager.LoadScene("bookPage4");
+			pageNumber++;
+		}
+		if (pageNumber==4)
+		{
+			SceneManager.LoadScene("bookPage5");
+			pageNumber++;
+		}
+		if (pageNumber==5)
+		{
+			SceneManager.LoadScene("bookPage6");
+			pageNumber++;
+		}
+		if (pageNumber==6)
+		{
+			SceneManager.LoadScene("bookPage7");
+			pageNumber++;
+		}
+		if (pageNumber==7)
+		{
+			SceneManager.LoadScene("bookPage8");
+			pageNumber++;
+		}
+		if (pageNumber==8)
+		{
+			SceneManager.LoadScene("scene1_OutsideTower");
+			
+		}
+    }
       void Update () {
             FallCheck();
 
@@ -164,7 +225,7 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void StartGame() {
-            SceneManager.LoadScene("scene1");
+            SceneManager.LoadScene("scene1_OutsideTower");
       }
 
       public void RestartGame() {
@@ -184,7 +245,7 @@ public class GameHandler : MonoBehaviour {
       public void Credits() {
             SceneManager.LoadScene("Credits");
       }
-}
+
 
 public class Level {
       public int number;
@@ -194,4 +255,5 @@ public class Level {
             this.number = number;
             this.spawnPoint = spawnPoint;
       }
+}
 }
