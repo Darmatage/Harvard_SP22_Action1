@@ -9,7 +9,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
        public int maxHealth = 10;
        public int currentHealth;
 	   public CameraShake cameraShake;
-	   public AudioSource enemyDieSFX;
+	   //public AudioSource enemyDieSFX;
 
        void Start(){
               rend = GetComponentInChildren<Renderer> ();

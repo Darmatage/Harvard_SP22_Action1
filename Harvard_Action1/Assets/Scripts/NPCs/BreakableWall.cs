@@ -12,6 +12,7 @@ public class BreakableWall : MonoBehaviour {
       private Renderer myRend;
       private Color defaultColor;
 	  public int halfwall=0;
+	  public CameraShake cameraShake;
 
       void Start(){
             anim = gameObject.GetComponentInChildren<Animator>();
@@ -59,6 +60,7 @@ public class BreakableWall : MonoBehaviour {
 	  {
             // this is the function that the player attack script would access
             boxColliderObj.SetActive (false);
+			cameraShake.ShakeCamera(0.15f,0.3f);
 			 Destroy (gameObject);
 			if (hitNum > 0) 
 			{

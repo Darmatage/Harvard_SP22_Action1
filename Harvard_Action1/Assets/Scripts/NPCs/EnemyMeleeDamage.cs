@@ -25,7 +25,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
               if (currentHealth <= 0){
 				    Die();
 					 GetComponent<AudioSource>().Play();//enemyDieSFX.Play();
-					cameraShake.ShakeCamera(0.15f,0.3f);
+					
 					Debug.Log("camera shake");
               }
        }
@@ -34,6 +34,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
               Instantiate (healthLoot, transform.position, Quaternion.identity);
               //anim.SetBool ("isDead", true);
               GetComponent<Collider2D>().enabled = false;
+			  cameraShake.ShakeCamera(0.15f,0.3f);
               StartCoroutine(Death());
        }
 
