@@ -24,8 +24,8 @@ public class GameHandler : MonoBehaviour {
 
       public bool isDefending = false;
 	  public int playercolor;
-	  public GameObject NextButton;
-	  public GameObject StoryButton;
+	 // public GameObject NextButton;
+	 // public GameObject ButtonPlayStory;
 	  public GameObject StartButton;
 	  public int pageNumber=0;
 	  public GameObject QuitButton;
@@ -43,24 +43,24 @@ public class GameHandler : MonoBehaviour {
 
       void Start () {
             pauseMenuUI.SetActive(false);
+			//ButtonPlayStory.SetActive(true);
+			QuitButton.SetActive(true);
+			StartButton.SetActive(true);
             GameisPaused = false;
             player = GameObject.FindWithTag("Player");
 			playercolor=0;
-		pageNumber=0;
+			pageNumber=0;
             DefineGameLevels();
             SetGameLevel(1); // Start the game at level 1
             SetPlayerPosition(currentLevel.spawnPoint); // Define player starting point in level
-			if (pageNumber==0)
-				NextButton.SetActive(false);
-				
-			else 
-				NextButton.SetActive(true);
-				StoryButton.SetActive(true);
-			QuitButton.SetActive(true);
-			StartButton.SetActive(true);
+			
+				//NextButton.SetActive(false);
+				//ButtonPlayStory.SetActive(true);
+				//SceneManager.LoadScene("bookPage1");
+			
 			
       }
-public void turnPage()
+/*public void turnPage()
     {
 		if (pageNumber==0)
 		{
@@ -107,9 +107,24 @@ public void turnPage()
 			SceneManager.LoadScene("scene1_OutsideTower");
 			
 		}
-    }
+    }*/
       void Update () {
-            FallCheck();
+		  if (Input.GetKeyDown(KeyCode.Escape))
+		  {
+             if (GameisPaused)
+            {
+                Resume();
+            }
+            else
+            {
+                Pause();
+            }
+        }
+		  
+          //  if(pageNumber==8)
+			//{
+				FallCheck();
+		//	}
 
             if (Input.GetKeyDown(KeyCode.Escape)){
                   if (GameisPaused){
@@ -119,7 +134,8 @@ public void turnPage()
                         Pause();
                   }
             }
-      }
+	  }
+      
 
       void DefineGameLevels() {
             levels[0] = new Level(0, new Vector3(0,0,0)); // Not a real level, allows us to look up levels numbers by the index
@@ -128,13 +144,16 @@ public void turnPage()
 
       // Has player fallen off map?
       void FallCheck() {
-            Transform transform = player.GetComponent<Transform>();
+		  
+		  
+           // Transform transform = player.GetComponent<Transform>();
 
-            if (transform.position.y <= -10) {
-                  Debug.Log("Fell Off");
+           // if (transform.position.y <= -10) {
+              //   Debug.Log("Fell Off");
 
-                  SetPlayerPosition(currentLevel.spawnPoint);
+               //   SetPlayerPosition(currentLevel.spawnPoint);
             }
+		  
       }
 
       void Pause(){
@@ -225,12 +244,12 @@ public void turnPage()
       }
 
       public void StartGame() {
-            SceneManager.LoadScene("scene1_OutsideTower");
+            SceneManager.LoadScene("bookPage1");
       }
 
       public void RestartGame() {
 		Time.timeScale = 1f;
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("StartMenu");
             playerHealth = StartPlayerHealth;
       }
 

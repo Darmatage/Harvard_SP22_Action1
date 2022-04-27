@@ -1,0 +1,97 @@
+using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+
+public class bookPages : MonoBehaviour
+{
+    public int pageNumber=1;         // This integer drives game progress!
+   // public GameHandler gameHandler; 
+    public GameObject BG;
+       public GameObject nextButton;
+	   public GameObject skipButton;
+      //public AudioSource audioSource;
+    //private bool allowSpace = true;
+   
+    void Start()
+    {              
+		BG.SetActive(true);
+        nextButton.SetActive(true);
+		skipButton.SetActive(true);
+		
+		//pageNumber++;
+		//Debug.Log("pageNumber in Start"+pageNumber);
+    }
+
+    void Update()
+    {                 
+             // nextPage2();
+       
+		
+			//SceneManager.LoadScene("bookPage1");
+			//pageNumber++;
+		}
+      /*  if (pageNumber==1)
+		{
+			Debug.Log("loadpage2");
+			SceneManager.LoadScene("bookPage2");
+			pageNumber++;
+		}
+		if (pageNumber==2)
+		{
+			SceneManager.LoadScene("bookPage3");
+			pageNumber++;
+		}
+		if (pageNumber==3)
+		{
+			SceneManager.LoadScene("bookPage4");
+			pageNumber++;
+		}
+		if (pageNumber==4)
+		{
+			SceneManager.LoadScene("bookPage5");
+			pageNumber++;
+		}
+		if (pageNumber==5)
+		{
+			SceneManager.LoadScene("bookPage6");
+			pageNumber++;
+		}
+		if (pageNumber==6)
+		{
+			SceneManager.LoadScene("bookPage7");
+			pageNumber++;
+		}
+		if (pageNumber==7)
+		{
+			SceneManager.LoadScene("bookPage8");
+			pageNumber++;
+		}
+		if (pageNumber==8)
+		{
+			SceneManager.LoadScene("scene1_OutsideTower");
+			
+		}*/
+       
+    
+	
+        public void nextPage2()
+		{
+			//pageNumber++;
+			SceneManager.LoadScene("bookpage2");
+		}
+		
+		public void nextPage3()
+		{
+			//pageNumber++;
+			SceneManager.LoadScene("bookpage3");
+		}
+    
+    public void skiptoGame()
+    {
+        SceneManager.LoadScene("scene1_OutsideTower");
+    }
+
+}   
