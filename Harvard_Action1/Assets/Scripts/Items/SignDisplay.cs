@@ -16,16 +16,16 @@ public class SignDisplay : MonoBehaviour {
 			  	audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
        }
 
+
+          //James- updated this to no longer flicker when player stands on book
        void Update () {
-            if (Input.GetKeyDown(KeyCode.Space) && playerInRange){
-                   if (imageSign.activeInHierarchy){
-                        imageSign.SetActive(false);
-                   } else {
+            if (playerInRange){ //Input.GetKeyDown(KeyCode.Space) &&
+               //     if (imageSign.activeInHierarchy){
+               //          imageSign.SetActive(false);
+               //     } else {
                         imageSign.SetActive(true);
-						dialogueText.text = dialogue;
-						
-                        
-                   }
+						dialogueText.text = dialogue;     
+                 //  }
             }
        }
 
