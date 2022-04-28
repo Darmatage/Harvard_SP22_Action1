@@ -70,7 +70,7 @@ public class bookPages : MonoBehaviour
 		
     public void skiptoGame()
     {
-        SceneManager.LoadScene("scene1_OutsideTower");
+        SceneManager.LoadScene("scene1_LowerTower_Salwa");
     }
 
 }   
