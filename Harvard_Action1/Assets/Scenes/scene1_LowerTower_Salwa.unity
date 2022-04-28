@@ -1633,6 +1633,10 @@ PrefabInstance:
       propertyPath: yellowJelly.uiBar
       value: 
       objectReference: {fileID: 990694423}
+    - target: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
+      propertyPath: brownSticky.startValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6419823561646818545, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
       propertyPath: m_Name
       value: Player
