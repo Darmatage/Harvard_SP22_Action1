@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PauseMenu.unity
     guid: 2e25956b71a548f45910bd7e753c1ed5
   - enabled: 1
-    path: Assets/Scenes/scene2_LowerFloor.unity
+    path: Assets/Scenes/scene2_MidTower_James.unity
     guid: 5877f024ad48f4c4ca4c00ee96cb261c
   - enabled: 0
     path: Assets/Scenes/OldScenes/Tutorial_TileMaps.unity
@@ -30,13 +30,13 @@ EditorBuildSettings:
     path: Assets/Scenes/EndLose.unity
     guid: 472a2aeebb587ad4e8ab3a3d6ada5683
   - enabled: 1
-    path: Assets/Scenes/scene1_OutsideTower.unity
+    path: Assets/Scenes/scene1_LowerTower_Salwa.unity
     guid: b54f63974833edd458b5eaf5ff2a0d6b
   - enabled: 1
-    path: Assets/Scenes/scene4_Rooftop.unity
+    path: Assets/Scenes/scene3_UpperTower_Chris.unity
     guid: 0259eb40641ce2a4cb4046251427fc23
   - enabled: 1
-    path: Assets/Scenes/scene3_UpperFloor.unity
+    path: Assets/Scenes/scene4_RooftopJellyDragonBoss_Shared.unity
     guid: f3b7102ae7a55d4448cf3e759c59cca5
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
