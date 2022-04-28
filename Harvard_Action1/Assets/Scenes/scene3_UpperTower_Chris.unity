@@ -189,6 +189,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02db46d2199bddc40bf68daed0cd2102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dieEnemySound: {fileID: 0}
+  vomitSound: {fileID: 0}
+  chompSound: {fileID: 0}
+  jumpSound: {fileID: 0}
+  wallbreakSound: {fileID: 0}
+  openbookSound: {fileID: 0}
+  opendoorSound: {fileID: 0}
+  audiosource: {fileID: 0}
 --- !u!82 &179149106
 AudioSource:
   m_ObjectHideFlags: 0
@@ -854,9 +862,9 @@ GameObject:
   - component: {fileID: 395911214}
   - component: {fileID: 395911216}
   - component: {fileID: 395911215}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Ground_TM
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
