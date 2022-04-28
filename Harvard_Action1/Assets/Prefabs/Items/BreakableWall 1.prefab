@@ -44,7 +44,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.022333682, y: -0.063278615}
+  m_Offset: {x: 0.12200755, y: -0.18011403}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -55,7 +55,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5979942, y: 1.9752358}
+  m_Size: {x: 0.30931175, y: 1.4011874}
   m_EdgeRadius: 0
 --- !u!1 &7259577981852902986
 GameObject:
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 7259577982316283584}
   m_Layer: 3
   m_Name: BreakableWall 1
-  m_TagString: Untagged
+  m_TagString: breakable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -187,7 +187,7 @@ Transform:
   m_GameObject: {fileID: 7259577982316283585}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.467, y: 0.045, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 7259577981852902985}
   - {fileID: 7259577981397049117}
@@ -207,7 +207,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.26143745, y: -0.043817997}
+  m_Offset: {x: 0.12406492, y: -0.135324}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -218,7 +218,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.9586041, y: 2.0452604}
+  m_Size: {x: 2.0687487, y: 1.8622484}
   m_EdgeRadius: 0
 --- !u!114 &7259577982316283584
 MonoBehaviour:
@@ -235,3 +235,5 @@ MonoBehaviour:
   anim: {fileID: 7259577981852902991}
   hitNum: 2
   boxColliderObj: {fileID: 7259577981397049119}
+  halfwall: 0
+  cameraShake: {fileID: 0}
