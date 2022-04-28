@@ -54,60 +54,11 @@ public class GameHandler : MonoBehaviour {
             SetGameLevel(1); // Start the game at level 1
             SetPlayerPosition(currentLevel.spawnPoint); // Define player starting point in level
 			
-				//NextButton.SetActive(false);
-				//ButtonPlayStory.SetActive(true);
-				//SceneManager.LoadScene("bookPage1");
+				
 			
 			
       }
-/*public void turnPage()
-    {
-		if (pageNumber==0)
-		{
-			SceneManager.LoadScene("bookPage1");
-			pageNumber++;
-		}
-        if (pageNumber==1)
-		{
-			SceneManager.LoadScene("bookPage2");
-			pageNumber++;
-		}
-		if (pageNumber==2)
-		{
-			SceneManager.LoadScene("bookPage3");
-			pageNumber++;
-		}
-		if (pageNumber==3)
-		{
-			SceneManager.LoadScene("bookPage4");
-			pageNumber++;
-		}
-		if (pageNumber==4)
-		{
-			SceneManager.LoadScene("bookPage5");
-			pageNumber++;
-		}
-		if (pageNumber==5)
-		{
-			SceneManager.LoadScene("bookPage6");
-			pageNumber++;
-		}
-		if (pageNumber==6)
-		{
-			SceneManager.LoadScene("bookPage7");
-			pageNumber++;
-		}
-		if (pageNumber==7)
-		{
-			SceneManager.LoadScene("bookPage8");
-			pageNumber++;
-		}
-		if (pageNumber==8)
-		{
-			SceneManager.LoadScene("scene1_OutsideTower");
-			
-		}
-    }*/
+
       void Update () {
 		  if (Input.GetKeyDown(KeyCode.Escape))
 		  {
@@ -207,7 +158,9 @@ public class GameHandler : MonoBehaviour {
                   playerHealth -= damage;
 				  Debug.Log(playerHealth);
                   if (playerHealth >=0){
-                        updateStatsDisplay();
+					  
+                        //updateStatsDisplay();
+						
                   }
                   player.GetComponent<PlayerHurt>().playerHit();
             }
@@ -224,6 +177,7 @@ public class GameHandler : MonoBehaviour {
       }
 
       public void updateStatsDisplay(){
+		  
             Text healthTextTemp = healthText.GetComponent<Text>();
             healthTextTemp.text = "HEALTH: " + playerHealth;
 

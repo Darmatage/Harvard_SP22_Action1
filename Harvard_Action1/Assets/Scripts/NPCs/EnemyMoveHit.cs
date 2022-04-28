@@ -11,6 +11,7 @@ public class EnemyMoveHit : MonoBehaviour {
 		public CameraShake cameraShake;
        public int EnemyLives = 3;
        private GameHandler gameHandler;
+	   public PlayerBars health;
 		
        public float attackRange = 2;
        public bool isAttacking = false;
@@ -61,7 +62,9 @@ public class EnemyMoveHit : MonoBehaviour {
 				  if(enemycolor!=playercolor){
                      isAttacking = true;
                     // anim.SetBool("Attack", true);
-                     gameHandler.playerGetHit(damage);
+					Debug.Log("enemymovehit player taking damage");
+                     //gameHandler.playerGetHit(damage);
+					 health.TakeDamage(damage);
 					 cameraShake.ShakeCamera(0.15f,0.3f);
 					 //float pushBack = 0f;
 					 //if (other.gameObject.transform.position.x > gameObject.transform.position.x){

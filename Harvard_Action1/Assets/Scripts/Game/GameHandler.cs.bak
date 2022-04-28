@@ -154,7 +154,7 @@ public class GameHandler : MonoBehaviour {
                //   SetPlayerPosition(currentLevel.spawnPoint);
             }
 		  
-      }
+      
 
       void Pause(){
             pauseMenuUI.SetActive(true);

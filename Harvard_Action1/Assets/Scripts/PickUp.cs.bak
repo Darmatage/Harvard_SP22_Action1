@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour{
 	
-	//public CameraShake cameraShake;
+	public CameraShake cameraShake;
 	      public GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
       public bool isHealthPickUp = true;
@@ -26,6 +26,7 @@ public class PickUp : MonoBehaviour{
             if (other.gameObject.tag == "Player"){
                   GetComponent<Collider2D>().enabled = false;
                   GetComponent<AudioSource>().Play();
+				  cameraShake.ShakeCamera(0.15f,0.1f);
                   StartCoroutine(DestroyThis());
 					
 					

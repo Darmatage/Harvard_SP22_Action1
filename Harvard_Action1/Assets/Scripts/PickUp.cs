@@ -10,6 +10,7 @@ public class PickUp : MonoBehaviour{
       public bool isHealthPickUp = true;
       public bool isSpeedBoostPickUp = false;
 	public Animator playerAnimator;
+	
 		
       public int healthBoost = 50;
       public float speedBoost = 2f;

@@ -6,25 +6,39 @@ using UnityEngine.UI;
 
 public class PlayerBars : MonoBehaviour, IDamageable
 {
+    public Bar brownSticky;
     public Bar health;
     public Bar yellowJelly;
     public UnityEvent onTakeDamage;
-	public int playercolor;
-	
+
     void Start() {
+        brownSticky.curValue = health.startValue;
         health.curValue = health.startValue;
         yellowJelly.curValue = yellowJelly.startValue;
-		playercolor=0;
+
+        if (!brownSticky.uiBar) {
+            brownSticky.uiBar = GameObject.FindWithTag("BarBrown").GetComponent<Image>();
+        }
+
+        if (!health.uiBar) {
+            health.uiBar = GameObject.FindWithTag("BarRed").GetComponent<Image>();
+        }
+
+        if (!yellowJelly.uiBar) {
+            yellowJelly.uiBar = GameObject.FindWithTag("BarYellow").GetComponent<Image>();
+        }
     }
 
     void Update() {
         // Decay values over time
+        brownSticky.Subtract(brownSticky.decayRate * Time.deltaTime);
         // yellowJelly.Subtract(yellowJelly.decayRate * Time.deltaTime);
 
         // Regen values over time
         health.Add(health.regenRate * Time.deltaTime);
 
         // Update Bars
+        brownSticky.uiBar.fillAmount = brownSticky.GetPercentage();
         health.uiBar.fillAmount = health.GetPercentage();
         yellowJelly.uiBar.fillAmount = yellowJelly.GetPercentage();
 
@@ -53,7 +67,13 @@ public class PlayerBars : MonoBehaviour, IDamageable
         health.Add(value);
     }
 
+    public void Sticky(float value) {
+        Debug.LogFormat("Sticky: {0}", value);
+        brownSticky.Add(value);
+    }
+
     public void TakeDamage(int value) {
+		Debug.Log("playerbars takedamage");
         health.Subtract(value);
         onTakeDamage?.Invoke();
     }
