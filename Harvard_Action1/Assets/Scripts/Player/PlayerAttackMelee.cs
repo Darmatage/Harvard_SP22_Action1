@@ -39,10 +39,13 @@ public class PlayerAttackMelee : MonoBehaviour{
             }
 			Collider2D[] hitWalls = Physics2D.OverlapCircleAll(attackPt.position, attackRange, wallLayer);
            
-			foreach(Collider2D wall in hitWalls){
-                  wall.GetComponent<BreakableWall>().wallDamage();
-				  Debug.Log("We hit " + wall.name);
-          }
+		foreach(Collider2D wall in hitWalls) {
+                  if (wall && wall.GetComponent<BreakableWall>()) {
+                        wall.GetComponent<BreakableWall>().wallDamage();
+                  }
+
+			Debug.Log("We hit " + wall.name);
+            }
       }
 
       //NOTE: to help see the attack sphere in editor:
