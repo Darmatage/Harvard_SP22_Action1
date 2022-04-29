@@ -77,14 +77,14 @@ public class GameHandler : MonoBehaviour {
 				FallCheck();
 		//	}
 
-            if (Input.GetKeyDown(KeyCode.Escape)){
+            /*if (Input.GetKeyDown(KeyCode.Escape)){
                   if (GameisPaused){
                         Resume();
                   }
                   else {
                         Pause();
                   }
-            }
+            }*/
 	  }
       
 
