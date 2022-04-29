@@ -26,7 +26,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
 				    Die();
 					 GetComponent<AudioSource>().Play();//enemyDieSFX.Play();
 					
-					Debug.Log("camera shake");
+					//Debug.Log("camera shake");
               }
        }
 
@@ -40,7 +40,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
 
        IEnumerator Death(){
               yield return new WaitForSeconds(0.5f);
-              Debug.Log("You Killed a baddie. You deserve loot!");
+              //Debug.Log("You Killed a baddie. You deserve loot!");
 			  
               Destroy(gameObject);
        }

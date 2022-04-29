@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class PickUp : MonoBehaviour{
+public class PickUpBlue : MonoBehaviour{
 	
 	public CameraShake cameraShake;
 	      public GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
-      public bool isHealthPickUp = true;
+      public bool isBlueBean = true;
       public bool isSpeedBoostPickUp = false;
 	public Animator playerAnimator;
 	
@@ -35,9 +35,10 @@ public class PickUp : MonoBehaviour{
                   StartCoroutine(DestroyThis());
 					
 					
-                  if (isHealthPickUp == true) {
-                       playerAnimator.SetInteger("PlayerColor",1);
-					   gameHandler.playercolor=1;
+                  if (isBlueBean == true) {
+					  Debug.Log("pickup playercolor to 2");
+                       playerAnimator.SetInteger("PlayerColor",2);
+					   gameHandler.playercolor=2;
 					   
 					   
 			// gameHandler.playerGetHit(healthBoost * -1);

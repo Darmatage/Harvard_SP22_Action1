@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttackShoot : MonoBehaviour{
 
       //public Animator animator;
-      audioManager audioManager;
+      //AudioManager audioManager;
       PlayerController controller;
       public Transform FirePoint;
       public GameObject projectilePrefab;
@@ -16,6 +16,8 @@ public class PlayerAttackShoot : MonoBehaviour{
 	  //public AudioSource playerShootSFX;
 	  // public Rigidbody2D rig2;
 	   //public static float runSpeed = 10f;
+	public AudioSource vomitSFX;
+
 
       void Start(){
 		GameObject player = GameObject.Find("Player");
@@ -46,7 +48,8 @@ public class PlayerAttackShoot : MonoBehaviour{
             }
 
 		GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, targerRotation);	
-		audioManager.PlaySound("vomit");
+		vomitSFX.Play();
+		//audioManager.PlaySound("vomit");
 				//playerShootSFX.Play();
 			//Debug.Log("IS facing right" +FaceRight);
             //GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, Quaternion.identity);

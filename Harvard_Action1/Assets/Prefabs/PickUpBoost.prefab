@@ -169,6 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df5fc15eadd245478ad9d71915cbb50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraShake: {fileID: 0}
   gameHandler: {fileID: 0}
   isHealthPickUp: 1
   isSpeedBoostPickUp: 0
