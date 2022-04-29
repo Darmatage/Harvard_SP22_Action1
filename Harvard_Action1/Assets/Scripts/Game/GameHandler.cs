@@ -24,10 +24,9 @@ public class GameHandler : MonoBehaviour {
 
       public bool isDefending = false;
 	  public int playercolor;
-	 // public GameObject NextButton;
-	 // public GameObject ButtonPlayStory;
+	 
 	  public GameObject StartButton;
-	  public int pageNumber=0;
+	
 	  public GameObject QuitButton;
 	 
 
@@ -43,19 +42,16 @@ public class GameHandler : MonoBehaviour {
 
       void Start () {
             pauseMenuUI.SetActive(false);
-			//ButtonPlayStory.SetActive(true);
+			
 			QuitButton.SetActive(true);
 			StartButton.SetActive(true);
             GameisPaused = false;
             player = GameObject.FindWithTag("Player");
 			playercolor=0;
-			pageNumber=0;
+			
             DefineGameLevels();
             SetGameLevel(1); // Start the game at level 1
-            SetPlayerPosition(currentLevel.spawnPoint); // Define player starting point in level
-			
-				
-			
+           // SetPlayerPosition(currentLevel.spawnPoint); // Define player starting point in level
 			
       }
 
@@ -71,20 +67,7 @@ public class GameHandler : MonoBehaviour {
                 Pause();
             }
         }
-		  
-          //  if(pageNumber==8)
-			//{
-				FallCheck();
-		//	}
-
-            /*if (Input.GetKeyDown(KeyCode.Escape)){
-                  if (GameisPaused){
-                        Resume();
-                  }
-                  else {
-                        Pause();
-                  }
-            }*/
+				FallCheck();	
 	  }
       
 

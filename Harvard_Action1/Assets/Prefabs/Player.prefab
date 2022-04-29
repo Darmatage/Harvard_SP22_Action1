@@ -322,7 +322,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackPt: {fileID: 867039695}
-  attackRange: 6
+  attackRange: 3
   attackRate: 2
   attackDamage: 10
   enemyLayers:

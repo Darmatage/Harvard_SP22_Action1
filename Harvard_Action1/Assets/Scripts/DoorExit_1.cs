@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorExit_1 : MonoBehaviour{
 
-    public string nextLevel = "MainMenu";
+    public string nextLevel = "scene4_RooftopJellyDragonBoss_Shared";
 	public AudioSource doorSFX;
 
     public void Start(){

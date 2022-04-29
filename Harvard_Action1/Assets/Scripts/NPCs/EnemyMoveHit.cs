@@ -66,14 +66,14 @@ public class EnemyMoveHit : MonoBehaviour {
                      //gameHandler.playerGetHit(damage);
 					 health.TakeDamage(damage);
 					 cameraShake.ShakeCamera(0.15f,0.3f);
-					 //float pushBack = 0f;
-					 //if (other.gameObject.transform.position.x > gameObject.transform.position.x){
-                        //    pushBack = 3f;
-                    // }
-					// else {
-                      //      pushBack = -3f;
-                     //}
-					// other.gameObject.transform.position = new Vector3(transform.position.x + pushBack, transform.position.y + 1, -1);
+					 float pushBack = 0f;
+					 if (collision.gameObject.transform.position.x > gameObject.transform.position.x){
+                            pushBack = 3f;
+                     }
+					else {
+                           pushBack = -3f;
+                     }
+					 collision.gameObject.transform.position = new Vector3(transform.position.x + pushBack, transform.position.y + 1, -1);
 				  }
               }
        }

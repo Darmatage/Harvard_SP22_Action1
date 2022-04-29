@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             if (!isGrounded()) {
                 // Only allow extra jumps if player has yellow jelly available
                 if (bars.yellowJelly.curValue > 0) {
-                    bars.Burn(bars.yellowJelly, 5f);
+                    bars.Burn(bars.yellowJelly, 1f);
                 }
                 else {
                     return;
