@@ -9,12 +9,14 @@ public class SignDisplay : MonoBehaviour {
        public Text dialogueText;
        public string dialogue;
        public bool playerInRange = false;
-	   AudioManager audioManager;
+	   //AudioManager audioManager;
+	   public AudioSource bookSFX;
 
        void Start () {
-              imageSign.SetActive(false);
-			  	audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
-       }
+            imageSign.SetActive(false);
+			//audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
+			bookSFX = GetComponent<AudioSource>();
+	   }
 
 
           //James- updated this to no longer flicker when player stands on book
@@ -32,7 +34,9 @@ public class SignDisplay : MonoBehaviour {
        private void OnTriggerEnter2D(Collider2D other){
              if (other.CompareTag("Player")) {
                    playerInRange = true;
-				   audioManager.PlaySound("openbook");
+				   //audioManager.PlaySound("openbook");
+				   bookSFX.Stop();
+				   bookSFX.Play();
                    Debug.Log("Player in range");
                   }
              }

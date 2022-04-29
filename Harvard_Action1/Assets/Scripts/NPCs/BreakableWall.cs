@@ -4,26 +4,28 @@ using UnityEngine;
 
 public class BreakableWall : MonoBehaviour {
 
-      public Animator anim;
-      //public GameObject ParticleVFX;
-      //public AudioSource breakSFX;
-      public int hitNum = 2; // how many times the object can be hit before it disappears.
-      public GameObject boxColliderObj; // a child collider that can be turned off
-      private Renderer myRend;
-      private Color defaultColor;
-	  public int halfwall=0;
-	  public CameraShake cameraShake;
-	  AudioManager audioManager;
+	public Animator anim;
+	//public GameObject ParticleVFX;
+	//public AudioSource breakSFX;
+	public int hitNum = 2; // how many times the object can be hit before it disappears.
+	public GameObject boxColliderObj; // a child collider that can be turned off
+	private Renderer myRend;
+	private Color defaultColor;
+	public int halfwall=0;
+	public CameraShake cameraShake;
+	//AudioManager audioManager;
+	public AudioSource wallSFX;
 
-      void Start(){
-            anim = gameObject.GetComponentInChildren<Animator>();
-            boxColliderObj.SetActive(true);
-            myRend = gameObject.GetComponentInChildren<Renderer>();
-				audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
-            //defaultColor = myRend.material.color;
+	void Start(){
+		anim = gameObject.GetComponentInChildren<Animator>();
+		boxColliderObj.SetActive(true);
+		myRend = gameObject.GetComponentInChildren<Renderer>();
+		//audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
+        //defaultColor = myRend.material.color;
+		wallSFX = GetComponent<AudioSource>();
       }
 
-      void Update(){
+	void Update(){
            /* if (hitNum == 2){
                   anim.SetBool ("wallHalf", false);
                   anim.SetBool ("wallGone", false);
@@ -56,15 +58,15 @@ public class BreakableWall : MonoBehaviour {
 				
 			}*/
 			
-      }
+	}
 
-      public void wallDamage()
-	  {
+	public void wallDamage(){
             // this is the function that the player attack script would access
-            boxColliderObj.SetActive (false);
-						 Destroy (gameObject);
-						 audioManager.PlaySound("wallbreak");
-			cameraShake.ShakeCamera(0.15f,0.3f);
+		boxColliderObj.SetActive (false);
+		Destroy (gameObject);
+		//audioManager.PlaySound("wallbreak");
+		wallSFX.Play();
+		cameraShake.ShakeCamera(0.15f,0.3f);
 
 			/*if (hitNum > 0) 
 			{

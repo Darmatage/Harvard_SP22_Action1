@@ -19,11 +19,15 @@ public class PickUp : MonoBehaviour{
       void Start(){
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
             //playerPowerupVFX = GameObject.FindWithTag("Player").GetComponent<playerVFX>();
+			
+			GameObject myCamera = GameObject.FindWithTag("MainCamera");
+			cameraShake = myCamera.transform.parent.GetComponent<CameraShake>();
+			
+			playerAnimator = GameObject.Find("PlayerArt").GetComponent<Animator>();
       }
 
       public void OnTriggerEnter2D (Collider2D other){
-                playerAnimator=GameObject.Find("PlayerArt").GetComponent<Animator>();
-				
+                
             if (other.gameObject.tag == "Player"){
                   GetComponent<Collider2D>().enabled = false;
                   GetComponent<AudioSource>().Play();
