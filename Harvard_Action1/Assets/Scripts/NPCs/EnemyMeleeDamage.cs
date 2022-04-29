@@ -40,7 +40,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
 
        IEnumerator Death(){
               yield return new WaitForSeconds(0.5f);
-              //Debug.Log("You Killed a baddie. You deserve loot!");
+              Debug.Log("You Killed a blue baddie. You deserve loot!");
 			  
               Destroy(gameObject);
        }
