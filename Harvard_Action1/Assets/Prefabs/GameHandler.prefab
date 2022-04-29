@@ -50,3 +50,6 @@ MonoBehaviour:
   tokensText: {fileID: 0}
   isDefending: 0
   playercolor: 0
+  StartButton: {fileID: 0}
+  pageNumber: 0
+  QuitButton: {fileID: 0}
