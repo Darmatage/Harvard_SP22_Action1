@@ -6,24 +6,20 @@ public class PlayerController : MonoBehaviour
 {
     // TODO: public Animator animator;
     private PlayerBars bars;
-    public float buttonTime = 0.3f;
     private CapsuleCollider2D capsuleCollider;
     private CircleCollider2D circleCollider;
     public LayerMask enemyLayer;
 	public LayerMask breakableWall;
     public bool FaceRight = true; // Which way is the player facing?
-    public float fallMultiplier = 2.5f;
+    public float fallGravityMultiplier = 5f;
     public float gravity = -9.81f;
-    public float gravityScale = 1;
-    public float gravityScaleFalling = 10;
     public LayerMask groundLayer;
     private Vector3 hMove;
     public bool isAlive = true; // Will come from bars when needed
     // private bool isGrounded = true;
     private bool isJumping = false;
-    public float jumpForce = 20f;
-    private float jumpTime = 0;
-    public float lowJumpModifier = 2f;
+    public float jumpForce = 7f;
+    public float jumpGravityMultiplier = 5f;
     private PhysicsMaterial2D currentMaterial;
     public PhysicsMaterial2D materialNoSticky;
     public PhysicsMaterial2D materialSticky;
@@ -62,7 +58,33 @@ public class PlayerController : MonoBehaviour
     void Update() {
         if (isAlive) {
             Move();
-            Jump();
+
+            if (Input.GetButtonDown("Jump")) {
+
+                // Check for extra jumps
+                if (!isGrounded()) {
+                    // Only allow extra jumps if player has yellow jelly available
+                    if (bars.yellowJelly.curValue > 0) {
+                        bars.Burn(bars.yellowJelly, 2f);
+
+                        Jump(); // Do an extra jump
+                    }
+                }
+                // Player is grounded
+                else {
+                    Jump();
+                }
+            }
+
+            if (rig.velocity.y < 0) {
+                rig.velocity += Vector2.up * gravity * fallGravityMultiplier * Time.deltaTime;
+                //rig.gravityScale = 10;
+            }
+
+            else if (rig.velocity.y >= 0 && !isGrounded()) {
+                rig.velocity += Vector2.up * gravity * jumpGravityMultiplier * Time.deltaTime;
+                //rig.gravityScale = 1;
+            }
         }        
     }
 
@@ -78,53 +100,10 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(transform.position.x, groundCheck.surfacePosition.y + floorHeight, transform.position.z);
         }*/
 
-        if (Input.GetButtonDown("Jump")) {
-            if (!isGrounded()) {
-                // Only allow extra jumps if player has yellow jelly available
-                if (bars.yellowJelly.curValue > 0) {
-                    bars.Burn(bars.yellowJelly, 1f);
-                }
-                else {
-                    return;
-                }
-            }
-
-            isJumping = true;
-            jumpTime = 0;
-
-            // animator.SetTrigger("Jump");
-             //audioManager.PlaySound("jump");
-			 JumpSFX.Play();
-        }
-
-        if (isJumping) {
-            // rig.velocity = Vector2.up * jumpForce;
-            // rig.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-            rig.velocity = new Vector2(rig.velocity.x, jumpForce);
-            jumpTime += Time.deltaTime;
-        }
-
-        if (Input.GetKeyUp(KeyCode.Space) | jumpTime > buttonTime) {
-            isJumping = false;
-        }
-
-        /*
-        NOTE:
-        There are two jump modes here:
-        - Floaty jump: changes the velocity of the rig.
-        - Lame jump: changes the gravity scale of the rig.
-
-        Neither work well :/
-        */
-        if (rig.velocity.y < 0) {
-            rig.velocity += Vector2.up * gravity * (fallMultiplier - 1) * Time.deltaTime;
-            rig.gravityScale = 10;
-        }
-
-        else if (rig.velocity.y >= 0 && !isGrounded()) {
-            rig.velocity += Vector2.up * gravity * (lowJumpModifier - 1) * Time.deltaTime;
-            rig.gravityScale = 1;
-        }
+        isJumping = true;
+        JumpSFX.Play();
+        // rig.velocity = new Vector2(rig.velocity.x, jumpForce);
+        rig.velocity = Vector2.up * jumpForce;
     }
 
     public void Move() {

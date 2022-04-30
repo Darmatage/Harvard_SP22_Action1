@@ -238,7 +238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8b9ee06e6a84332b73cb5e64b02612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonTime: 0.3
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -246,16 +245,14 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   FaceRight: 1
-  fallMultiplier: 2.5
+  fallGravityMultiplier: 5
   gravity: -9.81
-  gravityScale: 5
-  gravityScaleFalling: 40
   groundLayer:
     serializedVersion: 2
     m_Bits: 2147483647
   isAlive: 1
   jumpForce: 7
-  lowJumpModifier: 2
+  jumpGravityMultiplier: 5
   materialNoSticky: {fileID: 6200000, guid: a2c569baaf8ad44f9ba52c0824dd60e8, type: 2}
   materialSticky: {fileID: 6200000, guid: 94a3b22f9fd1f412d9a64a281786919a, type: 2}
   rig: {fileID: 0}
