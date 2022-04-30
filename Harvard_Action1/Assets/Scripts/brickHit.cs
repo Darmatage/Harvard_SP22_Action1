@@ -28,11 +28,13 @@ public class brickHit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      playercolor=gameHandler.playercolor;  
     }
 	public void OnCollisionEnter2D(Collision2D collision){
               if (collision.gameObject.tag == "Player") {
+				  Debug.Log(playercolor);
 				  if(playercolor!=2){
+					  
                      Debug.Log("brick is causing damage");
                       health.TakeDamage(damage);
 					 //cameraShake.ShakeCamera(0.15f,0.3f);
