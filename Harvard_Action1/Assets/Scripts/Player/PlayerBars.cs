@@ -13,19 +13,22 @@ public class PlayerBars : MonoBehaviour, IDamageable
     public UnityEvent onTakeDamage;
 
     void Start() {
-        brownSticky.curValue = health.startValue;
+        brownSticky.curValue = brownSticky.startValue;
         health.curValue = health.startValue;
         yellowJelly.curValue = yellowJelly.startValue;
 
         if (!brownSticky.uiBar) {
+            Debug.Log("Getting brown bar");
             brownSticky.uiBar = GameObject.FindWithTag("BarBrown").GetComponent<Image>();
         }
 
         if (!health.uiBar) {
+            Debug.Log("Getting red bar");
             health.uiBar = GameObject.FindWithTag("BarRed").GetComponent<Image>();
         }
 
         if (!yellowJelly.uiBar) {
+            Debug.Log("Getting yellow bar");
             yellowJelly.uiBar = GameObject.FindWithTag("BarYellow").GetComponent<Image>();
         }
     }
@@ -37,6 +40,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
 
         // Regen values over time
         health.Add(health.regenRate * Time.deltaTime);
+        yellowJelly.Add(yellowJelly.regenRate * Time.deltaTime);
 
         // Update Bars
         brownSticky.uiBar.fillAmount = brownSticky.GetPercentage();
@@ -96,6 +100,11 @@ public class Bar {
 
     public float GetPercentage() {
         return curValue / maxValue;
+    }
+
+    public float GetValue() {
+        Debug.LogFormat("GetValue: {0}", curValue);
+        return curValue;
     }
 
     public void Subtract(float value) {

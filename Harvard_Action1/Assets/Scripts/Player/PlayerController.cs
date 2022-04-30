@@ -30,11 +30,14 @@ public class PlayerController : MonoBehaviour
     public float startSpeed = 10f;
     // TODO: public AudioSource WalkSFX;
 
-    void Start() {
-        bars = GameObject.FindWithTag("Player").GetComponent<PlayerBars>();
+    void Awake() {
+        bars = GetComponent<PlayerBars>();
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         rig = transform.GetComponent<Rigidbody2D>();
+    }
+
+    void Start() {
 		//audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
 
         // SetMaterial(materialSticky);
@@ -46,32 +49,40 @@ public class PlayerController : MonoBehaviour
         if (hMove.x == 0) {
             rig.velocity = new Vector2(rig.velocity.x / 1.1f, rig.velocity.y);
         }
+    }
 
-        if (bars.brownSticky.curValue > 0 && currentMaterial == materialNoSticky) {
+    void SetMaterialState() {
+        if (bars.brownSticky.GetValue() > 0 && currentMaterial == materialNoSticky) {
             SetMaterial(materialSticky);
         }
-        else if (bars.brownSticky.curValue <= 0 && currentMaterial == materialSticky) {
+        else if (bars.brownSticky.GetValue() <= 0 && currentMaterial == materialSticky) {
             SetMaterial(materialNoSticky);
         }
     }
 
     void Update() {
         if (isAlive) {
+            SetMaterialState();
             Move();
 
             if (Input.GetButtonDown("Jump")) {
-
+                // Debug.Log("Jump: Button pushed");
                 // Check for extra jumps
                 if (!isGrounded()) {
+                    // Debug.Log("Jump: Second Jump attempted");
                     // Only allow extra jumps if player has yellow jelly available
-                    if (bars.yellowJelly.curValue > 0) {
+                    if (bars.yellowJelly.GetValue() > 0) {
                         bars.Burn(bars.yellowJelly, 2f);
-
+                        // Debug.Log("Jump: Second Jump allowed");
                         Jump(); // Do an extra jump
+                    }
+                    else {
+                        // Debug.LogFormat("Jump: Second Jump declined: {0} {1}", bars.yellowJelly.startValue, bars.yellowJelly.curValue);
                     }
                 }
                 // Player is grounded
                 else {
+                    // Debug.Log("Jump: First Jump");
                     Jump();
                 }
             }
