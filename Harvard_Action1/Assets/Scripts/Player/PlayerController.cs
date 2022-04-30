@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public bool isAlive = true; // Will come from bars when needed
     // private bool isGrounded = true;
     private bool isJumping = false;
-    public float jumpForce = 7f;
+    public float jumpForce = 20f;
     public float jumpGravityMultiplier = 5f;
     private PhysicsMaterial2D currentMaterial;
     public PhysicsMaterial2D materialNoSticky;

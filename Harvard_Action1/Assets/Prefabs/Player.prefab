@@ -251,7 +251,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2147483647
   isAlive: 1
-  jumpForce: 7
+  jumpForce: 20
   jumpGravityMultiplier: 5
   materialNoSticky: {fileID: 6200000, guid: a2c569baaf8ad44f9ba52c0824dd60e8, type: 2}
   materialSticky: {fileID: 6200000, guid: 94a3b22f9fd1f412d9a64a281786919a, type: 2}
