@@ -96,6 +96,9 @@ MonoBehaviour:
   health: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
   playercolor: 0
   damage: 10
+  hitVFX: {fileID: 5604168277950993391}
+  cameraShake: {fileID: 0}
+  brickanim: {fileID: 1833918437563678317}
 --- !u!1 &5604168277950993391
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,6 +109,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5604168277950993390}
   - component: {fileID: 5604168277950993385}
+  - component: {fileID: 1833918437563678317}
   m_Layer: 0
   m_Name: brick
   m_TagString: Untagged
@@ -179,3 +183,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1833918437563678317
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5604168277950993391}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

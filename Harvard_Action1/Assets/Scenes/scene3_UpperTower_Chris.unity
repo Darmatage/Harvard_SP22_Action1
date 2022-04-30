@@ -26819,6 +26819,30 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 86ae92cb8007994469d678b4a76c2798, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac75e70638f17ad42a72876650306105, type: 3}
+--- !u!1 &512014751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5604168277950993391, guid: b89fb10bf1855b2408e5601f6b5fe517, type: 3}
+  m_PrefabInstance: {fileID: 1837827525}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &512014754
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 512014751}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8befaa50ed1ec6341aaaeee2329b346a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &533636962
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27737,6 +27761,36 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2242028334283644989, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
   m_PrefabInstance: {fileID: 884248041}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &921847153
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 921847154}
+  m_Layer: 0
+  m_Name: brickSpawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &921847154
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 921847153}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.26, y: 1.88, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1240499277}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &939192886
 GameObject:
   m_ObjectHideFlags: 0
@@ -32249,6 +32303,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c65b23024574a4acb8aca22018e5c3ad, type: 3}
+--- !u!4 &1240499277 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2779437324526795178, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
+  m_PrefabInstance: {fileID: 2779437323556830695}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1251432020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32590,6 +32649,14 @@ PrefabInstance:
       propertyPath: health
       value: 
       objectReference: {fileID: 1042613599}
+    - target: {fileID: 5604168277914945432, guid: b89fb10bf1855b2408e5601f6b5fe517, type: 3}
+      propertyPath: hitVFX
+      value: 
+      objectReference: {fileID: 512014751}
+    - target: {fileID: 5604168277914945432, guid: b89fb10bf1855b2408e5601f6b5fe517, type: 3}
+      propertyPath: brickanim
+      value: 
+      objectReference: {fileID: 512014754}
     - target: {fileID: 5604168277914945436, guid: b89fb10bf1855b2408e5601f6b5fe517, type: 3}
       propertyPath: m_Name
       value: brickPrefab
@@ -32604,11 +32671,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5604168277914945439, guid: b89fb10bf1855b2408e5601f6b5fe517, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: 2.41
       objectReference: {fileID: 0}
     - target: {fileID: 5604168277914945439, guid: b89fb10bf1855b2408e5601f6b5fe517, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 5604168277914945439, guid: b89fb10bf1855b2408e5601f6b5fe517, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32642,7 +32709,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1833918437563678317, guid: b89fb10bf1855b2408e5601f6b5fe517, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b89fb10bf1855b2408e5601f6b5fe517, type: 3}
 --- !u!1001 &1841604934
 PrefabInstance:
@@ -33133,17 +33201,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2779437323578226400, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779437323578226400, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2779437324526795178, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2779437324526795178, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.74
       objectReference: {fileID: 0}
     - target: {fileID: 2779437324526795178, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 3.92
       objectReference: {fileID: 0}
     - target: {fileID: 2779437324526795178, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33177,6 +33253,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2779437324526795179, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2779437324526795179, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
+      propertyPath: spawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 921847154}
     - target: {fileID: 2779437324526795180, guid: 22e6b08f94b11f141bd84aafaab762e2, type: 3}
       propertyPath: m_Name
       value: BrickSpawn

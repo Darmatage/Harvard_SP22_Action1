@@ -24,7 +24,7 @@ public class BrickSpawn : MonoBehaviour {
 
       void FixedUpdate(){
             timeToSpawn = Random.Range(spawnRangeStart, spawnRangeEnd);
-            spawnTimer += 0.01f;
+            spawnTimer += 0.005f;
             if (spawnTimer >= timeToSpawn){
                   spawnBrick();
                   spawnTimer =0f;
