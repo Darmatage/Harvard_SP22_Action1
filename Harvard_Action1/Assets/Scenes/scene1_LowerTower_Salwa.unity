@@ -1110,6 +1110,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 381388893}
     - target: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
+      propertyPath: brownSticky.uiBar
+      value: 
+      objectReference: {fileID: 1726794236}
+    - target: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
       propertyPath: yellowJelly.uiBar
       value: 
       objectReference: {fileID: 990694423}
@@ -1160,6 +1164,10 @@ PrefabInstance:
     - target: {fileID: 6419823561646818546, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6419823562536136108, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
@@ -21095,6 +21103,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedS: 2.5
   distS: 0.5
+--- !u!114 &1726794236 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1318059857, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+  m_PrefabInstance: {fileID: 655147158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1906533370
 PrefabInstance:
   m_ObjectHideFlags: 0
