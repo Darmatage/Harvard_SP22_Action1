@@ -169,8 +169,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df5fc15eadd245478ad9d71915cbb50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cameraShake: {fileID: 0}
-  gameHandler: {fileID: 0}
+  cameraShake: {fileID: 4070897997742285424, guid: 041f7cdbf554ec64bbc557f09137f14e, type: 3}
+  gameHandler: {fileID: 8030713552375230030, guid: e0a94788277373642b1499dad9eea81f, type: 3}
   isHealthPickUp: 1
   isSpeedBoostPickUp: 0
   playerAnimator: {fileID: 0}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec409f6b46d034060a5264d46925cc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameHandler: {fileID: 0}
+  gameHandler: {fileID: 8030713552375230030, guid: e0a94788277373642b1499dad9eea81f, type: 3}
   item: {fileID: 11400000, guid: 1abcd7cedb0964f3bb83f5bf301df4d2, type: 2}
 --- !u!1 &8948379085812215838
 GameObject:

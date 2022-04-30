@@ -27719,6 +27719,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2242028334283644990, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1042613599}
+    - target: {fileID: 2242028334283644990, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: attackRange
       value: 4
       objectReference: {fileID: 0}
@@ -32874,7 +32878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2242028334283644989, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -23.24
+      value: -48.75
       objectReference: {fileID: 0}
     - target: {fileID: 2242028334283644989, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32908,6 +32912,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2242028334283644990, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1042613599}
     - target: {fileID: 2242028334283644990, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: attackRange
       value: 5
@@ -32996,11 +33004,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2242028334283644989, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.459999
+      value: 13.78
       objectReference: {fileID: 0}
     - target: {fileID: 2242028334283644989, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.85
+      value: -35.79
       objectReference: {fileID: 0}
     - target: {fileID: 2242028334283644989, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -33034,6 +33042,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2242028334283644990, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 1042613599}
     - target: {fileID: 2242028334283644990, guid: 1b50dc5515ded1544add3e5e2527133f, type: 3}
       propertyPath: attackRange
       value: 4
@@ -33074,11 +33086,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6175889623115975643, guid: ca089a9dad16c3342a1a3bdd4a725e60, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 11.4
+      value: 11.34
       objectReference: {fileID: 0}
     - target: {fileID: 6175889623115975643, guid: ca089a9dad16c3342a1a3bdd4a725e60, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -52.03
+      value: -50.6
       objectReference: {fileID: 0}
     - target: {fileID: 6175889623115975643, guid: ca089a9dad16c3342a1a3bdd4a725e60, type: 3}
       propertyPath: m_LocalPosition.z

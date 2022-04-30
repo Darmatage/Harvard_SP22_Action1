@@ -65,7 +65,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     }
 
     public void Heal(float value) {
-        Debug.LogFormat("Headled: {0}", value);
+        Debug.LogFormat("Healed: {0}", value);
         health.Add(value);
     }
 
@@ -75,7 +75,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     }
 
     public void TakeDamage(int value) {
-		Debug.Log("playerbars takedamage");
+		Debug.Log("playerbars takedamage"+health);
         health.Subtract(value);
         onTakeDamage?.Invoke();
     }

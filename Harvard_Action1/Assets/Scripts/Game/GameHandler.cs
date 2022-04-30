@@ -41,8 +41,7 @@ public class GameHandler : MonoBehaviour {
       }
 
       void Start () {
-            pauseMenuUI.SetActive(false);
-			
+            pauseMenuUI.SetActive(false);			
 			QuitButton.SetActive(true);
 			StartButton.SetActive(true);
             GameisPaused = false;

@@ -51,7 +51,7 @@ public class GameHandler : MonoBehaviour {
 			
             DefineGameLevels();
             SetGameLevel(1); // Start the game at level 1
-            SetPlayerPosition(currentLevel.spawnPoint); // Define player starting point in level
+           // SetPlayerPosition(currentLevel.spawnPoint); // Define player starting point in level
 			
       }
 

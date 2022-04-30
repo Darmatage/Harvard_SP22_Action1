@@ -340,7 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec409f6b46d034060a5264d46925cc16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameHandler: {fileID: 0}
+  gameHandler: {fileID: 8030713552375230030, guid: e0a94788277373642b1499dad9eea81f, type: 3}
   item: {fileID: 11400000, guid: e88dacc117d3d4ad39e09e5cdca0be93, type: 2}
 --- !u!82 &1042613604
 AudioSource:

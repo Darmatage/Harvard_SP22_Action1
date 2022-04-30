@@ -183,7 +183,7 @@ MonoBehaviour:
   damage: 10
   cameraShake: {fileID: 0}
   EnemyLives: 1
-  health: {fileID: 0}
+  health: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
   attackRange: 4
   isAttacking: 0
   enemycolor: 1
@@ -204,7 +204,7 @@ MonoBehaviour:
   healthLoot: {fileID: 8948379085193303086, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
   maxHealth: 10
   currentHealth: 0
-  cameraShake: {fileID: 0}
+  cameraShake: {fileID: 4070897997742285424, guid: 041f7cdbf554ec64bbc557f09137f14e, type: 3}
 --- !u!82 &1543857053835388498
 AudioSource:
   m_ObjectHideFlags: 0
