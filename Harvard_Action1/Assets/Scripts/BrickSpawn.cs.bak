@@ -19,12 +19,12 @@ public class BrickSpawn : MonoBehaviour {
 
       void Start(){
               //assign the length of the array to the end of the random range
-             rangeEnd = spawnPoints.Length - 1 ;
+             rangeEnd = spawnPoints.Length;
        }
 
       void FixedUpdate(){
             timeToSpawn = Random.Range(spawnRangeStart, spawnRangeEnd);
-            spawnTimer += 0.009f;
+            spawnTimer += 0.005f;
             if (spawnTimer >= timeToSpawn){
                   spawnBrick();
                   spawnTimer =0f;

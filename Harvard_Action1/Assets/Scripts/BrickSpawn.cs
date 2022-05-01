@@ -12,14 +12,14 @@ public class BrickSpawn : MonoBehaviour {
       private Transform spawnPoint;
 
       //Timing variables
-      public float spawnRangeStart = 0.5f;
-      public float spawnRangeEnd = 1.2f;
+      public float spawnRangeStart = 0.2f;
+      public float spawnRangeEnd = 0.8f;
       private float timeToSpawn;
       private float spawnTimer = 0f;
 
       void Start(){
               //assign the length of the array to the end of the random range
-             rangeEnd = spawnPoints.Length - 1 ;
+             rangeEnd = spawnPoints.Length;
        }
 
       void FixedUpdate(){
