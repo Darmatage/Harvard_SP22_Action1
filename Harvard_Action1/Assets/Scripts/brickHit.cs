@@ -40,25 +40,27 @@ public class brickHit : MonoBehaviour
 				  //Debug.Log(playercolor);
 				  if(playercolor!=2){
 					  
-                     Debug.Log("brick is causing damage");
-                      health.TakeDamage(damage);
-					  Destroy(gameObject);
-				  //GameObject brickVFX = Instantiate(hitVFX, collision.gameObject.transform.position, Quaternion.identity);
-				 // brickanim.SetTrigger("BrickBreaking");
-               //StartCoroutine(DestroyVFX(brickVFX));
-					 cameraShake.ShakeCamera(0.15f,0.3f);
+                    Debug.Log("brick is causing damage");
+                    health.TakeDamage(damage);
+					
+				    //GameObject brickVFX = Instantiate(hitVFX, collision.gameObject.transform.position, Quaternion.identity);
+				    brickanim.SetBool("BrickBreaking", true);
+                    StartCoroutine(DestroyVFX(gameObject));
+					cameraShake.ShakeCamera(0.15f,0.3f);
 				  }
 			  }
 			  if(collision.gameObject.tag == "Ground"){
-				  Destroy(gameObject);
+				  
 				 // GameObject brickVFX = Instantiate(hitVFX, collision.gameObject.transform.position, Quaternion.identity);
-				 // brickanim.SetTrigger("BrickBreaking");
-              // StartCoroutine(DestroyVFX(brickVFX));				  
+				 brickanim.SetBool("BrickBreaking", true);
+                StartCoroutine(DestroyVFX(gameObject));				  
 			  }
 	}
-	IEnumerator DestroyVFX(GameObject theEffect){
+	IEnumerator DestroyVFX(GameObject gameObject){
           yield return new WaitForSeconds(0.5f);
-          Destroy(theEffect);
+          Destroy(gameObject);
+          
+          //Destroy(theEffect);
          // gameObject.GetComponent<AudioSource>().Stop();
 	}
 }
