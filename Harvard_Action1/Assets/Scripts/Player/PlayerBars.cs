@@ -103,7 +103,6 @@ public class Bar {
     }
 
     public float GetValue() {
-        Debug.LogFormat("GetValue: {0}", curValue);
         return curValue;
     }
 
