@@ -672,8 +672,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 533636963}
-  - {fileID: 189701454}
   - {fileID: 624984221}
+  - {fileID: 189701454}
   - {fileID: 436881960}
   - {fileID: 1757140943}
   - {fileID: 8948379086583150541}
@@ -30860,6 +30860,22 @@ PrefabInstance:
       propertyPath: m_FontData.m_Alignment
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 475977218642595376, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475977218642595376, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475977218642595376, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 475977218642595376, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 987623028061401046, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -31107,9 +31123,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 381388893}
     - target: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
+      propertyPath: whiteCloud.uiBar
+      value: 
+      objectReference: {fileID: 1548131498}
+    - target: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
       propertyPath: yellowJelly.uiBar
       value: 
       objectReference: {fileID: 990694423}
+    - target: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
+      propertyPath: whiteCloud.maxValue
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
+      propertyPath: whiteCloud.decayRate
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6419823561646818545, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
       propertyPath: m_Name
       value: Player
@@ -36698,6 +36726,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 2354665098603289109, guid: 996d62004b47dea4b87172b9efbaa5ef, type: 3}
   m_PrefabInstance: {fileID: 4319171124660093644}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1548131498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2222804990385333931, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+  m_PrefabInstance: {fileID: 655147158}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1663450424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5836256444433049131, guid: 1c0213d894428af4ba9fb199ae0ec497, type: 3}
@@ -37814,6 +37853,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05d330d3d77e1724fa34df80c7d6d456, type: 3}
+--- !u!1001 &8772565043446984391
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11.89
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 24.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745640, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745644, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: m_Name
+      value: Item_Cloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 8859541343785745645, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
+      propertyPath: gameHandler
+      value: 
+      objectReference: {fileID: 608366652}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bb3a267a79f174f04bc8fcabc75fdca8, type: 3}
 --- !u!4 &8948379086583150541 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6175889623115975643, guid: ca089a9dad16c3342a1a3bdd4a725e60, type: 3}

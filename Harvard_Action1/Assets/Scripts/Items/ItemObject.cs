@@ -43,15 +43,15 @@ public class ItemObject : MonoBehaviour, IInteractable {
           //Debug.LogFormat("Consumable Type {0}", item.consumables[i].type);
           switch (item.consumables[i].type) {
             case ConsumableType.BrownSticky:
-              //Debug.Log("Consuming Heart");
               bars.Sticky(item.consumables[i].value);
               break;
             case ConsumableType.RedHeart:
-              //Debug.Log("Consuming Heart");
               bars.Heal(item.consumables[i].value);
               break;
+            case ConsumableType.Cloud:
+              bars.Float(item.consumables[i].value);
+              break;
             case ConsumableType.YellowJelly:
-              //Debug.Log("Consuming YellowJelly");
               bars.Consume(item.consumables[i].value);
               break;
           }

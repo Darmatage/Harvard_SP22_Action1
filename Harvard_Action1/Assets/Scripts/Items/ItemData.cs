@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum ConsumableType {
   BrownSticky,
+  Cloud,
   RedHeart,
   YellowJelly
 }

@@ -18,5 +18,5 @@ MonoBehaviour:
   prefab: {fileID: 0}
   type: 0
   consumables:
-  - type: 1
+  - type: 2
     value: 20
