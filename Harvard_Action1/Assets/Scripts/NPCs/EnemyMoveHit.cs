@@ -65,7 +65,7 @@ public class EnemyMoveHit : MonoBehaviour {
 					Debug.Log("enemymovehit player taking damage");
                      //gameHandler.playerGetHit(damage);
 					 health.TakeDamage(damage);
-					 cameraShake.ShakeCamera(0.15f,0.3f);
+					 cameraShake.ShakeCamera(0.4f, 0.1f);
 					 float pushBack = 0f;
 					 if (collision.gameObject.transform.position.x > gameObject.transform.position.x){
                             pushBack = 3f;

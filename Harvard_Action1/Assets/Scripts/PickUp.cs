@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUp : MonoBehaviour{
 	
 	public CameraShake cameraShake;
-	      public GameHandler gameHandler;
+	public GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
       public bool isHealthPickUp = true;
       public bool isSpeedBoostPickUp = false;
@@ -19,11 +19,9 @@ public class PickUp : MonoBehaviour{
       void Start(){
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
             //playerPowerupVFX = GameObject.FindWithTag("Player").GetComponent<playerVFX>();
-			
-			GameObject myCamera = GameObject.FindWithTag("MainCamera");
-			cameraShake = myCamera.transform.parent.GetComponent<CameraShake>();
-			
-			playerAnimator = GameObject.Find("PlayerArt").GetComponent<Animator>();
+
+            cameraShake = GameObject.FindWithTag("CameraShake").GetComponent<CameraShake>();
+            playerAnimator = GameObject.Find("PlayerArt").GetComponent<Animator>();
       }
 
       public void OnTriggerEnter2D (Collider2D other){
@@ -31,14 +29,14 @@ public class PickUp : MonoBehaviour{
             if (other.gameObject.tag == "Player"){
                   GetComponent<Collider2D>().enabled = false;
                   GetComponent<AudioSource>().Play();
-				  cameraShake.ShakeCamera(0.15f,0.1f);
+			cameraShake.ShakeCamera(0.15f, 0.025f);
                   StartCoroutine(DestroyThis());
 					
 					
                   if (isHealthPickUp == true) {
-					  Debug.Log("pickup playercolor to 1");
-                       playerAnimator.SetInteger("PlayerColor",1);
-					   gameHandler.playercolor=1;
+				Debug.Log("pickup playercolor to 1");
+                        playerAnimator.SetInteger("PlayerColor",1);
+				gameHandler.playercolor=1;
 					   
 					   
 			// gameHandler.playerGetHit(healthBoost * -1);

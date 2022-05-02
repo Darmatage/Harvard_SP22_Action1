@@ -19,6 +19,7 @@ TagManager:
   - AudioSource
   - BarWhite
   - BarGroupWhite
+  - CameraShake
   layers:
   - Default
   - TransparentFX
