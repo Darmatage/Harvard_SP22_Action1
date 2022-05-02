@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 20f;
     public float jumpGravityMultiplier = 5f;
     private PhysicsMaterial2D currentMaterial;
+    public PhysicsMaterial2D materialBouncy;
     public PhysicsMaterial2D materialNoSticky;
     public PhysicsMaterial2D materialSticky;
     public Rigidbody2D rig;
@@ -52,10 +53,13 @@ public class PlayerController : MonoBehaviour
     }
 
     void SetMaterialState() {
-        if (bars.brownSticky.GetValue() > 0 && currentMaterial == materialNoSticky) {
+        if (bars.whiteCloud.GetValue() > 0 && currentMaterial != materialBouncy) {
+            SetMaterial(materialBouncy);
+        }
+        else if (bars.brownSticky.GetValue() > 0 && currentMaterial != materialSticky) {
             SetMaterial(materialSticky);
         }
-        else if (bars.brownSticky.GetValue() <= 0 && currentMaterial == materialSticky) {
+        else if (bars.brownSticky.GetValue() <= 0 && currentMaterial != materialNoSticky) {
             SetMaterial(materialNoSticky);
         }
     }

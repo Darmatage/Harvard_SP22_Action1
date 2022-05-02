@@ -218,8 +218,8 @@ MonoBehaviour:
     uiBar: {fileID: 0}
   whiteCloud:
     curValue: 0
-    decayRate: 0
-    maxValue: 0
+    decayRate: 1
+    maxValue: 100
     regenRate: 0
     startValue: 0
     uiBar: {fileID: 0}
@@ -260,6 +260,7 @@ MonoBehaviour:
   isAlive: 1
   jumpForce: 20
   jumpGravityMultiplier: 5
+  materialBouncy: {fileID: 6200000, guid: 391e6e971b89e4e64975b37413917c35, type: 2}
   materialNoSticky: {fileID: 6200000, guid: a2c569baaf8ad44f9ba52c0824dd60e8, type: 2}
   materialSticky: {fileID: 6200000, guid: 94a3b22f9fd1f412d9a64a281786919a, type: 2}
   rig: {fileID: 0}
