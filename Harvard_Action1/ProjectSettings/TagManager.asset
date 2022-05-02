@@ -17,6 +17,8 @@ TagManager:
   - breakable
   - AudioManager
   - AudioSource
+  - BarWhite
+  - BarGroupWhite
   layers:
   - Default
   - TransparentFX

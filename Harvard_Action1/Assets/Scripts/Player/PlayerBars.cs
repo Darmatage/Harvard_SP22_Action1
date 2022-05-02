@@ -9,26 +9,29 @@ public class PlayerBars : MonoBehaviour, IDamageable
 {
     public Bar brownSticky;
     public Bar health;
+    public Bar whiteCloud;
     public Bar yellowJelly;
     public UnityEvent onTakeDamage;
 
     void Start() {
         brownSticky.curValue = brownSticky.startValue;
         health.curValue = health.startValue;
+        whiteCloud.curValue = whiteCloud.startValue;
         yellowJelly.curValue = yellowJelly.startValue;
 
         if (!brownSticky.uiBar) {
-            Debug.Log("Getting brown bar");
             brownSticky.uiBar = GameObject.FindWithTag("BarBrown").GetComponent<Image>();
         }
 
         if (!health.uiBar) {
-            Debug.Log("Getting red bar");
             health.uiBar = GameObject.FindWithTag("BarRed").GetComponent<Image>();
         }
 
+        if (!whiteCloud.uiBar) {
+            whiteCloud.uiBar = GameObject.FindWithTag("BarWhite").GetComponent<Image>();
+        }
+
         if (!yellowJelly.uiBar) {
-            Debug.Log("Getting yellow bar");
             yellowJelly.uiBar = GameObject.FindWithTag("BarYellow").GetComponent<Image>();
         }
     }
@@ -36,6 +39,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     void Update() {
         // Decay values over time
         brownSticky.Subtract(brownSticky.decayRate * Time.deltaTime);
+        whiteCloud.Subtract(whiteCloud.decayRate * Time.deltaTime);
         // yellowJelly.Subtract(yellowJelly.decayRate * Time.deltaTime);
 
         // Regen values over time
@@ -45,6 +49,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
         // Update Bars
         brownSticky.uiBar.fillAmount = brownSticky.GetPercentage();
         health.uiBar.fillAmount = health.GetPercentage();
+        whiteCloud.uiBar.fillAmount = whiteCloud.GetPercentage();
         yellowJelly.uiBar.fillAmount = yellowJelly.GetPercentage();
 
         // Is Player Dead?
@@ -66,6 +71,11 @@ public class PlayerBars : MonoBehaviour, IDamageable
         // TODO
 		SceneManager.LoadScene("EndLose");
         Debug.Log("DIE: NOOOOOOO");
+    }
+
+    public void Float(float value) {
+        Debug.LogFormat("Float: {0}", value);
+        whiteCloud.Add(value);
     }
 
     public void Heal(float value) {
