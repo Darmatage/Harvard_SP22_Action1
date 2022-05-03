@@ -1821,6 +1821,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_MoveHitWhite
       objectReference: {fileID: 0}
+    - target: {fileID: 4431065832907364992, guid: acc0e1d5b707ad64c9177256df2c79b0, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7794768270898546661, guid: acc0e1d5b707ad64c9177256df2c79b0, type: 3}
       propertyPath: m_RootOrder
       value: 2

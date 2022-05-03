@@ -183,10 +183,20 @@ public class GameHandler : MonoBehaviour {
             SceneManager.LoadScene("bookPage1");
       }
 
-      public void RestartGame() {
-		Time.timeScale = 1f;
-            SceneManager.LoadScene("StartMenu");
+      public void RestartGame(int levelChoice){
+            Time.timeScale = 1f;
             playerHealth = StartPlayerHealth;
+            if (levelChoice == 0) {
+                  SceneManager.LoadScene("StartMenu");
+            } else if (levelChoice == 1) {
+                  SceneManager.LoadScene("scene1_LowerTower_Salwa");
+            } else if (levelChoice == 2) {
+                  SceneManager.LoadScene("scene2_MidTower_James");
+            } else if (levelChoice == 3) {
+                  SceneManager.LoadScene("scene3_UpperTower_Chris");
+            } else {
+                  SceneManager.LoadScene("scene4_RooftopJellyDragonBoss_Shared");
+            }
       }
 
       public void QuitGame() {
