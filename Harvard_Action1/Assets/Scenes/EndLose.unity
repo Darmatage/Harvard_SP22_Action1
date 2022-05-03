@@ -679,7 +679,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1-2 sentences to explain the player's fate
+  m_Text: Those Jelly baddies weren't so sweet to you!
 --- !u!222 &1588342846
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1182,7 +1182,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Died!
+  m_Text: You Fainted!
 --- !u!222 &2141759240
 CanvasRenderer:
   m_ObjectHideFlags: 0
