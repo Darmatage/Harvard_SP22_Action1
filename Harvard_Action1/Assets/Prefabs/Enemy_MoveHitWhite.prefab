@@ -186,7 +186,7 @@ MonoBehaviour:
   health: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
   attackRange: 15
   isAttacking: 0
-  enemycolor: 69
+  enemycolor: 0
   playercolor: 0
 --- !u!114 &1664023942119920519
 MonoBehaviour:

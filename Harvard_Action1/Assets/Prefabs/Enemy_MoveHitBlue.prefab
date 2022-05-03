@@ -186,7 +186,7 @@ MonoBehaviour:
   health: {fileID: 0}
   attackRange: 4
   isAttacking: 0
-  enemycolor: 1
+  enemycolor: 2
   playercolor: 0
 --- !u!114 &6316080424768929580
 MonoBehaviour:
