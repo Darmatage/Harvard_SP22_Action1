@@ -8,16 +8,16 @@ public class EnemyMoveHit : MonoBehaviour {
        public float speed = 4f;
        private Transform target;
        public int damage = 10;
-		public CameraShake cameraShake;
+	public CameraShake cameraShake;
        public int EnemyLives = 3;
        private GameHandler gameHandler;
-	   public PlayerBars health;
+	public PlayerBars health;
 		
        public float attackRange = 2;
        public bool isAttacking = false;
        private float scaleX;
-	   public int enemycolor;
-	   public int playercolor;
+	public int enemycolor;
+	public int playercolor;
 	   
 
        void Start () {
@@ -59,22 +59,27 @@ public class EnemyMoveHit : MonoBehaviour {
 
          public void OnCollisionEnter2D(Collision2D collision){
               if (collision.gameObject.tag == "Player") {
-				  if(enemycolor!=playercolor){
-                     isAttacking = true;
-                    // anim.SetBool("Attack", true);
-					Debug.Log("enemymovehit player taking damage");
-                     //gameHandler.playerGetHit(damage);
-					 health.TakeDamage(damage);
-					 cameraShake.ShakeCamera(0.4f, 0.1f);
-					 float pushBack = 0f;
-					 if (collision.gameObject.transform.position.x > gameObject.transform.position.x){
-                            pushBack = 3f;
+			if(enemycolor != playercolor) {
+                            isAttacking = true;
+                            // anim.SetBool("Attack", true);
+				// Debug.Log("enemymovehit player taking damage");
+                            //gameHandler.playerGetHit(damage);
+				health.TakeDamage(damage);
+				cameraShake.ShakeCamera(0.4f, 0.1f);
+				float pushBack = 0f;
+
+				if (collision.gameObject.transform.position.x > gameObject.transform.position.x){
+                                   pushBack = 3f;
+                            }
+				else {
+                                   pushBack = -3f;
+                            }
+
+				collision.gameObject.transform.position = new Vector3(transform.position.x + pushBack, transform.position.y + 1, -1);
+			}
+                     else {
+                            // Debug.LogFormat("Player made contact but no damage: {0} {1}", enemycolor, playercolor);
                      }
-					else {
-                           pushBack = -3f;
-                     }
-					 collision.gameObject.transform.position = new Vector3(transform.position.x + pushBack, transform.position.y + 1, -1);
-				  }
               }
        }
 

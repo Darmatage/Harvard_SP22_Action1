@@ -63,7 +63,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     }
 
     public void Consume(float value) {
-        Debug.LogFormat("Consumed: {0}", value);
+        // Debug.LogFormat("Consumed: {0}", value);
         yellowJelly.Add(value);
     }
 
@@ -74,22 +74,22 @@ public class PlayerBars : MonoBehaviour, IDamageable
     }
 
     public void Float(float value) {
-        Debug.LogFormat("Float: {0}", value);
+        // Debug.LogFormat("Float: {0}", value);
         whiteCloud.Add(value);
     }
 
     public void Heal(float value) {
-        Debug.LogFormat("Healed: {0}", value);
+        // Debug.LogFormat("Healed: {0}", value);
         health.Add(value);
     }
 
     public void Sticky(float value) {
-        Debug.LogFormat("Sticky: {0}", value);
+        // Debug.LogFormat("Sticky: {0}", value);
         brownSticky.Add(value);
     }
 
     public void TakeDamage(int value) {
-		Debug.Log("playerbars takedamage");
+		// Debug.Log("playerbars takedamage");
         health.Subtract(value);
         onTakeDamage?.Invoke();
     }

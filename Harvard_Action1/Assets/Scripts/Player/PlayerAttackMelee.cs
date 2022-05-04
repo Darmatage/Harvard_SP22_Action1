@@ -7,7 +7,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       //public Animator animator;
       public Transform attackPt;
 	 // public Transform attackPtRight;
-      public float attackRange = 0.5f;
+      public float attackRange = 2f;
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
       public int attackDamage = 40;
@@ -33,18 +33,19 @@ public class PlayerAttackMelee : MonoBehaviour{
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
            
             foreach(Collider2D enemy in hitEnemies){
-                  Debug.Log("We hit " + enemy.name);
+                  // Debug.Log("We hit " + enemy.name);
 				  //GetComponent<AudioSource>().Play();
                   enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
             }
-			Collider2D[] hitWalls = Physics2D.OverlapCircleAll(attackPt.position, attackRange, wallLayer);
+
+		Collider2D[] hitWalls = Physics2D.OverlapCircleAll(attackPt.position, attackRange, wallLayer);
            
 		foreach(Collider2D wall in hitWalls) {
                   if (wall && wall.GetComponent<BreakableWall>()) {
                         wall.GetComponent<BreakableWall>().wallDamage();
                   }
 
-			Debug.Log("We hit " + wall.name);
+			// Debug.Log("We hit " + wall.name);
             }
       }
 

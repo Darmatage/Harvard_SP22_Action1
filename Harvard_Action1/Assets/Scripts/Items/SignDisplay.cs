@@ -37,7 +37,7 @@ public class SignDisplay : MonoBehaviour {
 				   //audioManager.PlaySound("openbook");
 				   bookSFX.Stop();
 				   bookSFX.Play();
-                   Debug.Log("Player in range");
+                   // Debug.Log("Player in range");
                   }
              }
                         
@@ -45,7 +45,7 @@ public class SignDisplay : MonoBehaviour {
              if (other.CompareTag("Player")) {
                    playerInRange = false;
                    imageSign.SetActive(false);
-                   Debug.Log("Player left range");
+                   // Debug.Log("Player left range");
                   }
              }
 }

@@ -12,8 +12,8 @@ public class EnemyMeleeDamage : MonoBehaviour {
 	   //public AudioSource enemyDieSFX;
 
        void Start(){
-              rend = GetComponentInChildren<Renderer> ();
-              anim = GetComponentInChildren<Animator> ();
+              rend = GetComponentInChildren<Renderer>();
+              anim = GetComponentInChildren<Animator>();
               currentHealth = maxHealth;
        }
 
@@ -23,10 +23,10 @@ public class EnemyMeleeDamage : MonoBehaviour {
               //StartCoroutine(ResetColor());
               //anim.SetTrigger ("Hurt");
               if (currentHealth <= 0){
-				    Die();
-					 GetComponent<AudioSource>().Play();//enemyDieSFX.Play();
+			Die();
+			GetComponent<AudioSource>().Play();//enemyDieSFX.Play();
 					
-					//Debug.Log("camera shake");
+		       //Debug.Log("camera shake");
               }
        }
 
@@ -34,7 +34,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
               Instantiate (healthLoot, transform.position, Quaternion.identity);
               //anim.SetBool ("isDead", true);
               GetComponent<Collider2D>().enabled = false;
-			  cameraShake.ShakeCamera(0.15f,0.3f);
+		cameraShake.ShakeCamera(0.15f,0.3f);
               StartCoroutine(Death());
        }
 
@@ -50,4 +50,3 @@ public class EnemyMeleeDamage : MonoBehaviour {
               rend.material.color = Color.white;
        }
 }
-
