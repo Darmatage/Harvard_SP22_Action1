@@ -39,12 +39,12 @@ public class GameHandler : MonoBehaviour {
                   sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
                   sliderVolumeCtrl.value = volumeLevel;
             }
-
-            player = GameObject.FindWithTag("Player");
-            bars = player.GetComponent<PlayerBars>();
       }
 
       void Start () {
+            player = GameObject.FindWithTag("Player");
+            bars = player.GetComponent<PlayerBars>();
+
             pauseMenuUI.SetActive(false);			
 		QuitButton.SetActive(true);
 		StartButton.SetActive(true);
