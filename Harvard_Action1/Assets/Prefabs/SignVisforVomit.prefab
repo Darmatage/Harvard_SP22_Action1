@@ -99,10 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7dadf9a3e3d7b644beea8b052b56655, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  imageSign: {fileID: 0}
+  imageSign: {fileID: 4385905569137047932}
   dialogueText: {fileID: 0}
   dialogue: V is FOR VOMIT
   playerInRange: 0
+  bookSFX: {fileID: 2309490302825481647}
 --- !u!82 &2309490302825481647
 AudioSource:
   m_ObjectHideFlags: 0

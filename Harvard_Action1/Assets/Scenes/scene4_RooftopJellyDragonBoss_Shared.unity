@@ -1940,6 +1940,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 466704291}
     m_Modifications:
+    - target: {fileID: 2242028334283644977, guid: 0cf6255e722e8cf4ca2616b7c4c9d8d1, type: 3}
+      propertyPath: cameraShake
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2242028334283644990, guid: 0cf6255e722e8cf4ca2616b7c4c9d8d1, type: 3}
+      propertyPath: health
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2386121481139319795, guid: 0cf6255e722e8cf4ca2616b7c4c9d8d1, type: 3}
       propertyPath: m_RootOrder
       value: 12
@@ -1992,7 +2000,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1543857053835388498, guid: 0cf6255e722e8cf4ca2616b7c4c9d8d1, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0cf6255e722e8cf4ca2616b7c4c9d8d1, type: 3}
 --- !u!4 &1387003020 stripped
 Transform:
