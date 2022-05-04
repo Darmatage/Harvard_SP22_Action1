@@ -52,7 +52,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       //NOTE: to help see the attack sphere in editor:
       void OnDrawGizmos() {
             // if (attackPt == null) {return;}
-            Gizmos.color = new Color(1, 1, 0, 0.75F);
-            Gizmos.DrawWireSphere(new Vector2(attackPt.position.x, attackPt.position.y), attackRange);
+            // Gizmos.color = new Color(1, 1, 0, 0.75F);
+            // Gizmos.DrawWireSphere(new Vector2(attackPt.position.x, attackPt.position.y), attackRange);
       }
 }
