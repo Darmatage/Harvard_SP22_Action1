@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMoveHit : MonoBehaviour {
 
-       public Animator anim;
+       //public Animator anim;
        public float speed = 4f;
        private Transform target;
        public int damage = 10;
@@ -21,7 +21,9 @@ public class EnemyMoveHit : MonoBehaviour {
 	   
 
        void Start () {
-              anim = GetComponentInChildren<Animator> ();
+              cameraShake = GameObject.FindWithTag("CameraShake").GetComponent<CameraShake>();
+              health = GameObject.FindWithTag("Player").GetComponent<PlayerBars>();
+             // anim = GetComponentInChildren<Animator> ();
               scaleX = gameObject.transform.localScale.x;
 				//GameObject player=GameObject.Find("Player");
 					//PlayerBars playerbars = player.GetComponent<PlayerBars>();

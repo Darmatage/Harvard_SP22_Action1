@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMeleeDamage : MonoBehaviour {
        private Renderer rend;
-       public Animator anim;
+      // public Animator anim;
        public GameObject healthLoot;
        public int maxHealth = 10;
        public int currentHealth;
@@ -13,8 +13,9 @@ public class EnemyMeleeDamage : MonoBehaviour {
 
        void Start(){
               rend = GetComponentInChildren<Renderer>();
-              anim = GetComponentInChildren<Animator>();
+             // anim = GetComponentInChildren<Animator>();
               currentHealth = maxHealth;
+              cameraShake = GameObject.FindWithTag("CameraShake").GetComponent<CameraShake>();
        }
 
        public void TakeDamage(int damage){
