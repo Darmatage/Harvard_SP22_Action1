@@ -155,7 +155,7 @@ public class GameHandler : MonoBehaviour {
           if (playerHealth <= 0){
                   playerHealth = 0;
                   //Debug.Log("health is zero");
-				  playerDies();
+				//  playerDies();
             }
       }
 
