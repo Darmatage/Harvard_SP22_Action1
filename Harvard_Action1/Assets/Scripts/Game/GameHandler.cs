@@ -23,11 +23,11 @@ public class GameHandler : MonoBehaviour {
       public GameObject tokensText;
 
       public bool isDefending = false;
-	  public int playercolor;
+	public int playercolor;
 	 
-	  public GameObject StartButton;
+	public GameObject StartButton;
 	
-	  public GameObject QuitButton;
+	public GameObject QuitButton;
 	 
 
       void Awake () {
@@ -55,39 +55,36 @@ public class GameHandler : MonoBehaviour {
       }
 
       void Update () {
-		  if (Input.GetKeyDown(KeyCode.Escape))
-		  {
-             if (GameisPaused)
-            {
-                Resume();
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+                  if (GameisPaused) {
+                        Resume();
+                  } else {
+                        Pause();
+                  }
             }
-            else
-            {
-                Pause();
-            }
-        }
-				FallCheck();	
-	  }
+
+		FallCheck();	
+	}
       
 
       void DefineGameLevels() {
             levels[0] = new Level(0, new Vector3(0,0,0)); // Not a real level, allows us to look up levels numbers by the index
             levels[1] = new Level(1, new Vector3(0,0,0));
+            levels[2] = new Level(2, new Vector3(0,0,0));
+            levels[3] = new Level(3, new Vector3(0,0,0));
+            levels[4] = new Level(4, new Vector3(0,0,0));
       }
 
       // Has player fallen off map?
       void FallCheck() {
-		  
-		  
-           // Transform transform = player.GetComponent<Transform>();
+           Transform transform = player.GetComponent<Transform>();
 
-           // if (transform.position.y <= -10) {
-              //   Debug.Log("Fell Off");
+           if (transform.position.y <= -10) {
+                  Debug.Log("Fell Off");
 
-               //   SetPlayerPosition(currentLevel.spawnPoint);
+                  SetPlayerPosition(currentLevel.spawnPoint);
             }
-		  
-      
+      }
 
       void Pause(){
             pauseMenuUI.SetActive(true);
@@ -212,7 +209,7 @@ public class GameHandler : MonoBehaviour {
       public void Credits() {
             SceneManager.LoadScene("Credits");
       }
-
+}
 
 public class Level {
       public int number;
@@ -222,5 +219,4 @@ public class Level {
             this.number = number;
             this.spawnPoint = spawnPoint;
       }
-}
 }
