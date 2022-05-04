@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
                 if (!isGrounded()) {
                     // Debug.Log("Jump: Second Jump attempted");
                     // Only allow extra jumps if player has yellow jelly available
-                    if (bars.yellowJelly.GetValue() > 0) {
+                    if (bars.yellowJelly.GetValue() > 1f) {
                         bars.Burn(bars.yellowJelly, 2f);
                         // Debug.Log("Jump: Second Jump allowed");
                         Jump(); // Do an extra jump
