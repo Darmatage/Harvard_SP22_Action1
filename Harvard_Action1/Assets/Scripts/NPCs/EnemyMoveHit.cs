@@ -13,7 +13,7 @@ public class EnemyMoveHit : MonoBehaviour {
        private GameHandler gameHandler;
 	public PlayerBars health;
 		
-       public float attackRange = 2;
+       public float attackRange = 1.5f;
        public bool isAttacking = false;
        private float scaleX;
 	public int enemycolor;
