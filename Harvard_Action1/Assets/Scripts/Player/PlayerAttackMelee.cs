@@ -12,7 +12,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       private float nextAttackTime = 0f;
       public int attackDamage = 40;
       public LayerMask enemyLayers;
-	  public LayerMask wallLayer;
+	public LayerMask wallLayer;
 
       void Start(){
            //animator = gameObject.GetComponentInChildren<Animator>();
@@ -50,8 +50,9 @@ public class PlayerAttackMelee : MonoBehaviour{
       }
 
       //NOTE: to help see the attack sphere in editor:
-      void OnDrawGizmosSelected(){
-           if (attackPt == null) {return;}
-            Gizmos.DrawWireSphere(attackPt.position, attackRange);
+      void OnDrawGizmos() {
+            // if (attackPt == null) {return;}
+            // Gizmos.color = new Color(1, 1, 0, 0.75F);
+            // Gizmos.DrawWireSphere(new Vector2(attackPt.position.x, attackPt.position.y), attackRange);
       }
 }
