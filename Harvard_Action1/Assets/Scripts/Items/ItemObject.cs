@@ -51,6 +51,9 @@ public class ItemObject : MonoBehaviour, IInteractable {
             case ConsumableType.Cloud:
               bars.Float(item.consumables[i].value);
               break;
+            case ConsumableType.Vomit:
+              bars.VomitRestore(item.consumables[i].value);
+              break;
             case ConsumableType.YellowJelly:
               bars.Consume(item.consumables[i].value);
               break;

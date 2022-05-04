@@ -11,8 +11,13 @@ public class PlayerAttackMelee : MonoBehaviour{
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
       public int attackDamage = 40;
+      private PlayerBars bars;
       public LayerMask enemyLayers;
 	public LayerMask wallLayer;
+
+      void Awake() {
+            bars = GetComponent<PlayerBars>();
+      }
 
       void Start(){
            //animator = gameObject.GetComponentInChildren<Animator>();
@@ -21,14 +26,16 @@ public class PlayerAttackMelee : MonoBehaviour{
       void Update(){
            if (Time.time >= nextAttackTime){
                  //if (Input.GetKeyDown(KeyCode.Space))
-                 if (Input.GetAxis("Attack") > 0){
+                 if (Input.GetAxis("Attack") > 0 && bars.vomit.GetValue() > 0){
                         Attack();
                         nextAttackTime = Time.deltaTime + 1f / attackRate;
                  }
             }
       }
 
-      void Attack(){
+      void Attack() {
+            bars.Vomit(1);
+
             //animator.SetTrigger ("Melee");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
            

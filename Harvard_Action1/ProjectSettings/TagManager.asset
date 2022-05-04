@@ -20,6 +20,8 @@ TagManager:
   - BarWhite
   - BarGroupWhite
   - CameraShake
+  - BarGroupVomit
+  - BarGreen
   layers:
   - Default
   - TransparentFX

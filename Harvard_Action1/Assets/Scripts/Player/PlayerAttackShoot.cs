@@ -6,6 +6,7 @@ public class PlayerAttackShoot : MonoBehaviour{
 
       //public Animator animator;
       //AudioManager audioManager;
+      private PlayerBars bars;
       PlayerController controller;
       public Transform FirePoint;
       public GameObject projectilePrefab;
@@ -17,6 +18,10 @@ public class PlayerAttackShoot : MonoBehaviour{
 	  // public Rigidbody2D rig2;
 	   //public static float runSpeed = 10f;
 	public AudioSource vomitSFX;
+
+      void Awake() {
+            bars = GetComponent<PlayerBars>();
+      }
 
 
       void Start(){
@@ -31,7 +36,7 @@ public class PlayerAttackShoot : MonoBehaviour{
 
            if (Time.time >= nextAttackTime){
                   //if (Input.GetKeyDown(KeyCode.Space))
-                 if (Input.GetAxis("Attack") > 0){
+                 if (Input.GetAxis("Attack") > 0  && bars.vomit.GetValue() > 0) {
                         playerFire();
                         nextAttackTime = Time.time + 1f / attackRate;
                   }

@@ -216,6 +216,13 @@ MonoBehaviour:
     regenRate: 0
     startValue: 50
     uiBar: {fileID: 0}
+  vomit:
+    curValue: 0
+    decayRate: 0
+    maxValue: 100
+    regenRate: 0
+    startValue: 10
+    uiBar: {fileID: 0}
   whiteCloud:
     curValue: 0
     decayRate: 1

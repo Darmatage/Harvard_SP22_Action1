@@ -20,3 +20,5 @@ MonoBehaviour:
   consumables:
   - type: 2
     value: 20
+  - type: 3
+    value: 10

@@ -9,6 +9,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
 {
     public Bar brownSticky;
     public Bar health;
+    public Bar vomit;
     public Bar whiteCloud;
     public Bar yellowJelly;
     public UnityEvent onTakeDamage;
@@ -22,6 +23,10 @@ public class PlayerBars : MonoBehaviour, IDamageable
 
         if (!health.uiBar) {
             health.uiBar = GameObject.FindWithTag("BarRed").GetComponent<Image>();
+        }
+
+        if (!vomit.uiBar) {
+            vomit.uiBar = GameObject.FindWithTag("BarGreen").GetComponent<Image>();
         }
 
         if (!whiteCloud.uiBar) {
@@ -46,6 +51,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
         // Update Bars
         brownSticky.uiBar.fillAmount = brownSticky.GetPercentage();
         health.uiBar.fillAmount = health.GetPercentage();
+        vomit.uiBar.fillAmount = vomit.GetPercentage();
         whiteCloud.uiBar.fillAmount = whiteCloud.GetPercentage();
         yellowJelly.uiBar.fillAmount = yellowJelly.GetPercentage();
 
@@ -58,6 +64,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     public void Reset() {
         brownSticky.curValue = brownSticky.startValue;
         health.curValue = health.startValue;
+        vomit.curValue = vomit.startValue;
         whiteCloud.curValue = whiteCloud.startValue;
         yellowJelly.curValue = yellowJelly.startValue;
     }
@@ -96,6 +103,16 @@ public class PlayerBars : MonoBehaviour, IDamageable
 		// Debug.Log("playerbars takedamage");
         health.Subtract(value);
         onTakeDamage?.Invoke();
+    }
+
+    public void Vomit(float value) {
+        // Debug.LogFormat("Healed: {0}", value);
+        vomit.Subtract(value);
+    }
+
+    public void VomitRestore(float value) {
+        // Debug.LogFormat("Healed: {0}", value);
+        vomit.Add(value);
     }
 }
 
