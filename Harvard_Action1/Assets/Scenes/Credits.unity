@@ -359,7 +359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.025371075, g: 0, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2087,7 +2087,7 @@ GameObject:
   - component: {fileID: 2030944070}
   - component: {fileID: 2030944069}
   m_Layer: 5
-  m_Name: TextIntro
+  m_Name: CreditText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2109,8 +2109,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 86}
-  m_SizeDelta: {x: 590.018, y: 236}
+  m_AnchoredPosition: {x: 20, y: 67}
+  m_SizeDelta: {x: 900, y: 236}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2030944069
 MonoBehaviour:
@@ -2139,14 +2139,14 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 50
-    m_Alignment: 0
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: A cute platformer by Chris Abrams, James Burns, and Salwa Mohammed. Music
-    by Michelle Lugo.
+  m_Text: "A cute platformer by Chris Abrams, James Burns, and Salwa Mohammed. \nMusic
+    by Michelle Lugo."
 --- !u!222 &2030944070
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/storyBookPages/bookPage8.unity
     guid: 03e2dc8dfa62a164d94000fa663fb795
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: b6284f93c70602c48b694d31cf8aec8c
   m_configObjects: {}
