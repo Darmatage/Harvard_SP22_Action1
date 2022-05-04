@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
 public class GameHandler : MonoBehaviour {
+      private PlayerBars bars;
       public Level currentLevel;
 	public static bool GameisPaused = false;
-      Level[] levels = new Level[2]; // When adding more levels, increase size
+      Level[] levels = new Level[5]; // When adding more levels, increase size
       public GameObject pauseMenuUI;
       public AudioMixer mixer;
       public static float volumeLevel = 1.0f;
@@ -38,15 +39,17 @@ public class GameHandler : MonoBehaviour {
                   sliderVolumeCtrl = sliderTemp.GetComponent<Slider>();
                   sliderVolumeCtrl.value = volumeLevel;
             }
+
+            player = GameObject.FindWithTag("Player");
+            bars = player.GetComponent<PlayerBars>();
       }
 
       void Start () {
             pauseMenuUI.SetActive(false);			
-			QuitButton.SetActive(true);
-			StartButton.SetActive(true);
+		QuitButton.SetActive(true);
+		StartButton.SetActive(true);
             GameisPaused = false;
-            player = GameObject.FindWithTag("Player");
-			playercolor=0;
+		playercolor = 0;
 			
             DefineGameLevels();
             SetGameLevel(1); // Start the game at level 1
@@ -83,6 +86,7 @@ public class GameHandler : MonoBehaviour {
                   Debug.Log("Fell Off");
 
                   SetPlayerPosition(currentLevel.spawnPoint);
+                  bars.Reset();
             }
       }
 

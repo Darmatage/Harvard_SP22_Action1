@@ -14,10 +14,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     public UnityEvent onTakeDamage;
 
     void Start() {
-        brownSticky.curValue = brownSticky.startValue;
-        health.curValue = health.startValue;
-        whiteCloud.curValue = whiteCloud.startValue;
-        yellowJelly.curValue = yellowJelly.startValue;
+        Reset();
 
         if (!brownSticky.uiBar) {
             brownSticky.uiBar = GameObject.FindWithTag("BarBrown").GetComponent<Image>();
@@ -56,6 +53,13 @@ public class PlayerBars : MonoBehaviour, IDamageable
         if (health.curValue == 0.0f) {
             Die();
         }
+    }
+
+    public void Reset() {
+        brownSticky.curValue = brownSticky.startValue;
+        health.curValue = health.startValue;
+        whiteCloud.curValue = whiteCloud.startValue;
+        yellowJelly.curValue = yellowJelly.startValue;
     }
 
     public void Burn(Bar bar, float value) {
