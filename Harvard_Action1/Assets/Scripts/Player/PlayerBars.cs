@@ -13,6 +13,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     public Bar whiteCloud;
     public Bar yellowJelly;
     public UnityEvent onTakeDamage;
+    public float regenRate = 100.0f; // Regenerate over time? //JEB
 
     void Start() {
         Reset();
@@ -46,7 +47,8 @@ public class PlayerBars : MonoBehaviour, IDamageable
 
         // Regen values over time
         health.Add(health.regenRate * Time.deltaTime);
-        yellowJelly.Add(yellowJelly.regenRate * Time.deltaTime);
+        // yellowJelly.Add(yellowJelly.regenRate * Time.deltaTime);
+        vomit.Add(vomit.regenRate * Time.deltaTime); //JEB
 
         // Update Bars
         brownSticky.uiBar.fillAmount = brownSticky.GetPercentage();
@@ -121,7 +123,7 @@ public class Bar {
     public float curValue;
     public float decayRate; // Decay over time?
     public float maxValue;
-    public float regenRate; // Regenerate over time?
+    public float regenRate = 10.0f; // Regenerate over time? //JEB
     public float startValue;
     public Image uiBar;
 

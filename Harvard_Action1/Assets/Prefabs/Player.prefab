@@ -240,6 +240,7 @@ MonoBehaviour:
   onTakeDamage:
     m_PersistentCalls:
       m_Calls: []
+  regenRate: 100
 --- !u!114 &4566554729063134722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,7 +366,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6419823561646818545}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: f687b54c6bb5fd1419494243e0daaad0, type: 2}
   m_audioClip: {fileID: 8300000, guid: a00f819b0796edf409cfd0deb59eb051, type: 3}
@@ -461,7 +462,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6419823561646818545}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: f687b54c6bb5fd1419494243e0daaad0, type: 2}
   m_audioClip: {fileID: 8300000, guid: efd5523a7503bbe44b580cbb9280b8df, type: 3}

@@ -26,7 +26,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       void Update(){
            if (Time.time >= nextAttackTime){
                  //if (Input.GetKeyDown(KeyCode.Space))
-                 if (Input.GetAxis("Attack") > 0 && bars.vomit.GetValue() > 0){
+                 if (Input.GetAxis("Attack") > 0 && bars.vomit.GetValue() >= 0){ //temporarily made vomit unlimited again JEB
                         Attack();
                         nextAttackTime = Time.deltaTime + 1f / attackRate;
                  }
