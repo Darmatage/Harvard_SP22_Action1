@@ -1563,6 +1563,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ImageSignDoubleJump
       objectReference: {fileID: 0}
+    - target: {fileID: 2354665098603289109, guid: 996d62004b47dea4b87172b9efbaa5ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2354665098603289115, guid: 996d62004b47dea4b87172b9efbaa5ef, type: 3}
       propertyPath: m_Color.b
       value: 0.32156864
@@ -1802,6 +1806,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ImageSignVomit
       objectReference: {fileID: 0}
+    - target: {fileID: 2354665098603289109, guid: 996d62004b47dea4b87172b9efbaa5ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 996d62004b47dea4b87172b9efbaa5ef, type: 3}
 --- !u!224 &304484551062598449 stripped
@@ -1930,7 +1938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6017779866461261261, guid: ddaa6cc8d3001834b990d931489d308b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6017779867618951427, guid: ddaa6cc8d3001834b990d931489d308b, type: 3}
       propertyPath: m_FontData.m_FontSize

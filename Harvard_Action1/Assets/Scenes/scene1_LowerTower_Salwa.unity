@@ -1094,6 +1094,14 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1571498811955292357, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1571498811955292357, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2046512228324296966, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
