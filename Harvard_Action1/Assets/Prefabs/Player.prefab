@@ -220,7 +220,7 @@ MonoBehaviour:
     curValue: 0
     decayRate: 0
     maxValue: 100
-    regenRate: 0
+    regenRate: 1
     startValue: 50
     uiBar: {fileID: 0}
   whiteCloud:
