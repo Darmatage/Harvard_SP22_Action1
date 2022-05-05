@@ -14,6 +14,7 @@ public class EnemyMoveHit : MonoBehaviour {
 	public PlayerBars health;
 		
        public float attackRange = 1.5f;
+       public float enemyPushBack = 1.5f;
        public bool isAttacking = false;
        private float scaleX;
 	public int enemycolor;
@@ -71,10 +72,10 @@ public class EnemyMoveHit : MonoBehaviour {
 				float pushBack = 0f;
 
 				if (collision.gameObject.transform.position.x > gameObject.transform.position.x){
-                                   pushBack = 3f;
+                                   pushBack = enemyPushBack;
                             }
 				else {
-                                   pushBack = -3f;
+                                   pushBack = -enemyPushBack;
                             }
 
 				collision.gameObject.transform.position = new Vector3(transform.position.x + pushBack, transform.position.y + 1, -1);
