@@ -432,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50489cd67b652a94f80b210987fd6557, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevel: scene4_RooftopJellyDragonBoss_Shared
+  nextLevel: scene4_RooftopJellyDragonBoss_James
   doorSFX: {fileID: 311329930}
 --- !u!50 &311329926
 Rigidbody2D:

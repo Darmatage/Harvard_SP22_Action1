@@ -42,7 +42,7 @@ EditorBuildSettings:
     path: Assets/Scenes/scene3_UpperTower_Chris.unity
     guid: 0259eb40641ce2a4cb4046251427fc23
   - enabled: 1
-    path: Assets/Scenes/scene4_RooftopJellyDragonBoss_Shared.unity
+    path: Assets/Scenes/scene4_RooftopJellyDragonBoss_James.unity
     guid: f3b7102ae7a55d4448cf3e759c59cca5
   - enabled: 1
     path: Assets/Scenes/storyBookPages/bookPage1.unity

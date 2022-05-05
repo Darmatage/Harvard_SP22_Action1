@@ -196,7 +196,7 @@ public class GameHandler : MonoBehaviour {
             } else if (levelChoice == 3) {
                   SceneManager.LoadScene("scene3_UpperTower_Chris");
             } else if (levelChoice == 4) {
-                  SceneManager.LoadScene("scene4_RooftopJellyDragonBoss_Shared");
+                  SceneManager.LoadScene("scene4_RooftopJellyDragonBoss_James");
             } else {
                   SceneManager.LoadScene("Credits");
             }
