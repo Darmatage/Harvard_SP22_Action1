@@ -141,6 +141,7 @@ public class PlayerController : MonoBehaviour
 
 
         if (isJumping) {
+			animator.SetBool("Jump",true);
             x = x / 2;
         }
  

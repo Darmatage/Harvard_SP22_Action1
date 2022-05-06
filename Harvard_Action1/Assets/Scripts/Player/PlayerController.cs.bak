@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
         }
  
         rig.velocity = new Vector2(x * runSpeed, rig.velocity.y);
-		animator.SetBool ("Walk", true);
+		//animator.SetBool ("Walk", true);
 
         if ((x < 0 && !FaceRight) || (x > 0 && FaceRight)) {
             PlayerTurn();
