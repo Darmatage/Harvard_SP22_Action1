@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2242028333720931957}
   - component: {fileID: 2242028333720931954}
+  - component: {fileID: 1308051953198890335}
   m_Layer: 7
   m_Name: enemyYellow
   m_TagString: Untagged
@@ -24,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2242028333720931956}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2242028334283644989}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &2242028333720931954
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6357462271911841176, guid: 625073615df7ed1408bc841d38aca693, type: 3}
+  m_Sprite: {fileID: 7317081455886813277, guid: 21a2614fcb338294399bb852cac14f6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,6 +84,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1308051953198890335
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2242028333720931956}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f839242b7231b214d91cbc16517f82cb, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2242028334283644976
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,7 +131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2242028334283644976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.27, y: 16.53, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2242028333720931957}
@@ -183,6 +203,7 @@ MonoBehaviour:
   EnemyLives: 1
   health: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
   attackRange: 4
+  enemyPushBack: 1.5
   isAttacking: 0
   enemycolor: 1
   playercolor: 0
@@ -198,6 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda5a156e7428624cb5f8d7e207be618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   healthLoot: {fileID: 8948379085193303086, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
   maxHealth: 10
   currentHealth: 0

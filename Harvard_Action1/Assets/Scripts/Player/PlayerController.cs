@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // TODO: public Animator animator;
+    public Animator animator;
     private PlayerBars bars;
     private CapsuleCollider2D capsuleCollider;
     private CircleCollider2D circleCollider;
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
         capsuleCollider = GetComponent<CapsuleCollider2D>();
         circleCollider = GetComponent<CircleCollider2D>();
         rig = transform.GetComponent<Rigidbody2D>();
+		animator= GetComponentInChildren<Animator>();
     }
 
     void Start() {
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate() {
         // Changes velocity on hills and slides
         if (hMove.x == 0) {
+			
             rig.velocity = new Vector2(rig.velocity.x / 1.1f, rig.velocity.y);
         }
     }
@@ -85,30 +87,37 @@ public class PlayerController : MonoBehaviour
                         Jump(); // Do an extra jump
                     }
                     else {
+						//animator.SetBool ("Walk", false);
                         // Debug.LogFormat("Jump: Second Jump declined: {0} {1}", bars.yellowJelly.startValue, bars.yellowJelly.curValue);
                     }
                 }
                 // Player is grounded
+				
                 else {
                     // Debug.Log("Jump: First Jump");
+					
                     Jump();
                 }
             }
 
             if (rig.velocity.y < 0) {
                 rig.velocity += Vector2.up * gravity * fallGravityMultiplier * Time.deltaTime;
+				//animator.SetBool ("Walk", true);
                 //rig.gravityScale = 10;
             }
 
             else if (rig.velocity.y >= 0 && !isGrounded()) {
                 rig.velocity += Vector2.up * gravity * jumpGravityMultiplier * Time.deltaTime;
+				
                 //rig.gravityScale = 1;
             }
         }        
     }
 
     public bool isGrounded() {
+				 //animator.SetBool ("Walk", false);
         return circleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+		
     }
 
     public void Jump() {
@@ -120,6 +129,7 @@ public class PlayerController : MonoBehaviour
         }*/
 
         isJumping = true;
+		animator.SetBool("Jump",true);
         JumpSFX.Play();
         // rig.velocity = new Vector2(rig.velocity.x, jumpForce);
         rig.velocity = Vector2.up * jumpForce;
@@ -127,12 +137,15 @@ public class PlayerController : MonoBehaviour
 
     public void Move() {
         float x = Input.GetAxisRaw("Horizontal");
+		 
+
 
         if (isJumping) {
             x = x / 2;
         }
  
         rig.velocity = new Vector2(x * runSpeed, rig.velocity.y);
+		//animator.SetBool ("Walk", true);
 
         if ((x < 0 && !FaceRight) || (x > 0 && FaceRight)) {
             PlayerTurn();
@@ -142,6 +155,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Ground")) {
             isJumping = false;
+			animator.SetBool("Jump",false);
         }
     }
 

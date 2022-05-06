@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5836256443721730147}
   - component: {fileID: 5836256443721730148}
+  - component: {fileID: 8691374007994585214}
   m_Layer: 7
   m_Name: enemyRed
   m_TagString: Untagged
@@ -24,13 +25,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5836256443721730146}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5836256444433049131}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &5836256443721730148
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -71,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 1529027030026142577, guid: 625073615df7ed1408bc841d38aca693, type: 3}
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 31033456136208694, guid: 21a2614fcb338294399bb852cac14f6d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -83,6 +84,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8691374007994585214
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5836256443721730146}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 124183814a7aed24f8637836248be164, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5836256444433049126
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,8 +130,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5836256444433049126}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.35, y: 7.7700005, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5836256443721730147}
@@ -179,10 +199,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   damage: 10
-  cameraShake: {fileID: 0}
+  cameraShake: {fileID: 4070897997742285424, guid: 041f7cdbf554ec64bbc557f09137f14e, type: 3}
   EnemyLives: 1
   health: {fileID: 0}
   attackRange: 4
+  enemyPushBack: 1.5
   isAttacking: 0
   enemycolor: 3
   playercolor: 0
@@ -198,7 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda5a156e7428624cb5f8d7e207be618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 8691374007994585214}
   healthLoot: {fileID: 1692651351118213307, guid: a6db33919d7c3c14babd8f53d22479c4, type: 3}
   maxHealth: 10
   currentHealth: 0
-  cameraShake: {fileID: 0}
+  cameraShake: {fileID: 4070897997742285424, guid: 041f7cdbf554ec64bbc557f09137f14e, type: 3}
