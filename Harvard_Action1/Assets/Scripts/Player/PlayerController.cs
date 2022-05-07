@@ -136,7 +136,7 @@ public class PlayerController : MonoBehaviour
         }*/
 
         isJumping = true;
-		animator.SetBool ("Jump",true);
+		animator.SetBool("Jump", true);
         JumpSFX.Play();
         // rig.velocity = new Vector2(rig.velocity.x, jumpForce);
         rig.velocity = Vector2.up * jumpForce;
@@ -151,14 +151,13 @@ public class PlayerController : MonoBehaviour
 		
  
         rig.velocity = new Vector2(x * runSpeed, rig.velocity.y);
-			if(x!=0)
-			{
-			animator.SetBool ("Walk", true);
-			}
-			else
-			{
-				animator.SetBool ("Walk", false);
-			}
+
+        if (x!=0) {
+            animator.SetBool("Walk", true);
+        } else
+        {
+            animator.SetBool("Walk", false);
+        }
 		
         if ((x < 0 && !FaceRight) || (x > 0 && FaceRight)) {
             PlayerTurn();
