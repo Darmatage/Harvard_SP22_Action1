@@ -73,10 +73,12 @@ public class PlayerController : MonoBehaviour
     void Update() {
         if (isAlive) {
             SetMaterialState();
-            Move();
+			Move();
+			
 
             if (Input.GetButtonDown("Jump")) {
-                // Debug.Log("Jump: Button pushed");
+				
+                 //Debug.Log("Jump: Button pushed");
                 // Check for extra jumps
                 if (!isGrounded()) {
                     // Debug.Log("Jump: Second Jump attempted");
@@ -85,24 +87,26 @@ public class PlayerController : MonoBehaviour
                         bars.Burn(bars.yellowJelly, 2f);
                         // Debug.Log("Jump: Second Jump allowed");
                         Jump(); // Do an extra jump
+						
                     }
                     else {
-						//animator.SetBool ("Walk", false);
+												
                         // Debug.LogFormat("Jump: Second Jump declined: {0} {1}", bars.yellowJelly.startValue, bars.yellowJelly.curValue);
                     }
                 }
+				
                 // Player is grounded
 				
                 else {
                     // Debug.Log("Jump: First Jump");
-					
-                    Jump();
+					Jump();
                 }
             }
+			animator.SetBool ("Jump", false);
 
             if (rig.velocity.y < 0) {
                 rig.velocity += Vector2.up * gravity * fallGravityMultiplier * Time.deltaTime;
-				//animator.SetBool ("Walk", true);
+				
                 //rig.gravityScale = 10;
             }
 
@@ -115,8 +119,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public bool isGrounded() {
-				 //animator.SetBool ("Walk", false);
-        return circleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
+				 return circleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
 		
     }
 
@@ -137,17 +140,22 @@ public class PlayerController : MonoBehaviour
 
     public void Move() {
         float x = Input.GetAxisRaw("Horizontal");
-		 
-
-
-        if (isJumping) {
-			animator.SetBool("Jump",true);
-            x = x / 2;
+        if (isJumping) 
+		{			
+            x = x / 2;			
         }
+		
  
         rig.velocity = new Vector2(x * runSpeed, rig.velocity.y);
-		//animator.SetBool ("Walk", true);
-
+			if(x!=0)
+			{
+			animator.SetBool ("Walk", true);
+			}
+			else
+			{
+				animator.SetBool ("Walk", false);
+			}
+		
         if ((x < 0 && !FaceRight) || (x > 0 && FaceRight)) {
             PlayerTurn();
         }
@@ -157,6 +165,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground")) {
             isJumping = false;
 			animator.SetBool("Jump",false);
+			
         }
     }
 

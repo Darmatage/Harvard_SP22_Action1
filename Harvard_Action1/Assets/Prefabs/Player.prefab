@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8b9ee06e6a84332b73cb5e64b02612, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  animator: {fileID: 8081126261603704955}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb272ef939af7b340800039c75681d78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 0}
   FirePoint: {fileID: 39561182511272075}
   projectilePrefab: {fileID: 8834360304884460297, guid: c36d212fc24fb184393cc0279c136d90, type: 3}
   projectileSpeed: 10

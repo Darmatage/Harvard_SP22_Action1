@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerAttackShoot : MonoBehaviour{
 
-      //public Animator animator;
+      public Animator animator;
       //AudioManager audioManager;
       private PlayerBars bars;
       PlayerController controller;
@@ -28,7 +28,7 @@ public class PlayerAttackShoot : MonoBehaviour{
 		GameObject player = GameObject.Find("Player");
 		controller = player.GetComponent<PlayerController>();
             //audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
-            //animator = gameObject.GetComponentInChildren<Animator>();
+            animator = gameObject.GetComponentInChildren<Animator>();
       }
 
       void Update(){
@@ -37,14 +37,16 @@ public class PlayerAttackShoot : MonoBehaviour{
            if (Time.time >= nextAttackTime){
                   //if (Input.GetKeyDown(KeyCode.Space))
                  if (Input.GetAxis("Attack") > 0  && bars.vomit.GetValue() > 0) {
-                        playerFire();
+                        animator.SetTrigger ("Fire");
+						vomitSFX.Play();
+						playerFire();						
                         nextAttackTime = Time.time + 1f / attackRate;
                   }
             }
       }
 
       void playerFire(){
-            //animator.SetTrigger ("Fire");
+            
 
             Quaternion targerRotation = Quaternion.identity;
 
@@ -53,7 +55,7 @@ public class PlayerAttackShoot : MonoBehaviour{
             }
 
 		GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, targerRotation);	
-		vomitSFX.Play();
+		
 		//audioManager.PlaySound("vomit");
 				//playerShootSFX.Play();
 			//Debug.Log("IS facing right" +FaceRight);
