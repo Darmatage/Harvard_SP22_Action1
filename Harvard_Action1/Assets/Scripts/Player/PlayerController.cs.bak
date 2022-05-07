@@ -115,7 +115,12 @@ public class PlayerController : MonoBehaviour
 				
                 //rig.gravityScale = 1;
             }
-        }        
+        } 
+			if(isJumping=true){
+				animator.SetBool ("Jump", true);
+			}
+			else
+			{animator.SetBool ("Jump", false);}
     }
 
     public bool isGrounded() {
@@ -132,7 +137,7 @@ public class PlayerController : MonoBehaviour
         }*/
 
         isJumping = true;
-		animator.SetBool("Jump",true);
+		animator.SetBool ("Jump",true);
         JumpSFX.Play();
         // rig.velocity = new Vector2(rig.velocity.x, jumpForce);
         rig.velocity = Vector2.up * jumpForce;
@@ -164,6 +169,7 @@ public class PlayerController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Ground")) {
             isJumping = false;
+			animator.SetBool("Jump",false);
 			
         }
     }

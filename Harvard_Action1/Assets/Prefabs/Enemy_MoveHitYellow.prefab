@@ -199,7 +199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 2
   damage: 10
-  cameraShake: {fileID: 0}
+  cameraShake: {fileID: 4070897997742285424, guid: 041f7cdbf554ec64bbc557f09137f14e, type: 3}
   EnemyLives: 1
   health: {fileID: 5225560397350133281, guid: b5587727ff1a8443d8b166d1fddf29f5, type: 3}
   attackRange: 4
@@ -219,8 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bda5a156e7428624cb5f8d7e207be618, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  anim: {fileID: 1308051953198890335}
   healthLoot: {fileID: 8948379085193303086, guid: 9d7ea59538c324eb18930126969057b4, type: 3}
   maxHealth: 10
   currentHealth: 0
   cameraShake: {fileID: 4070897997742285424, guid: 041f7cdbf554ec64bbc557f09137f14e, type: 3}
+  enemyDieSFX: {fileID: 0}

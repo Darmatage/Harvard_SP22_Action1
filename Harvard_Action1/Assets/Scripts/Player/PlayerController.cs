@@ -73,8 +73,7 @@ public class PlayerController : MonoBehaviour
     void Update() {
         if (isAlive) {
             SetMaterialState();
-			Move();
-			
+			Move();		
 
             if (Input.GetButtonDown("Jump")) {
 				
@@ -115,7 +114,12 @@ public class PlayerController : MonoBehaviour
 				
                 //rig.gravityScale = 1;
             }
-        }        
+        } 
+			if(isJumping==true){
+				animator.SetBool ("Jump", true);
+			}
+			else
+			{animator.SetBool ("Jump", false);}
     }
 
     public bool isGrounded() {
@@ -132,7 +136,7 @@ public class PlayerController : MonoBehaviour
         }*/
 
         isJumping = true;
-		animator.SetBool("Jump",true);
+		animator.SetBool ("Jump",true);
         JumpSFX.Play();
         // rig.velocity = new Vector2(rig.velocity.x, jumpForce);
         rig.velocity = Vector2.up * jumpForce;

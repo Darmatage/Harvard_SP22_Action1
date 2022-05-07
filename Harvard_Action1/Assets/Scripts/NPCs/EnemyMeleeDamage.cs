@@ -24,6 +24,8 @@ public class EnemyMeleeDamage : MonoBehaviour {
               //StartCoroutine(ResetColor());
               //anim.SetTrigger ("Hurt");
               if (currentHealth <= 0){
+				  anim.SetBool ("isDead", true);
+				  
 			Die();
 			//GetComponent<AudioSource>().Play();
 			enemyDieSFX.Play();
@@ -33,9 +35,9 @@ public class EnemyMeleeDamage : MonoBehaviour {
        }
 
        void Die(){
-		   anim.SetBool ("isDead", true);
+		   
               Instantiate (healthLoot, transform.position, Quaternion.identity);
-              //anim.SetBool ("isDead", true);
+              
 			  //Debug.Log("isDead=",anim);
               GetComponent<Collider2D>().enabled = false;
 			  cameraShake.ShakeCamera(0.15f,0.3f);
