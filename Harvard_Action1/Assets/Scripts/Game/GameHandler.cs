@@ -196,6 +196,10 @@ public class GameHandler : MonoBehaviour {
             SceneManager.LoadScene("EndLose");
       }
 
+      public void MainMenu() {
+            SceneManager.LoadScene("StartMenu");
+      }
+
       public void StartGame() {
             SceneManager.LoadScene("bookPage1");
       }
