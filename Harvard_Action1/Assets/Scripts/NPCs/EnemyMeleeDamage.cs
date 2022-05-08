@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class EnemyMeleeDamage : MonoBehaviour {
        private Renderer rend;
-      public Animator anim;
+       public Animator anim;
        public GameObject healthLoot;
        public int maxHealth = 10;
        public int currentHealth;
-	   public CameraShake cameraShake;
-	   public AudioSource enemyDieSFX;
+       public CameraShake cameraShake;
+       public AudioSource enemyDieSFX;
 
        void Start(){
               rend = GetComponentInChildren<Renderer>();
