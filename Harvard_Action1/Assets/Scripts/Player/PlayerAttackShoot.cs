@@ -38,16 +38,14 @@ public class PlayerAttackShoot : MonoBehaviour{
                   //if (Input.GetKeyDown(KeyCode.Space))
                  if (Input.GetAxis("Attack") > 0  && bars.vomit.GetValue() > 0) {
                         animator.SetTrigger ("Fire");
-						vomitSFX.Play();
-						playerFire();						
+				vomitSFX.Play();
+				playerFire();						
                         nextAttackTime = Time.time + 1f / attackRate;
                   }
             }
       }
 
       void playerFire(){
-            
-
             Quaternion targerRotation = Quaternion.identity;
 
             if (!FaceRight) {
