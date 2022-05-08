@@ -7,11 +7,11 @@ public class BreakableWall : MonoBehaviour {
 	public Animator anim;
 	//public GameObject ParticleVFX;
 	//public AudioSource breakSFX;
-	public int hitNum = 2; // how many times the object can be hit before it disappears.
+	public int hitNum = 5; // how many times the object can be hit before it disappears.
 	public GameObject boxColliderObj; // a child collider that can be turned off
 	private Renderer myRend;
 	private Color defaultColor;
-	public int halfwall=0;
+	//public int halfwall=0;
 	public CameraShake cameraShake;
 	//AudioManager audioManager;
 	public AudioSource wallSFX;
@@ -26,44 +26,21 @@ public class BreakableWall : MonoBehaviour {
       }
 
 	void Update(){
-           /* if (hitNum == 2){
-                  anim.SetBool ("wallHalf", false);
-                  anim.SetBool ("wallGone", false);
+		if (hitNum == 1){
+                  anim.SetBool ("brokenWall", true);
+                  
             }
-            else if (hitNum == 1){
-                  anim.SetBool ("wallHalf", true);
-                  anim.SetBool ("wallGone", false);
-            }
-            else if (hitNum == 0){
-                  anim.SetBool ("wallHalf", false);
-                  anim.SetBool ("wallGone", true);*/
-                  boxColliderObj.SetActive (true);
-            //}
-			/*if(hitNum==2)
-			{
-				//halfwall=1;
-				//Debug.Log("halfwall= "+halfwall);
-				//anim.SetBool("halfwall" , false);
+			else if (hitNum==0){
+				boxColliderObj.SetActive (false);
+				Destroy(gameObject);
 			}
-			else if(hitNum==1)
-			{
-				
-				halfwall=0;
-				
-				//anim.SetBool("halfwall",true);
 			}
-			else if(hitNum==0)
-			{
-				//halfwall=0;
-				
-			}*/
-			
-	}
 
 	public void wallDamage(){
             // this is the function that the player attack script would access
+			anim.SetBool ("brokenWall", true);
 		boxColliderObj.SetActive (false);
-		Destroy (gameObject);
+		//Destroy (gameObject);
 		//audioManager.PlaySound("wallbreak");
 		wallSFX.Play();
 		cameraShake.ShakeCamera(0.15f,0.3f);
@@ -98,16 +75,17 @@ public class BreakableWall : MonoBehaviour {
 			 //{
 			//	boxColliderObj.SetActive (false);
 			 //Destroy (gameObject); 
-			 //}
-			 StartCoroutine(wallHitReturn());*/
+			 //}*/
+			 
+			 StartCoroutine(wallHitReturn());
 	  }
 	  
 
       IEnumerator wallHitReturn(){
             myRend.material.color = new Color(1.0f, 1.0f, 2.5f);
-            yield return new WaitForSeconds(0.5f);
-			//Debug.Log("hitnum is -1"+hitNum);
-            hitNum --;
+            yield return new WaitForSeconds(1f);
+			//Debug.Log("hitnum "+hitNum);
+           // hitNum -=1;
             myRend.material.color = defaultColor;
            // breakSFX.Stop();
       }
