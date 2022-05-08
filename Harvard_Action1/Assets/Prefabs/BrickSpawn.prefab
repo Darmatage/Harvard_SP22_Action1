@@ -79,8 +79,8 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 2779437323578226400}
   - {fileID: 3302206320181038439}
-  spawnRangeStart: 0.5
-  spawnRangeEnd: 1.2
+  spawnRangeStart: 0.2
+  spawnRangeEnd: 0.8
 --- !u!1 &8788417166897398376
 GameObject:
   m_ObjectHideFlags: 0
