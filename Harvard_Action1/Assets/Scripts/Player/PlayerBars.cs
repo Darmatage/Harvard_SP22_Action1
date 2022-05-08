@@ -46,8 +46,9 @@ public class PlayerBars : MonoBehaviour, IDamageable
         // yellowJelly.Subtract(yellowJelly.decayRate * Time.deltaTime);
 
         // Regen values over time
+        brownSticky.Add(brownSticky.regenRate * Time.deltaTime);
         health.Add(health.regenRate * Time.deltaTime);
-        // yellowJelly.Add(yellowJelly.regenRate * Time.deltaTime);
+        yellowJelly.Add(yellowJelly.regenRate * Time.deltaTime);
         vomit.Add(vomit.regenRate * Time.deltaTime); //JEB
 
         // Update Bars
