@@ -29,7 +29,6 @@ public class GameHandler : MonoBehaviour {
 	public GameObject StartButton;
 	
 	public GameObject QuitButton;
-	 
 
       void Awake () {
             SetAudioLevel (volumeLevel);
@@ -42,14 +41,18 @@ public class GameHandler : MonoBehaviour {
       }
 
       void Start () {
-            player = GameObject.FindWithTag("Player");
-            bars = player.GetComponent<PlayerBars>();
-
             pauseMenuUI.SetActive(false);			
 		QuitButton.SetActive(true);
 		StartButton.SetActive(true);
             GameisPaused = false;
 		playercolor = 0;
+
+            if (!IsGameLevel()) {
+                  return;
+            }
+
+            player = GameObject.FindWithTag("Player");
+            bars = player.GetComponent<PlayerBars>();
 			
             DefineGameLevels();
             SetGameLevel(1); // Start the game at level 1
@@ -66,6 +69,10 @@ public class GameHandler : MonoBehaviour {
                   }
             }
 
+            if (!IsGameLevel()) {
+                  return;
+            }
+
 		FallCheck();	
 	}
       
@@ -76,6 +83,15 @@ public class GameHandler : MonoBehaviour {
             levels[2] = new Level(2, new Vector3(0,0,0));
             levels[3] = new Level(3, new Vector3(0,0,0));
             levels[4] = new Level(4, new Vector3(0,0,0));
+      }
+
+      // Are we on a game level or a cutscene / menu
+      bool IsGameLevel() {
+            if (player) {
+                  return true;
+            }
+
+            return false;
       }
 
       // Has player fallen off map?
@@ -187,6 +203,7 @@ public class GameHandler : MonoBehaviour {
       public void RestartGame(int levelChoice){
             Time.timeScale = 1f;
             playerHealth = StartPlayerHealth;
+
             if (levelChoice == 0) {
                   SceneManager.LoadScene("StartMenu");
             } else if (levelChoice == 1) {
