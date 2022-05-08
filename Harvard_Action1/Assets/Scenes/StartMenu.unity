@@ -208,8 +208,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8030713552375230030, guid: e0a94788277373642b1499dad9eea81f, type: 3}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
-        m_MethodName: RestartGame
-        m_Mode: 3
+        m_MethodName: Credits
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -788,7 +788,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2087516983}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
         m_MethodName: StartGame
         m_Mode: 1
@@ -1860,6 +1860,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+--- !u!114 &2087516983 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8807378969212218751, guid: 517b77893d945c74b926539dceb85f5f, type: 3}
+  m_PrefabInstance: {fileID: 2087516982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e62bdd8b384f6c446b5b0fadd591ad73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2121831002
 GameObject:
   m_ObjectHideFlags: 0
@@ -1943,7 +1954,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2087516983}
         m_TargetAssemblyTypeName: GameHandler, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
