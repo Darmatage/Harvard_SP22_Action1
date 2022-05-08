@@ -204,16 +204,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brownSticky:
     curValue: 0
-    decayRate: 1
+    decayRate: 0
     maxValue: 100
-    regenRate: 0
+    regenRate: 1
     startValue: 0
     uiBar: {fileID: 0}
   health:
     curValue: 0
     decayRate: 0
     maxValue: 100
-    regenRate: 0
+    regenRate: 1
     startValue: 60
     uiBar: {fileID: 0}
   vomit:
@@ -234,7 +234,7 @@ MonoBehaviour:
     curValue: 0
     decayRate: 0
     maxValue: 100
-    regenRate: 0
+    regenRate: 1
     startValue: 20
     uiBar: {fileID: 0}
   onTakeDamage:
