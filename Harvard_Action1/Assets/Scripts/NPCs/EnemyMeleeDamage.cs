@@ -44,7 +44,11 @@ public class EnemyMeleeDamage : MonoBehaviour {
        }
 
        IEnumerator Death() {
-              yield return new WaitForSeconds(1f);
+              // Don't let baby dragon keep flying
+              if (enemyType != EnemyType.DragonBaby) {
+                     yield return new WaitForSeconds(1f);
+              }
+
               //Debug.Log("You Killed a baddie. You deserve loot!");
 		Destroy(gameObject);
        }
