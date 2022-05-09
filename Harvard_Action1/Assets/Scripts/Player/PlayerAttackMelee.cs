@@ -14,6 +14,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       private PlayerBars bars;
       public LayerMask enemyLayers;
 	public LayerMask wallLayer;
+      private bool isAttacking = false;
 
       void Awake() {
             bars = GetComponent<PlayerBars>();
@@ -34,15 +35,19 @@ public class PlayerAttackMelee : MonoBehaviour{
       }
 
       void Attack() {
+            if (isAttacking) {
+                  return;
+            }
+
+            isAttacking = true;
+
             bars.Vomit(1);
 
             //animator.SetTrigger ("Melee");
             Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPt.position, attackRange, enemyLayers);
-           
-            foreach(Collider2D enemy in hitEnemies){
-                  // Debug.Log("We hit " + enemy.name);
-				  //GetComponent<AudioSource>().Play();
-                  enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
+
+            if (hitEnemies.Length > 0) {
+                  hitEnemies[0].GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
             }
 
 		Collider2D[] hitWalls = Physics2D.OverlapCircleAll(attackPt.position, attackRange, wallLayer);
@@ -54,6 +59,8 @@ public class PlayerAttackMelee : MonoBehaviour{
 
 			// Debug.Log("We hit " + wall.name);
             }
+
+            isAttacking = false;
       }
 
       //NOTE: to help see the attack sphere in editor:

@@ -120,8 +120,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   healthLoot: {fileID: 1692651351118213307, guid: a6db33919d7c3c14babd8f53d22479c4, type: 3}
-  maxHealth: 50
-  currentHealth: 50
+  maxHealth: 500
+  currentHealth: 500
   cameraShake: {fileID: 0}
   enemyDieSFX: {fileID: 8142460663191871771}
 --- !u!82 &8142460663191871771
