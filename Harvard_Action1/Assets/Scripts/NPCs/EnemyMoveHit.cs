@@ -9,6 +9,7 @@ public class EnemyMoveHit : MonoBehaviour {
        private Transform target;
        public int damage = 10;
 	public CameraShake cameraShake;
+       private EnemyMeleeDamage enemyMeleeDamage;
        public int EnemyLives = 3;
        private GameHandler gameHandler;
 	public PlayerBars health;
@@ -23,6 +24,7 @@ public class EnemyMoveHit : MonoBehaviour {
 
        void Start () {
               cameraShake = GameObject.FindWithTag("CameraShake").GetComponent<CameraShake>();
+              enemyMeleeDamage = GetComponent<EnemyMeleeDamage>();
               health = GameObject.FindWithTag("Player").GetComponent<PlayerBars>();
               anim = GetComponentInChildren<Animator> ();
               scaleX = gameObject.transform.localScale.x;
@@ -60,11 +62,25 @@ public class EnemyMoveHit : MonoBehaviour {
 			}
        }
 
+       public void FireOn() {
+              if (enemyMeleeDamage.enemyType == EnemyType.DragonLarge) {
+                     anim.SetBool("Fire", true);
+              }
+       }
+
+       public void FireOff() {
+              if (enemyMeleeDamage.enemyType == EnemyType.DragonLarge) {
+                     anim.SetBool("Fire", false);
+              }
+       }
+
          public void OnCollisionEnter2D(Collision2D collision){
               if (collision.gameObject.tag == "Player") {
 			if(enemycolor != playercolor) {
                             isAttacking = true;
-                            anim.SetBool("Fire", true);
+                            
+                            FireOn();
+
 				// Debug.LogFormat("enemymovehit player taking damage: {0}", damage);
                             //gameHandler.playerGetHit(damage);
 				health.TakeDamage(damage);
@@ -89,7 +105,7 @@ public class EnemyMoveHit : MonoBehaviour {
        public void OnCollisionExit2D(Collision2D collision){
               if (collision.gameObject.tag == "Player") {
                      isAttacking = false;
-                     anim.SetBool("Fire", false);
+                     FireOff();
               }
        }
 
