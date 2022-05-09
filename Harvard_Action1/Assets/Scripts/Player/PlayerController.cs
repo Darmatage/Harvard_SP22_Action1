@@ -123,8 +123,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public bool isGrounded() {
-				 return circleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
-		
+	    return circleCollider.IsTouchingLayers(LayerMask.GetMask("Ground"));
     }
 
     public void Jump() {

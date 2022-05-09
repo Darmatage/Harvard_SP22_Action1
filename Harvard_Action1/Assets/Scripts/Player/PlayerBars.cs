@@ -10,6 +10,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     public Bar brownSticky;
     public Bar health;
     public Bar vomit;
+    public Bar superVomit;
     public Bar whiteCloud;
     public Bar yellowJelly;
     public UnityEvent onTakeDamage;
@@ -24,6 +25,10 @@ public class PlayerBars : MonoBehaviour, IDamageable
 
         if (!health.uiBar) {
             health.uiBar = GameObject.FindWithTag("BarRed").GetComponent<Image>();
+        }
+
+        if (!superVomit.uiBar) {
+            superVomit.uiBar = GameObject.FindWithTag("BarOrange").GetComponent<Image>();
         }
 
         if (!vomit.uiBar) {
@@ -49,11 +54,12 @@ public class PlayerBars : MonoBehaviour, IDamageable
         brownSticky.Add(brownSticky.regenRate * Time.deltaTime);
         health.Add(health.regenRate * Time.deltaTime);
         yellowJelly.Add(yellowJelly.regenRate * Time.deltaTime);
-        vomit.Add(vomit.regenRate * Time.deltaTime); //JEB
+        vomit.Add(vomit.regenRate * Time.deltaTime);
 
         // Update Bars
         brownSticky.uiBar.fillAmount = brownSticky.GetPercentage();
         health.uiBar.fillAmount = health.GetPercentage();
+        superVomit.uiBar.fillAmount = superVomit.GetPercentage();
         vomit.uiBar.fillAmount = vomit.GetPercentage();
         whiteCloud.uiBar.fillAmount = whiteCloud.GetPercentage();
         yellowJelly.uiBar.fillAmount = yellowJelly.GetPercentage();
@@ -67,6 +73,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     public void Reset() {
         brownSticky.curValue = brownSticky.startValue;
         health.curValue = health.startValue;
+        superVomit.curValue = superVomit.startValue;
         vomit.curValue = vomit.startValue;
         whiteCloud.curValue = whiteCloud.startValue;
         yellowJelly.curValue = yellowJelly.startValue;
@@ -100,6 +107,11 @@ public class PlayerBars : MonoBehaviour, IDamageable
     public void Sticky(float value) {
         // Debug.LogFormat("Sticky: {0}", value);
         brownSticky.Add(value);
+    }
+
+    public void SuperVomitRestore(float value) {
+        // Debug.LogFormat("Healed: {0}", value);
+        superVomit.Add(value);
     }
 
     public void TakeDamage(int value) {
