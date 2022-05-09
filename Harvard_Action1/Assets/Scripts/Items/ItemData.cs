@@ -6,6 +6,7 @@ public enum ConsumableType {
   BrownSticky,
   Cloud,
   RedHeart,
+  SuperVomit,
   Vomit,
   YellowJelly
 }
