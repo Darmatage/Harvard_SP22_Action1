@@ -64,7 +64,7 @@ public class EnemyMoveHit : MonoBehaviour {
               if (collision.gameObject.tag == "Player") {
 			if(enemycolor != playercolor) {
                             isAttacking = true;
-                             anim.SetBool("Fire", true);
+                            anim.SetBool("Fire", true);
 				// Debug.LogFormat("enemymovehit player taking damage: {0}", damage);
                             //gameHandler.playerGetHit(damage);
 				health.TakeDamage(damage);
