@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMoveHit : MonoBehaviour {
 
-       //public Animator anim;
+       public Animator anim;
        public float speed = 4f;
        private Transform target;
        public int damage = 10;
@@ -24,7 +24,7 @@ public class EnemyMoveHit : MonoBehaviour {
        void Start () {
               cameraShake = GameObject.FindWithTag("CameraShake").GetComponent<CameraShake>();
               health = GameObject.FindWithTag("Player").GetComponent<PlayerBars>();
-             // anim = GetComponentInChildren<Animator> ();
+              anim = GetComponentInChildren<Animator> ();
               scaleX = gameObject.transform.localScale.x;
 				//GameObject player=GameObject.Find("Player");
 					//PlayerBars playerbars = player.GetComponent<PlayerBars>();
@@ -64,7 +64,7 @@ public class EnemyMoveHit : MonoBehaviour {
               if (collision.gameObject.tag == "Player") {
 			if(enemycolor != playercolor) {
                             isAttacking = true;
-                            // anim.SetBool("Attack", true);
+                             anim.SetBool("Fire", true);
 				// Debug.LogFormat("enemymovehit player taking damage: {0}", damage);
                             //gameHandler.playerGetHit(damage);
 				health.TakeDamage(damage);
@@ -89,7 +89,7 @@ public class EnemyMoveHit : MonoBehaviour {
        public void OnCollisionExit2D(Collision2D collision){
               if (collision.gameObject.tag == "Player") {
                      isAttacking = false;
-                     //anim.SetBool("Attack", false);
+                     anim.SetBool("Fire", false);
               }
        }
 
