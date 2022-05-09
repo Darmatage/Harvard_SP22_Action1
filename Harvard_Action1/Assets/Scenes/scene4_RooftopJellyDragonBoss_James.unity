@@ -1880,7 +1880,7 @@ GameObject:
   - component: {fileID: 1240896012}
   - component: {fileID: 1240896011}
   m_Layer: 0
-  m_Name: Door_Exit_Top
+  m_Name: CandyChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2103,7 +2103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240896010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.99, y: 51.08, z: 0}
+  m_LocalPosition: {x: 10.2, y: 53.42, z: 0}
   m_LocalScale: {x: 1.1498, y: 0.96873754, z: 1}
   m_Children:
   - {fileID: 1751350512}
@@ -2323,6 +2323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: THE_JELLY_DRAGON_HIMSELF
       objectReference: {fileID: 0}
+    - target: {fileID: 2242028334283644977, guid: b023f5be902192b4c8baf48d8bdbf8e2, type: 3}
+      propertyPath: healthLoot
+      value: 
+      objectReference: {fileID: 6175889623115975647, guid: ca089a9dad16c3342a1a3bdd4a725e60, type: 3}
     - target: {fileID: 5056803453070720982, guid: b023f5be902192b4c8baf48d8bdbf8e2, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -5918,8 +5922,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1751350512}
   - component: {fileID: 1751350513}
+  - component: {fileID: 1751350514}
   m_Layer: 0
-  m_Name: Square
+  m_Name: chest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5933,7 +5938,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1751350511}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.08, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1240896016}
@@ -5980,7 +5985,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4342272009928742039, guid: 6d6340021907843fd9622e24113165b4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a65aeaf74fd7e754eac6e86e258d330f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -5991,6 +5996,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1751350514
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1751350511}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3758071ee76bc954f9988d3bb377cd6d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1807173532
 PrefabInstance:
   m_ObjectHideFlags: 0

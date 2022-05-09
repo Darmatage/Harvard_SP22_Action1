@@ -36,8 +36,8 @@ public class PickUpBlue : MonoBehaviour{
 					
 					
                   if (isBlueBean == true) {
-					  Debug.Log("pickup playercolor to 2");
-                       playerAnimator.SetInteger("PlayerColor",2);
+					  //Debug.Log("pickup playercolor to 2");
+                       playerAnimator.SetInteger("PlayerColor",1);
 					   gameHandler.playercolor=2;
 					   
 					   

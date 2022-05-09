@@ -8,6 +8,7 @@ public class DoorExit_1 : MonoBehaviour{
 
     public string nextLevel = "scene4_RooftopJellyDragonBoss_Shared";
 	public AudioSource doorSFX;
+	
 
     public void Start(){
       //       audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
@@ -19,6 +20,7 @@ public class DoorExit_1 : MonoBehaviour{
             // audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
 			//   audioManager.PlaySound("opendoor");
             if (other.gameObject.tag == "Player"){
+				
 							SceneManager.LoadScene(nextLevel); 
             }
       }	 
