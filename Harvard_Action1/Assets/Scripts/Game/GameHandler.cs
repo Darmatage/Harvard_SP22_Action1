@@ -204,7 +204,7 @@ public class GameHandler : MonoBehaviour {
             SceneManager.LoadScene("bookPage1");
       }
 
-      public void RestartGame(int levelChoice){
+      public void RestartGame(int levelChoice) {
             Time.timeScale = 1f;
             playerHealth = StartPlayerHealth;
 
