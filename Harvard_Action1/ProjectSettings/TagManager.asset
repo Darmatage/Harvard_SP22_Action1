@@ -23,6 +23,7 @@ TagManager:
   - BarGroupVomit
   - BarGreen
   - JellyDragon
+  - JellyDragonBlast
   layers:
   - Default
   - TransparentFX
