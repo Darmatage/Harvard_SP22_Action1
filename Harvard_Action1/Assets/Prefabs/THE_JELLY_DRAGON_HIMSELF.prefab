@@ -119,6 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  enemyType: 1
   healthLoot: {fileID: 1692651351118213307, guid: a6db33919d7c3c14babd8f53d22479c4, type: 3}
   maxHealth: 500
   currentHealth: 500

@@ -198,6 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d4ccf467c2e7c49b1be45cc5d2337e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   speed: 3
   damage: 5
   cameraShake: {fileID: 0}
@@ -221,6 +222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
+  enemyType: 3
   healthLoot: {fileID: 6411707096305002431, guid: e47587fd681534f3bb0dedddfdbc98ca, type: 3}
   maxHealth: 10
   currentHealth: 0
