@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2242028333720931957}
   - component: {fileID: 2242028333720931954}
   m_Layer: 7
-  m_Name: DaddyJellyDragon
+  m_Name: BabyJellyDragon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -7119593357624207612, guid: 8615ebbdde6297247a776dc50363e3c1, type: 3}
+  m_Sprite: {fileID: -2833754732595150348, guid: 3327999251b06e245ba2f0cfcf6d150a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 0}
   healthLoot: {fileID: 6411707096305002431, guid: e47587fd681534f3bb0dedddfdbc98ca, type: 3}
-  maxHealth: 50
-  currentHealth: 50
+  maxHealth: 10
+  currentHealth: 10
   cameraShake: {fileID: 0}
   enemyDieSFX: {fileID: 0}

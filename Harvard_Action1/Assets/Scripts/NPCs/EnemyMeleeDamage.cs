@@ -24,7 +24,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
               //StartCoroutine(ResetColor());
               //anim.SetTrigger ("Hurt");
               if (currentHealth <= 0){
-				  anim.SetBool ("isDead", true);
+				 // anim.SetBool ("isDead", true);
 				  
 			Die();
 			//GetComponent<AudioSource>().Play();
