@@ -24,7 +24,7 @@ public class EnemyMeleeDamage : MonoBehaviour {
               //rend.material.color = new Color(2.4f, 0.9f, 0.9f, 1f);
               //StartCoroutine(ResetColor());
               //anim.SetTrigger ("Hurt");
-              Debug.LogFormat("Dragon Health: {0} {1}", damage, currentHealth);
+              // Debug.LogFormat("Dragon Health: {0} {1}", damage, currentHealth);
               if (currentHealth <= 0){
 		       // anim.SetBool ("isDead", true);
 			enemyDieSFX.Play();

@@ -36,7 +36,7 @@ public class PickupStickyBun : MonoBehaviour{
 					
 					
                   if (isStickyBun == true) {
-					  Debug.Log("pickup playercolor to 3");
+					  // Debug.Log("pickup playercolor to 3");
                        playerAnimator.SetInteger("PlayerColor",3);
 					   gameHandler.playercolor=3;
 					   

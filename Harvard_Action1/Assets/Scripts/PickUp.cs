@@ -34,7 +34,7 @@ public class PickUp : MonoBehaviour{
 					
 					
                   if (isHealthPickUp == true) {
-				Debug.Log("pickup playercolor to 1");
+				// Debug.Log("pickup playercolor to 1");
                         playerAnimator.SetInteger("PlayerColor",1);
 				gameHandler.playercolor=1;
 					   

@@ -35,9 +35,9 @@ public class PlayerBars : MonoBehaviour, IDamageable
             vomit.uiBar = GameObject.FindWithTag("BarGreen").GetComponent<Image>();
         }
 
-        if (!whiteCloud.uiBar) {
+        /*if (!whiteCloud.uiBar) {
             whiteCloud.uiBar = GameObject.FindWithTag("BarWhite").GetComponent<Image>();
-        }
+        }*/
 
         if (!yellowJelly.uiBar) {
             yellowJelly.uiBar = GameObject.FindWithTag("BarYellow").GetComponent<Image>();
@@ -47,7 +47,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
     void Update() {
         // Decay values over time
         brownSticky.Subtract(brownSticky.decayRate * Time.deltaTime);
-        whiteCloud.Subtract(whiteCloud.decayRate * Time.deltaTime);
+        // whiteCloud.Subtract(whiteCloud.decayRate * Time.deltaTime);
         // yellowJelly.Subtract(yellowJelly.decayRate * Time.deltaTime);
 
         // Regen values over time
@@ -61,7 +61,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
         health.uiBar.fillAmount = health.GetPercentage();
         superVomit.uiBar.fillAmount = superVomit.GetPercentage();
         vomit.uiBar.fillAmount = vomit.GetPercentage();
-        whiteCloud.uiBar.fillAmount = whiteCloud.GetPercentage();
+        // whiteCloud.uiBar.fillAmount = whiteCloud.GetPercentage();
         yellowJelly.uiBar.fillAmount = yellowJelly.GetPercentage();
 
         //Is Player Dead?
@@ -75,7 +75,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
         health.curValue = health.startValue;
         superVomit.curValue = superVomit.startValue;
         vomit.curValue = vomit.startValue;
-        whiteCloud.curValue = whiteCloud.startValue;
+        // whiteCloud.curValue = whiteCloud.startValue;
         yellowJelly.curValue = yellowJelly.startValue;
     }
 
