@@ -46,7 +46,6 @@ public class EnemyMoveHit : MonoBehaviour {
 	}
 
 	void Update () {
-              return;
 		float DistToPlayer = Vector3.Distance(transform.position, target.position);
 		playercolor=gameHandler.playercolor;
 		if(enemycolor!=playercolor){
