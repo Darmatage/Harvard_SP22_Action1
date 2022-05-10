@@ -2183,6 +2183,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: THE_JELLY_DRAGON_HIMSELF
       objectReference: {fileID: 0}
+    - target: {fileID: 2242028334283644991, guid: b023f5be902192b4c8baf48d8bdbf8e2, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5056803453070720982, guid: b023f5be902192b4c8baf48d8bdbf8e2, type: 3}
       propertyPath: m_RootOrder
       value: 0
