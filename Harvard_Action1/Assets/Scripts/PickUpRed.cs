@@ -5,13 +5,11 @@ using UnityEngine;
 public class PickUpRed : MonoBehaviour{
 	
 	public CameraShake cameraShake;
-	      public GameHandler gameHandler;
+	public GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
       public bool isRedBun = true;
       public bool isSpeedBoostPickUp = false;
 	public Animator playerAnimator;
-	
-		
       public int healthBoost = 50;
       public float speedBoost = 2f;
       public float speedTime = 2f;
@@ -20,10 +18,9 @@ public class PickUpRed : MonoBehaviour{
             gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
             //playerPowerupVFX = GameObject.FindWithTag("Player").GetComponent<playerVFX>();
 			
-			GameObject myCamera = GameObject.FindWithTag("MainCamera");
-			cameraShake = myCamera.transform.parent.GetComponent<CameraShake>();
-			
-			playerAnimator = GameObject.Find("PlayerArt").GetComponent<Animator>();
+		GameObject myCamera = GameObject.FindWithTag("MainCamera");
+		cameraShake = myCamera.transform.parent.GetComponent<CameraShake>();
+		playerAnimator = GameObject.Find("PlayerArt").GetComponent<Animator>();
       }
 
       public void OnTriggerEnter2D (Collider2D other){
@@ -37,8 +34,8 @@ public class PickUpRed : MonoBehaviour{
 					
                   if (isRedBun == true) {
 					  // Debug.Log("pickup playercolor to 3");
-                       playerAnimator.SetInteger("PlayerColor",3);
-					   gameHandler.playercolor=3;
+                        playerAnimator.SetInteger("PlayerColor",3);
+			      gameHandler.playercolor=3;
 					   
 					   
 			// gameHandler.playerGetHit(healthBoost * -1);
@@ -56,5 +53,4 @@ public class PickUpRed : MonoBehaviour{
             yield return new WaitForSeconds(0.3f);
             Destroy(gameObject);
       }
-
 }
