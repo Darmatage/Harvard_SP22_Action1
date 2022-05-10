@@ -37,7 +37,7 @@ public class PlayerAttackMelee : MonoBehaviour{
                  }
 
                  if (Input.GetAxis("AltAttack") > 0 && bars.vomit.GetValue() >= 0){ //temporarily made vomit unlimited again JEB
-                        Debug.Log("Alt Attack");
+                        AltAttack();
                  }
             }
       }
@@ -87,6 +87,18 @@ public class PlayerAttackMelee : MonoBehaviour{
             isAttacking = false;
       }
 
+      void AltAttack() {
+            bars.Vomit(5);
+
+            Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(new Vector2(attackPt.position.x / 2, attackPt.position.y / 2), new Vector2(GetAttackX() * 2, attackPt.position.y), enemyLayers);
+
+            foreach(Collider2D enemy in hitEnemies) {
+                  if (enemy != player) {
+                        enemy.GetComponent<EnemyMeleeDamage>().TakeDamage(attackDamage);
+                  }
+            }
+      }
+
       //NOTE: to help see the attack sphere in editor:
       void OnDrawGizmos() {
             // if (attackPt == null) {return;}
@@ -96,8 +108,8 @@ public class PlayerAttackMelee : MonoBehaviour{
 
             if (controller) {
                   if (controller.FaceRight) {
-                  attackX = GetAttackX() + 1;
-            }
+                        attackX = GetAttackX() + 1;
+                  }
                   else {
                         attackX = GetAttackX() - 1;
                   }

@@ -35,8 +35,14 @@ public class PlayerAttackShoot : MonoBehaviour{
            FaceRight = controller.FaceRight;
 
            if (Time.time >= nextAttackTime){
-                  //if (Input.GetKeyDown(KeyCode.Space))
-                 if (Input.GetAxis("Attack") > 0  && bars.vomit.GetValue() > 0) {
+                  if (Input.GetAxis("Attack") > 0  && bars.vomit.GetValue() > 0) {
+                        animator.SetTrigger ("Fire");
+				vomitSFX.Play();
+				playerFire();						
+                        nextAttackTime = Time.time + 1f / attackRate;
+                  }
+
+                  if (Input.GetAxis("AltAttack") > 0  && bars.vomit.GetValue() > 0) {
                         animator.SetTrigger ("Fire");
 				vomitSFX.Play();
 				playerFire();						
