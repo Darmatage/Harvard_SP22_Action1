@@ -1253,6 +1253,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4070897997742285424, guid: 041f7cdbf554ec64bbc557f09137f14e, type: 3}
+      propertyPath: cameraLevel
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4070897997742285425, guid: 041f7cdbf554ec64bbc557f09137f14e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -2077,8 +2081,8 @@ GameObject:
   - component: {fileID: 1290807549}
   - component: {fileID: 1290807548}
   m_Layer: 0
-  m_Name: Level_Music
-  m_TagString: Untagged
+  m_Name: Level_Data
+  m_TagString: LevelData
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

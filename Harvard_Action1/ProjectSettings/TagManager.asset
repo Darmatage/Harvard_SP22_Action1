@@ -24,6 +24,9 @@ TagManager:
   - BarGreen
   - JellyDragon
   - JellyDragonBlast
+  - BarGroupSuperVomit
+  - BarOrange
+  - LevelData
   layers:
   - Default
   - TransparentFX
