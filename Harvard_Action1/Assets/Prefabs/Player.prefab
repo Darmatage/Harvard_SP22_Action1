@@ -214,7 +214,7 @@ MonoBehaviour:
     decayRate: 0
     maxValue: 100
     regenRate: 1
-    startValue: 60
+    startValue: 70
     uiBar: {fileID: 0}
   vomit:
     curValue: 0
