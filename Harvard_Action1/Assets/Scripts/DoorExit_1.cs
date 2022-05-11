@@ -25,7 +25,7 @@ public class DoorExit_1 : MonoBehaviour{
             // audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
 			//   audioManager.PlaySound("opendoor");
             if (other.gameObject.tag == "Player"){
-				if(playercolor==2){
+				if(playercolor==1 || playercolor==2){
 				
 							SceneManager.LoadScene(nextLevel); 
             }
