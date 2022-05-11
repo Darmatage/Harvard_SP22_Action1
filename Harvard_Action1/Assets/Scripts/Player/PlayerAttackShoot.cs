@@ -64,11 +64,16 @@ public class PlayerAttackShoot : MonoBehaviour {
 
       void PlayerSuperFire() {
             Quaternion targerRotation = Quaternion.identity;
+            float firepointX = FirePoint.position.x;
 
             if (!FaceRight) {
+                  firepointX = firepointX + 3f;
                   targerRotation = Quaternion.Euler(new Vector3(0, -180, 0));
             }
+            else {
+                  firepointX = firepointX - 3f;
+            }
 
-		GameObject projectile = Instantiate(superProjectilePrefab, FirePoint.position, targerRotation);
+		GameObject projectile = Instantiate(superProjectilePrefab, new Vector2(firepointX, FirePoint.position.y), targerRotation);
       }
 }
