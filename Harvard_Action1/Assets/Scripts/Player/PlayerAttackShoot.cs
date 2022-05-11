@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerAttackShoot : MonoBehaviour{
+public class PlayerAttackShoot : MonoBehaviour {
 
       public Animator animator;
       //AudioManager audioManager;
@@ -10,6 +10,7 @@ public class PlayerAttackShoot : MonoBehaviour{
       PlayerController controller;
       public Transform FirePoint;
       public GameObject projectilePrefab;
+      public GameObject superProjectilePrefab;
       public float projectileSpeed = 10f;
       public float attackRate = 2f;
       private float nextAttackTime = 0f;
@@ -36,34 +37,38 @@ public class PlayerAttackShoot : MonoBehaviour{
 
            if (Time.time >= nextAttackTime){
                   if (Input.GetAxis("Attack") > 0  && bars.vomit.GetValue() > 0) {
-                        animator.SetTrigger ("Fire");
+                        animator.SetTrigger("Fire");
 				vomitSFX.Play();
-				playerFire();						
+				PlayerFire();						
                         nextAttackTime = Time.time + 1f / attackRate;
                   }
 
                   if (Input.GetAxis("AltAttack") > 0  && bars.vomit.GetValue() > 0) {
-                        animator.SetTrigger ("Fire");
+                        animator.SetTrigger("Fire");
 				vomitSFX.Play();
-				playerFire();						
+				PlayerSuperFire();						
                         nextAttackTime = Time.time + 1f / attackRate;
                   }
             }
       }
 
-      void playerFire(){
+      void PlayerFire() {
             Quaternion targerRotation = Quaternion.identity;
 
             if (!FaceRight) {
                   targerRotation = Quaternion.Euler(new Vector3(0, -180, 0));
             }
 
-		GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, targerRotation);	
-		
-		//audioManager.PlaySound("vomit");
-				//playerShootSFX.Play();
-			//Debug.Log("IS facing right" +FaceRight);
-            //GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, Quaternion.identity);
-           // projectile.AddForce(fwd * projectileSpeed, ForceMode.Impulse);
+		GameObject projectile = Instantiate(projectilePrefab, FirePoint.position, targerRotation);
+      }
+
+      void PlayerSuperFire() {
+            Quaternion targerRotation = Quaternion.identity;
+
+            if (!FaceRight) {
+                  targerRotation = Quaternion.Euler(new Vector3(0, -180, 0));
+            }
+
+		GameObject projectile = Instantiate(superProjectilePrefab, FirePoint.position, targerRotation);
       }
 }

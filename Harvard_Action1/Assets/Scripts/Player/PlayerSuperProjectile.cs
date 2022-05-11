@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Collections;
 using UnityEngine;
 
-public class PlayerProjectile : MonoBehaviour{
+public class PlayerSuperProjectile : MonoBehaviour{
 
       public int damage = 1;
       public GameObject hitEffectAnim;
@@ -10,7 +10,6 @@ public class PlayerProjectile : MonoBehaviour{
 	private GameHandler gameHandler;
 	public bool FaceRight;
 	//public AudioSource playerShootSFX;
-	 
 
       void Start() {
            StartCoroutine(selfDestruct());

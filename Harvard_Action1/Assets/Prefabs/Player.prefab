@@ -328,6 +328,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   FirePoint: {fileID: 39561182511272075}
   projectilePrefab: {fileID: 8834360304884460297, guid: c36d212fc24fb184393cc0279c136d90, type: 3}
+  superProjectilePrefab: {fileID: 8834360304884460297, guid: eca94a513f34e4f038dc243a7300ace3, type: 3}
   projectileSpeed: 10
   attackRate: 2
   FaceRight: 0
