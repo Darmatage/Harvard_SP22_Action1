@@ -50,7 +50,6 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate() {
         // Changes velocity on hills and slides
         if (hMove.x == 0) {
-			
             rig.velocity = new Vector2(rig.velocity.x / 1.1f, rig.velocity.y);
         }
     }
@@ -101,6 +100,7 @@ public class PlayerController : MonoBehaviour
 					Jump();
                 }
             }
+
 			animator.SetBool ("Jump", false);
 
             if (rig.velocity.y < 0) {
@@ -114,12 +114,14 @@ public class PlayerController : MonoBehaviour
 				
                 //rig.gravityScale = 1;
             }
-        } 
-			if(isJumping==true){
-				animator.SetBool ("Jump", true);
-			}
-			else
-			{animator.SetBool ("Jump", false);}
+        }
+
+        if (isJumping==true) {
+            animator.SetBool ("Jump", true);
+        }
+        else {
+            animator.SetBool ("Jump", false);
+        }
     }
 
     public bool isGrounded() {

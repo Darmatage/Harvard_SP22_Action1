@@ -439,6 +439,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevel: scene4_RooftopJellyDragonBoss_James
   doorSFX: {fileID: 311329930}
+  gameHandler: {fileID: 0}
+  playercolor: 0
 --- !u!50 &311329926
 Rigidbody2D:
   serializedVersion: 4
@@ -473,7 +475,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.107292086, y: -0.7640717}
+  m_Offset: {x: 0.107292056, y: 0.0132522285}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -484,7 +486,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0729172, y: 2.528143}
+  m_Size: {x: 2.0729172, y: 1.8490348}
   m_EdgeRadius: 0
 --- !u!212 &311329928
 SpriteRenderer:
@@ -52685,6 +52687,10 @@ CompositeCollider2D:
       - {x: -9.99999, y: 45.00004}
       - {x: -10.000026, y: 48.00001}
       - {x: -11.00001, y: 47.999973}
+    - - {x: 6.9999743, y: 35.999992}
+      - {x: 6.9999743, y: 37.00001}
+      - {x: 2.99999, y: 36.999973}
+      - {x: 3.0000253, y: 35.999992}
     - - {x: -6.0000253, y: 35.999992}
       - {x: -6.0000253, y: 37.00001}
       - {x: -10.00001, y: 36.999973}
@@ -52727,10 +52733,6 @@ CompositeCollider2D:
       - {x: -10.000026, y: 24.00001}
       - {x: -11.00001, y: 23.999975}
       - {x: -10.999974, y: -2.00001}
-    - - {x: 6.9999743, y: 35.999992}
-      - {x: 6.9999743, y: 37.00001}
-      - {x: 2.99999, y: 36.999973}
-      - {x: 3.0000253, y: 35.999992}
     - - {x: -10.000026, y: 25.99999}
       - {x: -9.999961, y: 26.99999}
       - {x: -5.99999, y: 27.000027}
