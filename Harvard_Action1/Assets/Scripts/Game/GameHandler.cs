@@ -9,6 +9,7 @@ public class GameHandler : MonoBehaviour {
       private PlayerBars bars;
       public Level currentLevel;
 	public static bool GameisPaused = false;
+      public bool canOpenDoor = true;
       Level[] levels = new Level[5]; // When adding more levels, increase size
       public GameObject pauseMenuUI;
       public AudioMixer mixer;

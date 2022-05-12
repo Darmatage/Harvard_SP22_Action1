@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUpBlue : MonoBehaviour{
 	
 	public CameraShake cameraShake;
-	      public GameHandler gameHandler;
+	public GameHandler gameHandler;
       //public playerVFX playerPowerupVFX;
       public bool isBlueBean = true;
       public bool isSpeedBoostPickUp = false;
@@ -33,13 +33,12 @@ public class PickUpBlue : MonoBehaviour{
                   GetComponent<AudioSource>().Play();
 				  cameraShake.ShakeCamera(0.15f,0.1f);
                   StartCoroutine(DestroyThis());
-					
-					
+
                   if (isBlueBean == true) {
 					  //Debug.Log("pickup playercolor to 2");
-                       playerAnimator.SetInteger("PlayerColor",1);
-					   gameHandler.playercolor=2;
-					   
+                        playerAnimator.SetInteger("PlayerColor",1);
+				gameHandler.playercolor=2;
+                        gameHandler.canOpenDoor = true;	   
 					   
 			// gameHandler.playerGetHit(healthBoost * -1);
                         //playerPowerupVFX.powerup();
