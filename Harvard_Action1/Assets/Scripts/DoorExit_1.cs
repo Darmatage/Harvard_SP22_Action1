@@ -22,7 +22,9 @@ public class DoorExit_1 : MonoBehaviour{
 	  }
 	  public void OnTriggerEnter2D(Collider2D other){
       if (other.gameObject.tag == "Player"){
+	  if(playercolor==2){
 				SceneManager.LoadScene(nextLevel);			
+	  }
       }	
 	  }	  
 }
