@@ -14,10 +14,10 @@ public class DoorExit_1 : MonoBehaviour{
 
     public void Start(){
       //       audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
-		doorSFX = GetComponent<AudioSource>();
+			doorSFX = GetComponent<AudioSource>();
 		  gameHandler = GameObject.FindWithTag("GameHandler").GetComponent<GameHandler>();
-	}         
-      public void Update(){
+		}         
+    public void Update(){
 		  playercolor=gameHandler.playercolor;
 	  }
 	  public void OnTriggerEnter2D(Collider2D other){
