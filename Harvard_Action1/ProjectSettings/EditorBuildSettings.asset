@@ -21,7 +21,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PauseMenu.unity
     guid: 2e25956b71a548f45910bd7e753c1ed5
   - enabled: 0
-    path: Assets/Scenes/scene2_MidTower_James2.unity
+    path: 
     guid: 5877f024ad48f4c4ca4c00ee96cb261c
   - enabled: 0
     path: Assets/Scenes/OldScenes/Tutorial_TileMaps.unity
@@ -74,4 +74,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: b6284f93c70602c48b694d31cf8aec8c
+  - enabled: 1
+    path: Assets/Scenes/scene5_JellyDragonBossHard_James.unity
+    guid: e0ca6f688ef637c47b19302edfee4645
   m_configObjects: {}
