@@ -21,16 +21,8 @@ public class DoorExit_1 : MonoBehaviour{
 		  playercolor=gameHandler.playercolor;
 	  }
 	  public void OnTriggerEnter2D(Collider2D other){
-            // AudioManager audioManager;
-            // audioManager = GameObject.FindWithTag("AudioManager").GetComponent<AudioManager>();
-			//   audioManager.PlaySound("opendoor");
-            if (other.gameObject.tag == "Player"){
-				if(playercolor==1 || playercolor==2){
-				
-							SceneManager.LoadScene(nextLevel); 
-            }
-			
-				
+      if (other.gameObject.tag == "Player"){
+				SceneManager.LoadScene(nextLevel);			
       }	
 	  }	  
 }
