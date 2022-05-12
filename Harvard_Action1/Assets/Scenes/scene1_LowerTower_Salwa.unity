@@ -377,6 +377,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextLevel: scene2_MidTower_JamesV2
   doorSFX: {fileID: 0}
+  gameHandler: {fileID: 0}
+  playercolor: 0
 --- !u!50 &311329926
 Rigidbody2D:
   serializedVersion: 4
@@ -85760,7 +85762,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
