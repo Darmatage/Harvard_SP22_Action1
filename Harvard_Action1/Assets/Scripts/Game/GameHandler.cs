@@ -9,6 +9,7 @@ public class GameHandler : MonoBehaviour {
       private PlayerBars bars;
       public Level currentLevel;
 	public static bool GameisPaused = false;
+      public bool canOpenDoor = true;
       Level[] levels = new Level[5]; // When adding more levels, increase size
       public GameObject pauseMenuUI;
       public AudioMixer mixer;
@@ -29,6 +30,7 @@ public class GameHandler : MonoBehaviour {
 	public GameObject StartButton;
 	
 	public GameObject QuitButton;
+      private new Transform transform;
 
       void Awake () {
             SetAudioLevel (volumeLevel);
@@ -53,6 +55,7 @@ public class GameHandler : MonoBehaviour {
 
             player = GameObject.FindWithTag("Player");
             bars = player.GetComponent<PlayerBars>();
+            transform = player.GetComponent<Transform>();
 			
             DefineGameLevels();
             SetGameLevel(1); // Start the game at level 1
@@ -87,7 +90,7 @@ public class GameHandler : MonoBehaviour {
 
       // Are we on a game level or a cutscene / menu
       bool IsGameLevel() {
-            if (player) {
+            if (GameObject.FindWithTag("Player") != null) {
                   return true;
             }
 
@@ -96,9 +99,7 @@ public class GameHandler : MonoBehaviour {
 
       // Has player fallen off map?
       void FallCheck() {
-           Transform transform = player.GetComponent<Transform>();
-
-           if (transform.position.y <= -10) {
+            if (transform.position.y <= -10) {
                   Debug.Log("Fell Off");
 
                   SetPlayerPosition(currentLevel.spawnPoint);

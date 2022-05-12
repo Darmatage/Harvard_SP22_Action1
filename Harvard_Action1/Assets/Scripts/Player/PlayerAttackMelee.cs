@@ -88,7 +88,7 @@ public class PlayerAttackMelee : MonoBehaviour{
       }
 
       void AltAttack() {
-            bars.Vomit(5);
+            bars.Vomit(3);
 
             Collider2D[] hitEnemies = Physics2D.OverlapAreaAll(new Vector2(attackPt.position.x / 2, attackPt.position.y / 2), new Vector2(GetAttackX() * 2, attackPt.position.y), enemyLayers);
 
