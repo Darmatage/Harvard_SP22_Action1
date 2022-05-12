@@ -213,7 +213,7 @@ MonoBehaviour:
     curValue: 0
     decayRate: 0
     maxValue: 100
-    regenRate: 1
+    regenRate: 0
     startValue: 70
     uiBar: {fileID: 0}
   vomit:
@@ -222,13 +222,6 @@ MonoBehaviour:
     maxValue: 100
     regenRate: 5
     startValue: 50
-    uiBar: {fileID: 0}
-  superVomit:
-    curValue: 0
-    decayRate: 0
-    maxValue: 100
-    regenRate: 0
-    startValue: 0
     uiBar: {fileID: 0}
   whiteCloud:
     curValue: 0

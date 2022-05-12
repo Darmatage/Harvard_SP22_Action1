@@ -59,7 +59,7 @@ public class PlayerBars : MonoBehaviour, IDamageable
         yellowJelly.uiBar.fillAmount = yellowJelly.GetPercentage();
 
         //Is Player Dead?
-        if (health.curValue <= 0.0f) {
+        if (health.curValue < 1.0f) {
             Die();
         }
     }
