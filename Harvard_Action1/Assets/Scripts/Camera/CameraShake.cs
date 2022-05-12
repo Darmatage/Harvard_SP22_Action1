@@ -5,6 +5,9 @@ using UnityEngine;
 public class CameraShake : MonoBehaviour {
        public new Camera camera;
        public CameraLevel cameraLevel;
+       public float cameraMoveSpeed = 2.5f;
+       public float cameraSizeDefault = 5f;
+       public float cameraSizeZoomedOut = 10f;
        public float durationTime = 0.15f;
        public float magnitude = 0.5f;
 	public GameObject target;
@@ -39,15 +42,19 @@ public class CameraShake : MonoBehaviour {
                             jellyDragonHP = jellyDragonEMD.currentHealth;
 
                             if (jellyDragonHP > 0) {
-                                   camera.orthographicSize = 10f;
+                                   if (camera.orthographicSize < cameraSizeZoomedOut) {
+                                          camera.orthographicSize = camera.orthographicSize + (cameraMoveSpeed * Time.deltaTime);
+                                   }
                             }
                             else {
-                                   camera.orthographicSize = 5f;
+                                   if (camera.orthographicSize > cameraSizeDefault) {
+                                          camera.orthographicSize = camera.orthographicSize - (cameraMoveSpeed * Time.deltaTime);
+                                   }
                             }
                      }
               }
               catch {
-                     camera.orthographicSize = 5f;
+                     camera.orthographicSize = cameraSizeDefault;
               }
        }
 
