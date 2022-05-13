@@ -722,7 +722,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -61765,10 +61765,6 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 766
     m_Data: {fileID: -437058381358787136, guid: 50958999b159e6247842a865e05a3ff9, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 887
     m_Data:
